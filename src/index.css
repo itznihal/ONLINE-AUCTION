@@ -33,7 +33,7 @@
     color: #3498db !important;
 }
 
-@media (max-width:991){
+@media only screen and (max-width: 991px){
     
     .navbar-brand{
         font-size: 1.5 rem !important;
@@ -41,6 +41,17 @@
 
     .menu_active{
         font-weight: bold;
-        border-bottom: none;
+        border:0 !important;
     }
+
+    .licls{
+        margin-top: 2rem;
+    }
+
+    .signblk{
+        margin-top: 5rem;
+        margin-bottom: 2rem;
+    }
+
+  
 }

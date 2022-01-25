@@ -20,7 +20,7 @@ const Navbar = () => {
     </button>
 
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+      <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
       {/* Home */}
       {/* // Home - Done
 // Add Lot
@@ -29,32 +29,32 @@ const Navbar = () => {
 // services - Done
 // Contact Us - Done */}
 {/* SignUp */}
-        <li className="nav-item px-3">
+        <li className="nav-item px-3 mx-auto licls">
           <NavLink activeClassName = 'menu_active' excat className="nav-link active" aria-current="page" to="/">Home</NavLink>
         </li>
 
-        <li className="nav-item px-3">
+        <li className="nav-item px-3 mx-auto licls">
           <NavLink activeClassName = 'menu_active' excat className="nav-link" to="/addlot">Add Lot</NavLink>
         </li>
 
-        <li className="nav-item px-3">
+        <li className="nav-item px-3 mx-auto licls">
           <NavLink activeClassName = 'menu_active' excat className="nav-link" to="/lot">Lot</NavLink>
         </li>
 
-        <li className="nav-item px-3">
+        <li className="nav-item px-3 mx-auto licls">
           <NavLink activeClassName = 'menu_active' excat className="nav-link" to="/about">About</NavLink>
         </li>
 
-        <li className="nav-item px-3">
+        <li className="nav-item px-3 mx-auto licls">
           <NavLink activeClassName = 'menu_active' excat className="nav-link" to="/service">Services</NavLink>
         </li>
 
-        <li className="nav-item px-3">
+        <li className="nav-item px-3 mx-auto licls">
           <NavLink activeClassName = 'menu_active' excat className="nav-link" to="/contact">Contact Us</NavLink>
         </li>
 
-        <li className="nav-item px-5">
-        <NavLink activeClassName = 'menu_active' excat className="btn btn-primary" to="/signup" role="button"> Sign Up</NavLink>
+        <li className="nav-item px-5 mx-auto">
+        <NavLink activeClassName = 'menu_active' excat className="btn btn-primary signblk" to="/signup" role="button"> Sign Up</NavLink>
         </li>
 
         
