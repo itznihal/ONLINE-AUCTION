@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Encode+Sans+Expanded:wght@400;700&family=Josefin+Sans:wght@300&family=Mulish&family=Nunito:wght@200&family=Waterfall&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Mulish', sans-serif;
+}
+
+.navbar {
+    background-color: #fff !important;
+}
+
+.navbar-brand{
+    font-size: 1.9rem !important;
+    color: #565387 !important;
+/* For logo */
+}
+
+.navbar a{
+    font-size: 1.3rem ;
+    text-transform: capitalize ;
+}
+
+.menu_active{
+    font-weight: bold;
+    border-bottom: 1px solid #565387;
+
+}
+
+.navbar a:hover{
+    color: #3498db !important;
+}
+
+@media (max-width:991){
+    
+    .navbar-brand{
+        font-size: 1.5 rem !important;
+    }
+
+    .menu_active{
+        font-weight: bold;
+        border-bottom: none;
+    }
+}
