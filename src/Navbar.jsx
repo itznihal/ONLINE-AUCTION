@@ -53,7 +53,7 @@ const Navbar = () => {
           <NavLink activeClassName = 'menu_active' excat className="nav-link" to="/contact">Contact Us</NavLink>
         </li>
 
-        <li className="nav-item px-5 mx-auto">
+        <li className="nav-item px-5 mx-auto \">
         <NavLink activeClassName = 'menu_active' excat className="btn btn-primary signblk" to="/signup" role="button"> Sign Up</NavLink>
         </li>
 

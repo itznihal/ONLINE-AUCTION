@@ -33,6 +33,8 @@
     color: #3498db !important;
 }
 
+
+
 @media only screen and (max-width: 991px){
     
     .navbar-brand{
@@ -55,3 +57,15 @@
 
   
 }
+
+.brand-name{
+font-size: 3rem;
+color: #3498db;
+box-shadow: 5px 10px;
+
+
+}
+.btn-get-started{
+
+}
+
