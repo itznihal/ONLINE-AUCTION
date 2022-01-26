@@ -34,7 +34,7 @@ const Navbar = () => {
         </li>
 
         <li className="nav-item px-3 mx-auto licls">
-          <NavLink activeClassName = 'menu_active' excat className="nav-link" to="/addlot">Add Lot</NavLink>
+          <NavLink activeClassName = 'menu_active' excat className="nav-link " to="/addlot">Add Lot</NavLink>
         </li>
 
         <li className="nav-item px-3 mx-auto licls">
@@ -45,7 +45,7 @@ const Navbar = () => {
           <NavLink activeClassName = 'menu_active' excat className="nav-link" to="/about">About</NavLink>
         </li>
 
-        <li className="nav-item px-3 mx-auto licls">
+        <li className="nav-item px-3 mx-auto licls ">
           <NavLink activeClassName = 'menu_active' excat className="nav-link" to="/service">Services</NavLink>
         </li>
 
