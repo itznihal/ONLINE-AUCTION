@@ -83,20 +83,20 @@
 // Home   Section 2 CSS
 
 /* Default btn sre-tyling */
-.btn {
+.homepg .btn {
     border: none;
     padding: 15px 30px !important;
   }
-  .btn.btn-outline-white {
+  .homepg .btn.btn-outline-white {
     border: 2px solid #fff;
     background: none;
     color: #fff;
   }
-  .btn.btn-outline-white:hover {
+  .homepg .btn.btn-outline-white:hover {
     background: #fff;
     color: #4481eb;
   }
-  .btn.btn-primary {
+  .homepg .btn.btn-primary {
     background: #4481eb;
     background: linear-gradient(-45deg, #3498db, #4481eb);
     color: #fff;
@@ -104,14 +104,11 @@
     transition: all 0.5s;
   }
 
-  .btn.btn-primary:hover {
+  .homepg .btn.btn-primary:hover {
     font-size: 15px;
   }
   
-  .img-fluidstrtd:hover{
-margin-left: 5px;
-transition: 0.5s;
-  }
+  
   /* Feature 1 */
   .feature-1 .wrap-icon {
     margin: 0 auto;

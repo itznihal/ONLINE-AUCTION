@@ -26,6 +26,10 @@ import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
 import Navbar from "./client/Navbar/Navbar";
 import { Switch , Route , Redirect} from "react-router-dom";  
 
+import '../node_modules/font-awesome/css/font-awesome.min.css'; 
+
+
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
