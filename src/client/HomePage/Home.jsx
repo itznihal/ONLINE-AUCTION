@@ -3,7 +3,9 @@ import { NavLink } from 'react-router-dom';
 // import { Swiper, SwiperSlide } from 'swiper/react';
 // import 'swiper/css';
 // import { FaBeer } from 'react-icons/fa';
-import Img from "./images/values-1.png"
+// import Img from "./images/values-1.png"
+import Img from "../images/values-1.png";
+import "./homestyle.scss";
 
 
 
@@ -43,6 +45,11 @@ const Home = () => {
 
 
       </section>
+
+
+
+      {/* Card Section Started */}
+      
 
     </>);
 };

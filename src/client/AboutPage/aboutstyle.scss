@@ -1,0 +1,170 @@
+.values .box {
+    padding: 30px;
+    box-shadow: 0px 0 5px rgba(1, 41, 112, 0.08);
+    text-align: center;
+    transition: 0.3s;
+    height: 100%;
+  }
+  .values .box img {
+    padding: 30px 50px;
+    transition: 0.5s;
+    transform: scale(1.1);
+  }
+  .values .box h3 {
+    font-size: 24px;
+    color: #012970;
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+  .values .box:hover {
+    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+  }
+  .values .box:hover img {
+    transform: scale(1);
+  }
+  
+  
+//   .section-header {
+//       text-align: center;
+//       padding-bottom: 40px;
+//     }
+//     .section-header h2 {
+//       font-size: 13px;
+//       letter-spacing: 1px;
+//       font-weight: 700;
+//       margin: 0;
+//       color: #4154f1;
+//       text-transform: uppercase;
+//     }
+//     .section-header p {
+//       margin: 10px 0 0 0;
+//       padding: 0;
+//       font-size: 38px;
+//       line-height: 42px;
+//       font-weight: 700;
+//       color: #012970;
+//     }
+//     @media (max-width: 768px) {
+//       .section-header p {
+//         font-size: 28px;
+//         line-height: 32px;
+//       }
+//     }
+
+
+    // About Written Section Css
+    section {
+        padding: 80px 0;
+        overflow: hidden;
+      }
+
+      .section-title {
+        text-align: center;
+        padding-bottom: 30px;
+      }
+
+      .section-title h2 {
+        font-size: 32px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        padding-bottom: 0;
+        color: #124265;
+      }
+      .section-title p {
+        margin-bottom: 0;
+        font-size: 14px;
+        color: #919191;
+      }
+
+
+      /*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+.about .content h3 {
+    font-weight: 600;
+    font-size: 26px;
+  }
+  .about .content ul {
+    list-style: none;
+    padding: 0;
+  }
+  .about .content ul li {
+    padding-left: 28px;
+    position: relative;
+  }
+  .about .content ul li + li {
+    margin-top: 10px;
+  }
+  .about .content ul i {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 20px;
+    color: #2487ce;
+    line-height: 1;
+  }
+  .about .content p:last-child {
+    margin-bottom: 0;
+  }
+  .about .content .btn-learn-more {
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 5px;
+    transition: 0.3s;
+    line-height: 1;
+    color: #2487ce;
+    -webkit-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+    margin-top: 6px;
+    border: 2px solid #2487ce;
+    text-decoration: none;
+  }
+  .about .content .btn-learn-more:hover {
+    background: #2487ce;
+    color: #fff;
+    text-decoration: none;
+  }
+
+
+
+
+
+
+//   About Heading
+
+
+.section-title {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  .section-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    color: #222222;
+  }
+  .section-title h2::before, .section-title h2::after {
+    content: "";
+    width: 50px;
+    height: 2px;
+    background: #3498db;
+    display: inline-block;
+  }
+  .section-title h2::before {
+    margin: 0 15px 10px 0;
+  }
+  .section-title h2::after {
+    margin: 0 0 10px 15px;
+  }
+  .section-title p {
+    margin: 15px 0 0 0;
+  }
+  
+  
+      

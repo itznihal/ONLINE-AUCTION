@@ -1,9 +1,15 @@
 import React from 'react';
 
+import "./addlotstyles.scss";
+
+
 const Addlot = () => {
   return (
   <>
-      <h1>Welcome Add lot Page</h1>
+      <h1>
+      Welcome Add lot Padddge</h1>
+     
+
   </>);
 };
 
