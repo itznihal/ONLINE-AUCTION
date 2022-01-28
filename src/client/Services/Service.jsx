@@ -19,7 +19,7 @@ const Service = () => {
   <div className='row'>
     <div className='col-10 mx-auto'>
       <div className='row'>
-      <div className='col-md-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex justify-content-center flex-column'>
+      <div className='col-md-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex justify-content-center flex-column' data-aos="fade-right" data-aos-delay="100">
       <h1> <strong className='brand-name'>Bid and sell items with Online Auction</strong></h1>
         <h2 className="my-3">
           An online auction is a service in which auction users or participants sell or bid for products or services via the Internet.
@@ -28,7 +28,7 @@ const Service = () => {
 
       </div>
 
-      <div className='col-lg-6 order-1 order-lg-2 header-img ' data-aos="fade-right" data-aos-delay="100">
+      <div className='col-lg-6 order-1 order-lg-2 header-img ' data-aos="fade-left" data-aos-delay="200">
           <img src={Img} className='img-fluid animated' alt="auction img" />
 
       </div>
@@ -51,7 +51,7 @@ const Service = () => {
   <div className='row'>
     <div className='col-10 mx-auto'>
       <div className='row'>
-      <div className='col-md-6 pt-5 pt-lg-0 order-2 order-lg-2 d-flex justify-content-center flex-column'>
+      <div className='col-md-6 pt-5 pt-lg-0 order-2 order-lg-2 d-flex justify-content-center flex-column' data-aos="fade-right" data-aos-delay="300">
         <h1> <strong className='brand-name'>Bid and sell items with Online Auction</strong></h1>
 
         <h2 className="my-3">
@@ -61,7 +61,7 @@ const Service = () => {
 
       </div>
 
-      <div className='col-lg-6 order-1 order-lg-1 header-img2 ' data-aos="fade-right" data-aos-delay="200">
+      <div className='col-lg-6 order-1 order-lg-1 header-img2 ' data-aos="fade-left" data-aos-delay="400">
           <img src={Img} className='img-fluid animated' alt="auction img" />
 
       </div>
@@ -88,7 +88,7 @@ const Service = () => {
   <div className='row'>
     <div className='col-10 mx-auto'>
       <div className='row'>
-      <div className='col-md-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex justify-content-center flex-column'>
+      <div className='col-md-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex justify-content-center flex-column' data-aos="fade-rightt" data-aos-delay="500">
       <h1> <strong className='brand-name'>Bid and sell items with Online Auction</strong></h1>
 
         <h2 className="my-3">
@@ -98,7 +98,7 @@ const Service = () => {
 
       </div>
 
-      <div className='col-lg-6 order-1 order-lg-2 header-img ' data-aos="fade-right" data-aos-delay="300">
+      <div className='col-lg-6 order-1 order-lg-2 header-img ' data-aos="fade-left" data-aos-delay="600">
           <img src={Img} className='img-fluid animated' alt="auction img" />
 
       </div>

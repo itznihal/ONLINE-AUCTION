@@ -11,14 +11,14 @@ import "./homestyle.scss";
 const Home = () => {
   return (
     <>
-      <section id='header' className='d-flex align-items-center'>
+      <section id='header' className='d-flex align-items-center homepg'>
 
 
         <div className="container-fluid nav_bg">
           <div className='row'>
             <div className='col-10 mx-auto'>
               <div className='row'>
-              <div className='col-md-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex justify-content-center flex-column' data-aos="fade-up" data-aos-delay="200">
+              <div className='col-md-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex justify-content-center flex-column' data-aos="fade-up" data-aos-delay="300">
                 <h1> Bid and sell items with <strong className='brand-name'><br/>Online Auction</strong></h1>
 
                 <h2 className="my-3">
@@ -32,7 +32,7 @@ const Home = () => {
 
               </div>
 
-              <div className='col-lg-6 order-1 order-lg-2 header-img ' data-aos="fade-up" data-aos-delay="300">
+              <div className='col-lg-6 order-1 order-lg-2 header-img ' data-aos="fade-up" data-aos-delay="400">
                   <img src={Img} className='img-fluid animated' alt="auction img" />
 
               </div>
@@ -69,7 +69,7 @@ const Home = () => {
         </div>
 
         <div className="row">
-          <div className="col-md-4" data-aos="fade-up" data-aos-delay="">
+          <div className="col-md-4" data-aos="fade-up" data-aos-delay="300">
             <div className="feature-1 text-center">
               <div className="wrap-icon icon-1">
               <div className='hmicn'>
@@ -82,7 +82,7 @@ and valid. The proofs of product must be there. All the valid identities of
 seller and bidder will be there.</p>
             </div>
           </div>
-          <div className="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div className="col-md-4" data-aos="fade-up" data-aos-delay="400">
             <div className="feature-1 text-center">
               <div className="wrap-icon icon-1">
               <div className='hmicn'>
@@ -96,7 +96,7 @@ seller.</p>
             </div>
           </div>
 
-          <div className="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div className="col-md-4" data-aos="fade-up" data-aos-delay="500">
             <div className="feature-1 text-center">
               <div className="wrap-icon icon-1">
               <div className='hmicn'>
@@ -121,7 +121,7 @@ any update, the database will be updated. </p>
     <section className="section">
 
       <div className="container">
-        <div className="row justify-content-center text-center mb-5" data-aos="fade">
+        <div className="row justify-content-center text-center mb-5" data-aos="zoom-in" data-aos-delay="200">
           <div className="col-md-6 mb-5">
             <img src={Img} alt="Auction Image" className="img-fluid"/>
           </div>
@@ -129,21 +129,21 @@ any update, the database will be updated. </p>
 
         <div className="row">
           <div className="col-md-4">
-            <div className="step">
+            <div className="step" data-aos="fade-up" data-aos-delay="300">
               <span className="number">01</span>
               <h3>Create Profile</h3>
               <p>User will be registered successfully and redirected to log in page.</p>
             </div>
           </div>
           <div className="col-md-4">
-            <div className="step">
+            <div className="step" data-aos="fade-up" data-aos-delay="400">
               <span className="number">02</span>
               <h3>Sign Up</h3>
               <p>User will be registered successfully and redirected to log in page.</p>
             </div>
           </div>
           <div className="col-md-4">
-            <div className="step">
+            <div className="step" data-aos="fade-up" data-aos-delay="500">
               <span className="number">03</span>
               <h3>Enjoy the app</h3>
               <p>Auction in physical mode, is some kind of difficult if you have to travel 
@@ -158,14 +158,14 @@ to auction place. </p>
     <section className="section">
       <div className="container">
         <div className="row align-items-center">
-          <div className="col-md-4 me-auto">
+          <div className="col-md-4 me-auto" data-aos="fade-up" data-aos-delay="400">
             <h2 className="mb-4">Create a lot</h2>
             <p className="mb-4">All the valid information related to item for bidding
 i.e. lot name, description of the item, category of item, date of bidding, 
 minimum price, end time of bidding, payment method, images of produc</p>
             <p><a href="#" className="btn btn-primary">Get Started</a></p>
           </div>
-          <div className="col-md-6" data-aos="fade-left">
+          <div className="col-md-6" data-aos="zoom-in" data-aos-delay="500">
             <img src={Img} alt="Auction Image" className="img-fluid"/>
           </div>
         </div>
@@ -175,13 +175,13 @@ minimum price, end time of bidding, payment method, images of produc</p>
     <section className="section">
       <div className="container">
         <div className="row align-items-center">
-          <div className="col-md-4 ms-auto order-2">
+          <div className="col-md-4 ms-auto order-2" data-aos="fade-up" data-aos-delay="400">
             <h2 className="mb-4">Make a bid</h2>
             <p className="mb-4">Customer will see the product detail and if interested in product then 
 he/she will make a bid of that product, valid identity proof.</p>
             <p><a href="#" className="btn btn-primary">Get Started</a></p>
           </div>
-          <div className="col-md-6" data-aos="fade-right">
+          <div className="col-md-6" data-aos="zoom-in" data-aos-delay="500">
             <img src={Img} alt="Auction Image" className="img-fluid"/>
           </div>
         </div>

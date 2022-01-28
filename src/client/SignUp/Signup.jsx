@@ -28,15 +28,15 @@ const Signup = () => {
 
     <>
 {/* <h1>Signup Page</h1> */}
-<div className="container-fluid nav_bg signupcls">
+<div className="container-fluid nav_bg signupcls" data-aos="fade-up" data-aos-delay="400">
   <div className='row'>
     <div className='col-10 mx-auto'>
 
 
 <div className={ `container ${flag? null : 'sign-up-mode'}`} >
-      <div className="forms-container">
+      <div className="forms-container" data-aos="fade-up" data-aos-delay="700">
         <div className="signin-signup">
-          <form action="#" className="sign-in-form">
+          <form action="#" className="sign-in-form" >
             <h2 className="title">Sign in</h2>
             <div className="input-field">
             <div className='signinicn'><GoSignIn/></div>
