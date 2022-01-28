@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import "./navbarstyle.scss";
+import {RiAuctionFill} from 'react-icons/ri';
+
 
 const Navbar = () => {
   return (
@@ -14,7 +16,9 @@ const Navbar = () => {
   
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
   <div className="container-fluid">
-    <NavLink className="navbar-logo" to="/">Auction</NavLink>
+    <NavLink className="navbar-logo" to="/">
+    <RiAuctionFill/>
+    eAuction</NavLink>
 
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
@@ -34,30 +38,8 @@ const Navbar = () => {
           <NavLink activeClassName = 'menu_active' excat className="nav-link active" aria-current="page" to="/">Home</NavLink>
         </li>
 
-        {/* <li className="nav-item px-3 mx-auto licls">
-          <NavLink activeClassName = 'menu_active' excat className="nav-link " to="/addlot">Add Lot</NavLink>
        
-       
-        </li> */}
-       
-       
-        {/* <li className="nav-item px-3 mx-auto licls">
-        <div className="dropdown"  data-aos="fade-up"
-     data-aos-anchor-placement="top-center">
-  <button type="button" id='drpdwn' className="btn  dropdown-toggle licls nav-item" data-bs-toggle="dropdown">
-    My Lots
-  </button>
-  <ul className="dropdown-menu "   data-aos="fade-up"     data-aos-anchor-placement="top-center" >
-    <li><NavLink className="dropdown-item" to="/addlot">Add Lots</NavLink></li>
-    <li><NavLink className="dropdown-item" to="/updatelot">Show Lots</NavLink></li>
-  
-
-  
-  </ul>
-</div>
-</li> */}
-
-<li className="dropdown nav-item px-3 mx-auto licls"><NavLink to="#" className="nav-link"><span>Drop Down</span> </NavLink>
+<li className="dropdown nav-item px-3 mx-auto licls"><NavLink to="#" className="nav-link"><span id='headrdr'>My Lots</span> </NavLink>
             <ul className='ddlist'>
               <li><NavLink to="/addlot" excat className="nav-link">Add Lot</NavLink></li>
               <li><NavLink to="/updatelot" excat className="nav-link">Update Lot</NavLink></li>
@@ -84,7 +66,14 @@ const Navbar = () => {
         </li>
 
         <li className="nav-item px-5 mx-auto \">
-        <NavLink activeClassName = 'menu_active' excat className="btn btn-primary signblk" to="/signup" role="button"> Sign Up</NavLink>
+        
+        
+        <div className='signupbtn'>
+                  <NavLink to="/signup" className='btn-get-started' id="bt1">
+                    Sign Up
+                  </NavLink>
+                </div>
+        
         </li>
 
         

@@ -7,7 +7,7 @@ const Addlot = () => {
   return (
   <>
       <h1>
-      Welcome Add lot Padddge</h1>
+       Add lot Padddge</h1>
      
 
   </>);

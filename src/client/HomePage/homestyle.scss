@@ -75,3 +75,93 @@
         transform: translateY(-10px);
     }
 }
+
+
+
+
+
+// Home   Section 2 CSS
+
+/* Default btn sre-tyling */
+.btn {
+    border: none;
+    padding: 15px 30px !important;
+  }
+  .btn.btn-outline-white {
+    border: 2px solid #fff;
+    background: none;
+    color: #fff;
+  }
+  .btn.btn-outline-white:hover {
+    background: #fff;
+    color: #4481eb;
+  }
+  .btn.btn-primary {
+    background: #4481eb;
+    background: linear-gradient(-45deg, #3498db, #4481eb);
+    color: #fff;
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.15);
+    transition: all 0.5s;
+  }
+
+  .btn.btn-primary:hover {
+    font-size: 15px;
+  }
+  
+  .img-fluidstrtd:hover{
+margin-left: 5px;
+transition: 0.5s;
+  }
+  /* Feature 1 */
+  .feature-1 .wrap-icon {
+    margin: 0 auto;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: relative;
+    margin-bottom: 30px;
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .feature-1 .wrap-icon.icon-1 {
+    background: linear-gradient(-45deg, #3498db, #4481eb);
+    
+  }
+  .feature-1 .wrap-icon .hmicn {
+    font-size: 40px;
+    line-height: 0;
+    color: #fff;
+    
+  }
+
+  
+  .feature-1 h3 {
+    font-size: 20px;
+  }
+  .feature-1 p {
+    color: #b1b1b1;
+  }
+  
+  /* Step */
+  .step {
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding: 40px;
+  }
+  .step .number {
+    background: linear-gradient(-45deg, #3498db, #4481eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .step p:last-child {
+    margin-bottom: 0px;
+  }
+  
+
+

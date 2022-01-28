@@ -28,7 +28,7 @@ const Service = () => {
 
       </div>
 
-      <div className='col-lg-6 order-1 order-lg-2 header-img ' data-aos="fade-right" data-aos-delay="800">
+      <div className='col-lg-6 order-1 order-lg-2 header-img ' data-aos="fade-right" data-aos-delay="100">
           <img src={Img} className='img-fluid animated' alt="auction img" />
 
       </div>
@@ -61,7 +61,7 @@ const Service = () => {
 
       </div>
 
-      <div className='col-lg-6 order-1 order-lg-1 header-img2 ' data-aos="fade-right" data-aos-delay="800">
+      <div className='col-lg-6 order-1 order-lg-1 header-img2 ' data-aos="fade-right" data-aos-delay="200">
           <img src={Img} className='img-fluid animated' alt="auction img" />
 
       </div>
@@ -98,7 +98,7 @@ const Service = () => {
 
       </div>
 
-      <div className='col-lg-6 order-1 order-lg-2 header-img ' data-aos="fade-right" data-aos-delay="800">
+      <div className='col-lg-6 order-1 order-lg-2 header-img ' data-aos="fade-right" data-aos-delay="300">
           <img src={Img} className='img-fluid animated' alt="auction img" />
 
       </div>
@@ -124,39 +124,46 @@ const Service = () => {
 
         <div className="section-title" data-aos="fade-up">
           <h2>Services</h2>
-          <p>Magnam dolores commodi suscipit eius consequatur ex aliquid fug</p>
+          <p>The purpose of the system is to make an auction system online with proper 
+security</p>
         </div>
 
         <div className="row">
           <div className="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div className="icon-box" data-aos="fade-up" data-aos-delay="100">
-              <div className="icon"> <div className='fabrsicn'><MdSell/></div></div>
-              <h4 className="title"><NavLink to="">Lorem Ipsum</NavLink></h4>
-              <p className="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-            </div>
-          </div>
-
-          <div className="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div className="icon-box" data-aos="fade-up" data-aos-delay="200">
-              <div className="icon"><div className='fabrsicn'><MdLocalShipping/></div></div>
-              <h4 className="title"><NavLink to="">Sed ut perspiciatis</NavLink></h4>
-              <p className="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+              <div className="icon"> <div className='fabrsicn'><MdSell/></div></div>
+              <h4 className="title"><NavLink to="">Availability</NavLink></h4>
+              <p className="description">The web-app can available 24*7. User can login and register at website at 
+any time. Lots of the product will be available only for the decided time by 
+seller</p>
             </div>
           </div>
 
           <div className="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div className="icon-box" data-aos="fade-up" data-aos-delay="300">
-              <div className="icon"><div className='fabrsicn'><AiFillUpCircle/></div></div>
-              <h4 className="title"><NavLink to="">Magni Dolores</NavLink></h4>
-              <p className="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+              <div className="icon"><div className='fabrsicn'><MdLocalShipping/></div></div>
+              <h4 className="title"><NavLink to="">Flexibility</NavLink></h4>
+              <p className="description">The seller can update/add/delete the product data instantly. As seller make 
+any update, the database will be updated</p>
             </div>
           </div>
 
           <div className="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div className="icon-box" data-aos="fade-up" data-aos-delay="400">
+              <div className="icon"><div className='fabrsicn'><AiFillUpCircle/></div></div>
+              <h4 className="title"><NavLink to="">Reliability</NavLink></h4>
+              <p className="description">A user-friendly website. Through help/contact section user can get any help 
+if needed.</p>
+            </div>
+          </div>
+
+          <div className="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div className="icon-box" data-aos="fade-up" data-aos-delay="500">
               <div className="icon"><div className='fabrsicn'><MdSell/></div></div>
-              <h4 className="title"><NavLink to="">Nemo Enim</NavLink></h4>
-              <p className="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+              <h4 className="title"><NavLink to="">Security</NavLink></h4>
+              <p className="description">Encryption of password will be there. All the details of the product is true 
+and valid. The proofs of product must be there. All the valid identities of 
+seller and bidder will be there.</p>
             </div>
           </div>
 
