@@ -7,6 +7,7 @@ import 'font-awesome/css/font-awesome.min.css';
 // import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 // import {FontAwesomeIcon} from "@fortawesome/free-solid-svg-icons";
 import {GoSignIn} from 'react-icons/go';
+import { NavLink } from 'react-router-dom';
 // BsFacebook
 // AiFillTwitterCircle
 // AiFillInstagram
@@ -49,23 +50,23 @@ const Signup = () => {
             <input type="submit" value="Login" className="btn solid" />
             <p className="social-text">Or Sign in with social platforms</p>
             <div className="social-media">
-              <a href="#" className="social-icon">
+              <NavLink to="#" className="social-icon">
                 {/* <i className="fab fa-facebook-f"></i> */}
                  <BsFacebook/>
 
-              </a>
-              <a href="#" className="social-icon">
+              </NavLink>
+              <NavLink to="#" className="social-icon">
                 {/* <i className="fab fa-twitter"></i> */}
                 <AiFillTwitterCircle/>
-              </a>
-              <a href="#" className="social-icon">
+              </NavLink>
+              <NavLink to="#" className="social-icon">
                 {/* <i className="fab fa-google"></i> */}
                 <AiFillInstagram/>
-              </a>
-              <a href="#" className="social-icon">
+              </NavLink>
+              <NavLink to="#" className="social-icon">
                 {/* <i className="fab fa-linkedin-in"></i> */}
                 <AiFillLinkedin/>
-              </a>
+              </NavLink>
             </div>
           </form>
           <form action="#" className="sign-up-form">
@@ -88,18 +89,18 @@ const Signup = () => {
             <input type="submit" className="btn" value="Sign up" />
             <p className="social-text">Or Sign up with social platforms</p>
             <div className="social-media">
-              <a href="#" class="social-icon">
+              <NavLink to="#" class="social-icon">
               <BsFacebook/>
-              </a>
-              <a href="#" className="social-icon">
+              </NavLink>
+              <NavLink to="#" className="social-icon">
               <AiFillTwitterCircle/>
-              </a>
-              <a href="#" className="social-icon">
+              </NavLink>
+              <NavLink to="#" className="social-icon">
               <AiFillInstagram/>
-              </a>
-              <a href="#" className="social-icon">
+              </NavLink>
+              <NavLink to="#" className="social-icon">
               <AiFillLinkedin/>
-              </a>
+              </NavLink>
             </div>
           </form>
         </div>
