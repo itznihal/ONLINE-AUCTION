@@ -60,6 +60,7 @@ const App = () => {
    <Route exact path="/service" component={Service}/>
    <Route exact path="/contact" component={Contact}/>
    <Route exact path="/signup" component={Signup}/>
+   <Route exact path="/signin" component={Signup}/>
      <Redirect to="/" />
      {/* Can use Error 404 Page  but redirect is better than that page */}
    </Switch>

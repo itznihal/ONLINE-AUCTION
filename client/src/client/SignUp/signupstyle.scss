@@ -1,12 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
-// * {
-//   margin: 0;
-//   padding: 0;
-//   box-sizing: border-box;
-// }
 
-.signupcls{
+
+.signupcls body,
+input {
   font-family: "Poppins", sans-serif;
 }
 
@@ -78,7 +75,7 @@
   position: relative;
 }
 
-.signupcls .input-field .signinicn {
+.signupcls .input-field i {
   text-align: center;
   line-height: 55px;
   color: #acacac;
@@ -144,10 +141,9 @@
   margin: 10px 0;
   cursor: pointer;
   transition: 0.5s;
-//   text-align: center;
 }
 
-.signupcls btn:hover {
+.signupcls .btn:hover {
   background-color: #4d84e2;
 }
 .signupcls .panels-container {
@@ -224,13 +220,10 @@
   height: 41px;
   font-weight: 600;
   font-size: 0.8rem;
- 
-  
-  
 }
 
 .signupcls .right-panel .image,
-.right-panel .content {
+.signupcls .right-panel .content {
   transform: translateX(800px);
 }
 
@@ -274,7 +267,7 @@
 }
 
 @media (max-width: 870px) {
-    .signupcls .container {
+  .signupcls .container {
     min-height: 800px;
     height: 100vh;
   }
@@ -377,14 +370,14 @@
 }
 
 @media (max-width: 570px) {
-  form {
+  .signupcls form {
     padding: 0 1.5rem;
   }
 
-  .image {
+  .signupcls .image {
     display: none;
   }
-  .panel .content {
+  .signupcls .panel .content {
     padding: 0.5rem 1rem;
   }
   .signupcls .container {
