@@ -1,25 +1,25 @@
-.values .box {
+.abtcls .values .box {
     padding: 30px;
     box-shadow: 0px 0 5px rgba(1, 41, 112, 0.08);
     text-align: center;
     transition: 0.3s;
     height: 100%;
   }
-  .values .box img {
+  .abtcls .values .box img {
     padding: 30px 50px;
     transition: 0.5s;
     transform: scale(1.1);
   }
-  .values .box h3 {
+  .abtcls .values .box h3 {
     font-size: 24px;
     color: #012970;
     font-weight: 700;
     margin-bottom: 18px;
   }
-  .values .box:hover {
+  .abtcls .values .box:hover {
     box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
   }
-  .values .box:hover img {
+  .abtcls .values .box:hover img {
     transform: scale(1);
   }
   
@@ -53,17 +53,17 @@
 
 
     // About Written Section Css
-    section {
+    .abtcls section {
         padding: 80px 0;
         overflow: hidden;
       }
 
-      .section-title {
+      .abtcls .section-title {
         text-align: center;
         padding-bottom: 30px;
       }
 
-      .section-title h2 {
+      .abtcls .section-title h2 {
         font-size: 32px;
         font-weight: bold;
         text-transform: uppercase;
@@ -71,7 +71,7 @@
         padding-bottom: 0;
         color: #124265;
       }
-      .section-title p {
+      .abtcls .section-title p {
         margin-bottom: 0;
         font-size: 14px;
         color: #919191;
@@ -138,31 +138,31 @@
 //   About Heading
 
 
-.section-title {
+.abtcls .section-title {
     text-align: center;
     padding-bottom: 30px;
   }
-  .section-title h2 {
+  .abtcls .section-title h2 {
     font-size: 32px;
     font-weight: bold;
     text-transform: uppercase;
     position: relative;
     color: #222222;
   }
-  .section-title h2::before, .section-title h2::after {
+  .abtcls .section-title h2::before, .section-title h2::after {
     content: "";
     width: 50px;
     height: 2px;
     background: #3498db;
     display: inline-block;
   }
-  .section-title h2::before {
+  .abtcls .section-title h2::before {
     margin: 0 15px 10px 0;
   }
-  .section-title h2::after {
+  .abtcls .section-title h2::after {
     margin: 0 0 10px 15px;
   }
-  .section-title p {
+  .abtcls .section-title p {
     margin: 15px 0 0 0;
   }
   

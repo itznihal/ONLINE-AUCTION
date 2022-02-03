@@ -13,7 +13,7 @@ const About = () => {
       {/* <h1>Welcome About Page</h1> */}
 
 
-      <div className="container-fluid nav_bg">
+      <div className="container-fluid nav_bg abtcls">
         <div className='row'>
           <div className='col-10 mx-auto'>
 

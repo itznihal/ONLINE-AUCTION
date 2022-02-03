@@ -1,0 +1,42 @@
+// .formbd{
+//     margin-top: 0;
+//     padding: 0;
+// }
+.form-elements .card {
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+  }
+  
+  .form-elements .card-header, .card-footer {
+    border-color: #ebeef4;
+    background-color: #fff;
+    color: #798eb3;
+    padding: 15px;
+  }
+  
+  .form-elements .card-title {
+    padding: 20px 0 15px 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #012970;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+  }
+  .form-elements .card-title span {
+    color: #899bbd;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .form-elements .card-body {
+    padding: 0 20px 20px 20px;
+  }
+  
+  .form-elements .card-img-overlay {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .rowset{
+      width: 75em;
+  }
