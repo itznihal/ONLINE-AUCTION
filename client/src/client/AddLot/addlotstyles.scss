@@ -2,6 +2,16 @@
 //     margin-top: 0;
 //     padding: 0;
 // }
+
+.formbd{
+  // margin-left: 15em;
+  width: 75em;
+  // align-items: center;
+  // justify-content: center;k
+}
+.form-elements{
+  margin-top: 0em;
+}
 .form-elements .card {
     margin-bottom: 30px;
     border: none;
@@ -38,5 +48,56 @@
   }
   
   .rowset{
-      width: 75em;
+      // width: 75em;
+      // text-align: center;
+      margin: 0em 3em;
+  }
+
+  .addlotcls .row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 4em;
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+
+
+
+  // Add Lot Header
+  .addlotcls .section-title {
+    text-align: center;
+    padding-bottom: 30px;
+    margin-top: 5em;
+    margin-bottom: -2em;
+  }
+  .addlotcls .section-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    color: #222222;
+  }
+  .addlotcls .section-title h2::before, .section-title h2::after {
+    content: "";
+    width: 50px;
+    height: 2px;
+    background: #3498db;
+    display: inline-block;
+  }
+  .addlotcls .section-title h2::before {
+    margin: 0 15px 10px 0;
+  }
+  .addlotcls .section-title h2::after {
+    margin: 0 0 10px 15px;
+  }
+  .addlotcls .section-title p {
+    margin: 15px 0 0 0;
+  }
+  
+  // submit btn
+  .addlotcls .submitbtn{
+    text-align: center;
+    margin-left: 8em;
   }

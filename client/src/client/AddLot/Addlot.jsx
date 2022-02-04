@@ -7,7 +7,7 @@ const Addlot = () => {
   return (
   <>
 
-<div className=" signupcls" data-aos="fade-up" data-aos-delay="400">
+<div className=" addlotcls" data-aos="fade-up" data-aos-delay="400">
         <div className='row'>
           <div className='col-10 mx-auto'>
     
@@ -18,16 +18,23 @@ const Addlot = () => {
 
           <div className="card">
             <div className="card-body">
-              <h5 className="card-title">ADD LOT</h5>
 
-              
+            <div className="section-title" data-aos="fade-up">
+          <h2>Add Lot</h2>
+          <p>Fill Details and Images of Lots</p>
+        </div>
+
+              {/* <h5 className="card-title">ADD LOT</h5> */}
+
+              <div className='row'>
+          <div className='col-8 mx-auto'>
               <form className='formbd'>
 
               {/* LOT NAME */}
                 <div className="row mb-3 rowset">
-                  <label for="inputText" className="col-sm-2 col-form-label">LOT NAME</label>
+                  <label for="inputText" className="col-sm-2 col-form-label" >LOT NAME</label>
                   <div className="col-sm-10">
-                    <input type="text" className="form-control"/>
+                    <input type="text" className="form-control" required/>
                   </div>
                 </div>
               
@@ -172,16 +179,17 @@ const Addlot = () => {
 
 
 
-            
+            {/* Create Button */}
 
-                <div className="row mb-3 rowset">
-                  <label className="col-sm-2 col-form-label">Submit Button</label>
+                <div className="row mb-3 rowset submitbtn">
+                  
                   <div className="col-sm-10">
-                    <button type="submit" className="btn btn-primary">Submit Form</button>
+                    <button type="submit" className="btn btn-primary">Create</button>
                   </div>
                 </div>
 
               </form>
+              </div></div>
               
             </div>
           </div>

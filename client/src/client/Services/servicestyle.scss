@@ -80,6 +80,8 @@
 
 
 
+
+
 // {/* My Service Section */}
 
 
@@ -132,29 +134,60 @@
       font-size: 2em;
   }
   
-  .services .title {
+   .title {
     font-weight: 700;
     margin-bottom: 15px;
     font-size: 18px;
     text-align: center;
    
   }
-  .services .title a {
+   .title a {
     color: #111;
     text-decoration: none;
   }
-  .services .description {
+   .description {
     font-size: 15px;
     line-height: 28px;
     margin-bottom: 0;
     text-align: center;
   }
-  .services .icon-box:hover .title a, .services .icon-box:hover .description {
+   .icon-box:hover .title a,  .icon-box:hover .description {
     color: #fff;
   }
-  .services .icon-box:hover .icon {
+  .icon-box:hover .icon {
     background: #fff;
   }
-  .services .icon-box:hover .icon i {
+   .icon-box:hover .icon i {
     color: #3498db;
   }
+
+
+  // My Service heading
+  
+.services .section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+.services .section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  color: #222222;
+}
+.services .section-title h2::before, .section-title h2::after {
+  content: "";
+  width: 50px;
+  height: 2px;
+  background: #3498db;
+  display: inline-block;
+}
+.services .section-title h2::before {
+  margin: 0 15px 10px 0;
+}
+.services .section-title h2::after {
+  margin: 0 0 10px 15px;
+}
+.services .section-title p {
+  margin: 15px 0 0 0;
+}
