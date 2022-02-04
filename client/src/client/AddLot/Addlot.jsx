@@ -44,7 +44,7 @@ const Addlot = () => {
                 <div className="row mb-3 rowset">
                   <label for="inputPassword" className="col-sm-2 col-form-label">LOT DESCRIPTION</label>
                   <div className="col-sm-10">
-                    <textarea className="form-control" style={{height: "100px"}}></textarea>
+                    <textarea className="form-control" style={{height: "100px"}} required></textarea>
                   </div>
                 </div>
 
@@ -57,8 +57,7 @@ const Addlot = () => {
                       <option selected>Choose Category</option>
                       <option value="1">Clothes</option>
                       <option value="2">Electronics</option>
-                      <option value="3">Properties</option>
-                      <option value="3">Clothing</option>
+                      <option value="3">Property</option>
                       <option value="3">HouseHold</option>
 
 
