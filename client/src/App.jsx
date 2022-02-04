@@ -20,6 +20,7 @@ import Addlot from "./client/AddLot/Addlot";
 import UpdateLot from "./client/UpdateLots/UpdateLot";
 
 import Lot from "./client/LotPage/Lot";
+import Profile from "./client/Profile/Profile";
 import Signup from "./client/SignUp/Signup";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
@@ -59,6 +60,7 @@ const App = () => {
    <Route exact path="/about" component={About}/>
    <Route exact path="/service" component={Service}/>
    <Route exact path="/contact" component={Contact}/>
+   <Route exact path="/profile" component={Profile}/>
    <Route exact path="/signup" component={Signup}/>
    <Route exact path="/signin" component={Signup}/>
      <Redirect to="/" />

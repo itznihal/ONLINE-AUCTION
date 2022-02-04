@@ -10,7 +10,7 @@ const Contact = () => {
   <div className='row'>
     <div className='col-10 mx-auto'>
 
-    <section className="contact">
+    <section className="contact contacttextt">
         <div className="content" data-aos="flip-left" data-aos-delay="100">
            
 
@@ -21,9 +21,9 @@ const Contact = () => {
                 </div>
         </div>
         {/* <div className='formcards'> */}
-        <div className="container">
+        <div className="container ">
         {/* <h1>Hello World</h1> */}
-             <div className="contactInfo">
+             <div className="contactInfo col-xl-6">
              
                 <div className="box" data-aos="fade-up-right" data-aos-delay="400">
                 <div className="step">
@@ -58,29 +58,54 @@ const Contact = () => {
                     </div>
                 </div> 
             </div> 
- <div className="contactForm" >
+
+
+ <div className="contactForm col-xl-6" >
                 
-                <form>
-                    <h2 data-aos="fade-up" data-aos-delay="200">Send Message</h2>
-                    <div className="inputBox" data-aos="fade-up" data-aos-delay="300">
-                        <input type="text" name="" required="required"/>
-                        <span>Full Name</span>
-                    </div>
-                    <div className="inputBox" data-aos="fade-up" data-aos-delay="400">
-                        <input type="email" name="" required="required"/>
-                        <span>Email</span>
-                    </div>
-                    <div className="inputBox" data-aos="fade-up" data-aos-delay="500">
-                        <textarea required="required"></textarea>
-                        <span>Type your Message</span>
-                    </div>
-                    <div className="inputBox" data-aos="fade-up" data-aos-delay="600">
-                        <input type="submit" name="" valur="Send"/>
-                    </div>
-                </form>
+                {/* Contact Form Here */}
+
+
+
+                
+          <div className="card p-4">
+            <form action="forms/contacttextt.php" method="post" className="react-email-form">
+              <div className="row gy-4">
+
+                <div className="col-md-6">
+                  <input type="text" name="name" className="form-control" placeholder="Your Name" required/>
+                </div>
+
+                <div className="col-md-6 ">
+                  <input type="email" className="form-control" name="email" placeholder="Your Email" required/>
+                </div>
+
+                <div className="col-md-12">
+                  <input type="text" className="form-control" name="subject" placeholder="Subject" required/>
+                </div>
+
+                <div className="col-md-12">
+                  <textarea className="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                </div>
+
+                <div className="col-md-12 text-center">
+                  <div className="loading">Loading</div>
+                  <div className="error-message"></div>
+                  <div className="sent-message">Your message has been sent. Thank you!</div>
+
+                  <button type="submit">SUBMIT</button>
+                </div>
+
+              </div>
+            </form>
+          </div>
+
+        
                   
 
             </div>
+
+
+
             </div>
         
     </section>

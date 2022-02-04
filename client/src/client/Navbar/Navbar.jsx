@@ -18,7 +18,7 @@ const Navbar = () => {
   <div className="container-fluid">
     <NavLink className="navbar-logo" to="/">
     <RiAuctionFill/>
-    Bidzers</NavLink>
+    BestBid</NavLink>
 
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
@@ -64,6 +64,14 @@ const Navbar = () => {
         <li className="nav-item px-3 mx-auto licls">
           <NavLink activeClassName = 'menu_active' excat className="nav-link" to="/contact">Contact Us</NavLink>
         </li>
+
+        <li className="dropdown nav-item px-3 mx-auto licls"><NavLink to="#" className="nav-link"><span id='headrdr'>My Profile</span> </NavLink>
+            <ul className='ddlist'>
+              <li><NavLink to="/profile" excat className="nav-link">User Profile</NavLink></li>
+              <li><NavLink to="/" excat className="nav-link">Logout</NavLink></li>
+              
+            </ul>
+          </li>
 
         <li className="nav-item px-5 mx-auto \">
         

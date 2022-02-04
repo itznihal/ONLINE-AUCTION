@@ -238,3 +238,194 @@
     margin-bottom: 0px;
   }
   
+
+
+//   Contact Form CSSS
+
+
+.contacttextt  .info-box {
+    padding: 28px 30px;
+  }
+  .contacttextt  .info-box i {
+    font-size: 38px;
+    line-height: 0;
+    color: #4154f1;
+  }
+  .contacttextt  .info-box h3 {
+    font-size: 20px;
+    color: #012970;
+    font-weight: 700;
+    margin: 20px 0 10px 0;
+  }
+  .contacttextt  .info-box p {
+    padding: 0;
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+  .contacttextt  .react-email-form .error-message {
+    display: none;
+    color: #fff;
+    background: #ed3c0d;
+    text-align: left;
+    padding: 15px;
+    margin-bottom: 24px;
+    font-weight: 600;
+  }
+  .contacttextt  .react-email-form .sent-message {
+    display: none;
+    color: #fff;
+    background: #18d26e;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 24px;
+    font-weight: 600;
+  }
+  .contacttextt  .react-email-form .loading {
+    display: none;
+    background: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 24px;
+  }
+  .contacttextt  .react-email-form .loading:before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px -6px 0;
+    border: 3px solid #18d26e;
+    border-top-color: #eee;
+    -webkit-animation: animate-loading 1s linear infinite;
+    animation: animate-loading 1s linear infinite;
+  }
+  .contacttextt  .react-email-form input, .contacttextt  .react-email-form textarea {
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+    border-radius: 0;
+  }
+  .contacttextt  .react-email-form input:focus, .contacttextt  .react-email-form textarea:focus {
+    border-color: #4154f1;
+  }
+  .contacttextt  .react-email-form input {
+    padding: 10px 15px;
+  }
+  .contacttextt  .react-email-form textarea {
+    padding: 12px 15px;
+  }
+  .contacttextt .react-email-form button[type=submit] {
+    background: #4154f1;
+    border: 0;
+    padding: 10px 30px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 4px;
+  }
+  .contacttextt .react-email-form button[type=submit]:hover {
+    background: #5969f3;
+  }
+  @-webkit-keyframes animate-loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes animate-loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .contacttextt .card {
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+  }
+  
+  .contacttextt .card-header, .card-footer {
+    border-color: #ebeef4;
+    background-color: #fff;
+    color: #798eb3;
+    padding: 15px;
+  }
+  
+  .contacttextt .card-title {
+    padding: 20px 0 15px 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #012970;
+    font-family: "Poppins", sans-serif;
+  }
+  .contacttextt .card-title span {
+    color: #899bbd;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .contacttextt .card-body {
+    padding: 0 20px 20px 20px;
+  }
+  
+  .contacttextt .card-img-overlay {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+
+
+  
+  .contacttextt body {
+    font-family: "Open Sans", sans-serif;
+    background: #f6f9ff;
+    color: #444444;
+  }
+  
+  .contacttextt a {
+    color: #4154f1;
+    text-decoration: none;
+  }
+  
+  .contacttextt a:hover {
+    color: #717ff5;
+    text-decoration: none;
+  }
+  
+  .contacttextt   h1, h2, h3, h4, h5, h6 {
+    font-family: "Nunito", sans-serif;
+  }
+  
+  /*--------------------------------------------------------------
+  # Main
+  --------------------------------------------------------------*/
+  .contacttextt #main {
+    margin-top: 60px;
+    padding: 20px 30px;
+    transition: all 0.3s;
+  }
+  @media (max-width: 1199px) {
+    .contacttextt  #main {
+      padding: 20px;
+    }
+  }
+
+
+  .contactpge .contactForm {
+    width: 64%;
+    padding: 40px;
+    background: #fff;
+    height: 76vh;
+    margin: 1em 3em;
+}
+
+.contacttextt .card {
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+    margin-top: 10em;
+}
