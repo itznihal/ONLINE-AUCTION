@@ -1,7 +1,53 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./contactstyle.scss";
 
 const Contact = () => {
+
+
+// CONTACT PAGE START
+
+const [userData , setUserData] = useState({});
+
+
+  const userContact = async () => {
+    
+try {
+  const res = await fetch('/getdata' ,{
+    method: "GET",
+    headers: {
+      "Content-Type":"application/json"
+    },
+    } );
+  const data =  await res.json();
+  console.log(data);
+  setUserData(data);
+  // console.log(`data send to backend`);
+
+  if(!res.status === 200){
+    const error = new Error(res.error);
+    throw error;
+    
+  }
+
+
+} catch (err) {
+  console.log(err);
+}
+
+  }
+  /*  USEEFFECT HOOK -> RUN ONLY ONE TIME WHEN FUNCTION IS CALLED -> ARRAY DENOTES -> NO OF TYMS USEEFFECT CALLLS -> callProfilePage is async function -> so we can not use it inside useEffect */
+  
+  useEffect(() => {
+  
+    userContact();
+  }, []);
+
+
+
+// CONTACT PAGE ENDS
+
+
+
   return (
   <>
       {/* <h1 id='contchead'> Contact Page</h1> */}
@@ -72,11 +118,15 @@ const Contact = () => {
               <div className="row gy-4">
 
                 <div className="col-md-6">
-                  <input type="text" name="name" className="form-control" placeholder="Your Name" required/>
+                  <input type="text" name="name" className="form-control" 
+                  value={userData.name}
+                  placeholder="Your Name" required/>
                 </div>
 
                 <div className="col-md-6 ">
-                  <input type="email" className="form-control" name="email" placeholder="Your Email" required/>
+                  <input type="email" className="form-control" name="email" 
+                   value={userData.email}
+                   placeholder="Your Email" required/>
                 </div>
 
                 <div className="col-md-12">
