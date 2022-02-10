@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./profilestyle.scss"
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import Img from "../images/values-1.png";
 import ProfileImg from "../images/profile-icon-png-899.png";
 import { AiOutlineUpload , AiFillDelete } from 'react-icons/ai';
@@ -9,7 +9,54 @@ import {  BsCloudUploadFill} from 'react-icons/bs';
 
 
 
+
+
 const Profile = () => {
+
+  // HERE USE HISTORY -> AT MIDDLEWARE PAGE -> IF NOT LOGIN -> REDIRECT TO LOGIN PAGE
+  const history = useHistory();
+
+  /*USESTATE FOR -> RECIVE AN USER OBJECT AS "DATA" -> ASSIGN DINAMICALLY TO THAT -> AFTER THAT TO CHANGE VALUE USE STATE USE*/
+  const [userData , setUserData] = useState({});
+
+
+  const callProfilePage = async () => {
+    
+try {
+  const res = await fetch('/about' ,{
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type":"application/json"
+    },
+    credentials:"include"
+  } );
+  const data =  await res.json();
+  console.log(data);
+  setUserData(data);
+  // console.log(`data send to backend`);
+
+  if(!res.status === 200){
+    const error = new Error(res.error);
+    throw error;
+    
+  }
+
+
+} catch (err) {
+  console.log(err);
+  history.push('/signup');
+}
+
+  }
+  /*  USEEFFECT HOOK -> RUN ONLY ONE TIME WHEN FUNCTION IS CALLED -> ARRAY DENOTES -> NO OF TYMS USEEFFECT CALLLS -> callProfilePage is async function -> so we can not use it inside useEffect */
+  
+  useEffect(() => {
+  
+    callProfilePage();
+  }, []);
+
+
   return (<>
 
 
@@ -32,8 +79,8 @@ const Profile = () => {
             <div className="card-body profile-card pt-4 d-flex flex-column align-items-center profileimg">
 
               <img src={ProfileImg} alt="Profile" className="rounded-circle"/>
-              <h2>Seller Name</h2>
-              <h3>Seller</h3>
+              <h2>{userData.name}</h2>
+              <h3>User</h3>
              
             </div>
           </div>
@@ -71,12 +118,12 @@ const Profile = () => {
 
                   <div className="row">
                     <div className="col-lg-3 col-md-4 label ">Full Name</div>
-                    <div className="col-lg-9 col-md-8">Seller Name</div>
+                    <div className="col-lg-9 col-md-8">{userData.name}</div>
                   </div>
 
                   <div className="row">
                     <div className="col-lg-3 col-md-4 label">Job</div>
-                    <div className="col-lg-9 col-md-8">Seller</div>
+                    <div className="col-lg-9 col-md-8">User</div>
                   </div>
 
                 
@@ -84,19 +131,19 @@ const Profile = () => {
 
                   <div className="row">
                     <div className="col-lg-3 col-md-4 label">Phone</div>
-                    <div className="col-lg-9 col-md-8">123456789</div>
+                    <div className="col-lg-9 col-md-8">{userData.phone}</div>
                   </div>
 
                   <div className="row">
                     <div className="col-lg-3 col-md-4 label">Email</div>
-                    <div className="col-lg-9 col-md-8">Seller123@gmail.com</div>
+                    <div className="col-lg-9 col-md-8">{userData.email}</div>
                   </div>
 
                 </div>
 
                 <div className="tab-pane fade profile-edit pt-3" id="profile-edit">
 
-                  <form>
+                  <form method='GET'>
                     <div className="row mb-3">
                       <label for="profileImage" className="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                       <div className="col-md-8 col-lg-9">
@@ -115,7 +162,7 @@ const Profile = () => {
                     <div className="row mb-3">
                       <label for="fullName" className="col-md-4 col-lg-3 col-form-label">Full Name</label>
                       <div className="col-md-8 col-lg-9">
-                        <input name="fullName" type="text" className="form-control" id="fullName" value="Seller Name"/>
+                        <input name="fullName" type="text" className="form-control" id="fullName" value={userData.name}/>
                       </div>
                     </div>
 
@@ -126,7 +173,7 @@ const Profile = () => {
                     <div className="row mb-3">
                       <label for="Job" className="col-md-4 col-lg-3 col-form-label">Job</label>
                       <div className="col-md-8 col-lg-9">
-                        <input name="job" type="text" className="form-control" id="Job" value="Seller"/>
+                        <input name="job" type="text" className="form-control" id="Job" value="User"/>
                       </div>
                     </div>
 
@@ -137,14 +184,14 @@ const Profile = () => {
                     <div className="row mb-3">
                       <label for="Phone" className="col-md-4 col-lg-3 col-form-label">Phone</label>
                       <div className="col-md-8 col-lg-9">
-                        <input name="phone" type="text" className="form-control" id="Phone" value="123456789"/>
+                        <input name="phone" type="text" className="form-control" id="Phone" value={userData.phone}/>
                       </div>
                     </div>
 
                     <div className="row mb-3">
                       <label for="Email" className="col-md-4 col-lg-3 col-form-label">Email</label>
                       <div className="col-md-8 col-lg-9">
-                        <input name="email" type="email" className="form-control" id="Email" value="Seller123@gmail.com"/>
+                        <input name="email" type="email" className="form-control" id="Email" value={userData.email}/>
                       </div>
                     </div>
 
