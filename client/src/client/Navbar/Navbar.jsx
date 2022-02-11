@@ -68,7 +68,7 @@ const Navbar = () => {
         <li className="dropdown nav-item px-3 mx-auto licls"><NavLink to="#" className="nav-link"><span id='headrdr'>My Profile</span> </NavLink>
             <ul className='ddlist'>
               <li><NavLink to="/profile" excat className="nav-link">User Profile</NavLink></li>
-              <li><NavLink to="/" excat className="nav-link">Logout</NavLink></li>
+              <li><NavLink to="/logout" excat className="nav-link">Logout</NavLink></li>
               
             </ul>
           </li>

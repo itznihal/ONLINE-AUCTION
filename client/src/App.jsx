@@ -18,6 +18,7 @@ import Service from "./client/Services/Service";
 import Contact from "./client/ContactPage/Contact";
 import Addlot from "./client/AddLot/Addlot";
 import UpdateLot from "./client/UpdateLots/UpdateLot";
+import Logout from "./client/Logout/Logout";
 
 import Lot from "./client/LotPage/Lot";
 import Profile from "./client/Profile/Profile";
@@ -61,6 +62,7 @@ const App = () => {
    <Route exact path="/service" component={Service}/>
    <Route exact path="/contact" component={Contact}/>
    <Route exact path="/profile" component={Profile}/>
+   <Route exact path="/logout" component={Logout}/>
    <Route exact path="/signup" component={Signup}/>
    <Route exact path="/signin" component={Signup}/>
      <Redirect to="/" />
