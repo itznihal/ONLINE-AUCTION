@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import "./signupstyle.scss";
 import { useState } from 'react';
 import login from '../images/login.svg';
 import register from '../images/register.svg';
 import 'font-awesome/css/font-awesome.min.css';
 import { NavLink, useHistory } from 'react-router-dom';
-
+import  {UserContext} from '../../App';
 
 
 // import {RiLockPasswordFill} from 'react-icons/ri';
 
 
 const Signup = () => {
+
+
+const {state, dispatch} = useContext(UserContext);
+
   const [flag, setFlag] = useState(1);
   const history = useHistory();
 
@@ -88,6 +92,7 @@ const loginUser =async (e) =>{
   if(res.status === 400 || !data){
     window("Invalid Credential");
   }else{
+    dispatch({type:"USER" , payload:true});
     window.alert("login Successful");
     history.push('/');
 
