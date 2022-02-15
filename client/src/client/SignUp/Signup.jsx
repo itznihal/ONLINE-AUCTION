@@ -52,7 +52,7 @@ const {state, dispatch} = useContext(UserContext);
 
     const data = await res.json();
 console.log(data);
-    if (data.status === 450 || !data) {
+    if (res.status === 400 || !data) {
       window.alert("Invalid Regestration");
       console.log("Invalid Regestration");
     } else {
@@ -90,7 +90,7 @@ const loginUser =async (e) =>{
   const data = res.json();
 
   if(res.status === 400 || !data){
-    window("Invalid Credential");
+    window.alert("Invalid Credential");
   }else{
     dispatch({type:"USER" , payload:true});
     window.alert("login Successful");
