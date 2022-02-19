@@ -36,7 +36,7 @@ const Contact = () => {
 
   }
   /*  USEEFFECT HOOK -> RUN ONLY ONE TIME WHEN FUNCTION IS CALLED -> ARRAY DENOTES -> NO OF TYMS USEEFFECT CALLLS -> callProfilePage is async function -> so we can not use it inside useEffect */
-
+ 
   useEffect(() => {
 
     userContact();
@@ -47,11 +47,13 @@ const Contact = () => {
   // for storing data in states
   const handleInputs = (e) => {
     const name = e.target.name;
-    const value = e.target.value;
+    const value =  e.target.value;
 
     setUserData({ ...userData, [name]: value });
 
   }
+
+
 
 
 
