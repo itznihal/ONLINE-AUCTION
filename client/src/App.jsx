@@ -19,6 +19,7 @@ import Contact from "./client/ContactPage/Contact";
 import Addlot from "./client/AddLot/Addlot";
 import UpdateLot from "./client/UpdateLots/UpdateLot";
 import Logout from "./client/Logout/Logout";
+import Footer from './client/Footer/Footer';
 
 import Lot from "./client/LotPage/Lot";
 import Profile from "./client/Profile/Profile";
@@ -29,8 +30,8 @@ import Navbar from "./client/Navbar/Navbar";
 import { Switch, Route, Redirect } from "react-router-dom";
 import {initialState , reducer } from "./client/Reducer/UseReducer";
 import '../node_modules/font-awesome/css/font-awesome.min.css';
-
-
+import '../node_modules/font-awesome/css/font-awesome.min.css'; 
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -93,6 +94,7 @@ const App = () => {
 
         <Navbar />
         <Routing />
+        <Footer />
 
 
       </UserContext.Provider>
