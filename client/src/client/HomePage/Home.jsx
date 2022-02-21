@@ -1,16 +1,48 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 // import { Swiper, SwiperSlide } from 'swiper/react';
 // import 'swiper/css';
 import { FaBeer } from 'react-icons/fa';
 import Img from "../images/values-1.png";
 import "./homestyle.scss";
+import MetaData from '../MetaData/MetaData';
+import Product from "./Product";
+import {getProduct} from "../../actions/productAction";
+import {useSelector , useDispatch} from "react-redux";
+import Loader from '../Loader/Loader';
+import { useAlert } from 'react-alert';
 
 
+// const product = {
+//   name: "Blue Tshirt",
+//   images: [{url : "https://image.shutterstock.com/image-vector/compatibility-testing-concept-icon-checking-600w-1498931552.jpg"}],
+//   price: "rs.5000",
+//   _id:"nihal",
+  
+// };
 
 const Home = () => {
+  const alert = useAlert();
+  const dispatch = useDispatch();
+  const {loading , error , products , productCount} = useSelector(
+(state) => state.products
+  );
+
+useEffect(() => {
+  
+
+  if(error){
+    return alert.error(error);
+  }
+dispatch(getProduct());
+  
+}, [dispatch , error , alert]);
+
+
   return (
+    <>{loading ? (<Loader/>) :(
     <>
+    <MetaData title="BEST BID"></MetaData>
       <section id='header' className='d-flex align-items-center homepg'>
 
 
@@ -194,13 +226,51 @@ he/she will make a bid of that product, valid identity proof.</p>
             </div>
 
 
+{/* PRODUCT COMPONENT */}
+
+
+{/* FEATURED PRODUCT */}
+
+<section className="product_section layout_padding">
+    <div className="container">
+      <div className="heading_container heading_center">
+      <div className="section-title" data-aos="fade-up">
+          <h2>Featured Auctions</h2>
+          <p>Start Bidding Now!</p>
+        </div>
+
+      </div>
+      <div className="row">
+
+{products && products.map(product => (
+  <Product product = {product} />
+))}
+
+
+
+
+
+        
+        
+      </div>
+      <div className="btn_box">
+        <NavLink excat to={"/lot"} className="view_more-link">
+          View More
+        </NavLink>
+      </div>
+    </div>
+  </section>
 
 
 
 
 
 
-    </>);
+
+    </>
+    ) }</>
+    
+    );
 };
 
 export default Home;
