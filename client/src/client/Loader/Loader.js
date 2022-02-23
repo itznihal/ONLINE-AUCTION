@@ -4,7 +4,7 @@ import "./loader.scss";
 const Loader = () => {
   return (
     <>
-Loader
+<h1 className='loadertest'>Loader</h1>
     </>
   )
 }

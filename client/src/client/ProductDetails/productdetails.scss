@@ -442,7 +442,7 @@ margin-top: 3em;
 .features .nav-link {
   border: 0;
   padding: 25px 20px;
-  color: black;
+  color: grey;
   box-shadow: 5px 5px 15px grey;
   border-radius: 0;
   display: flex;
@@ -468,8 +468,8 @@ margin-top: 3em;
 }
 .features .nav-link.active {
   transition: 0.3s;
-  color: #fff;
-  background-color: #4481eb;
+  color: #4481eb;
+  // background-color: #4481eb;
   border-color: 0;
 }
 .features .nav-link.active h4 {

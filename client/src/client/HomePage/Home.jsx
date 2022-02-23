@@ -38,7 +38,7 @@ dispatch(getProduct());
   
 }, [dispatch , error , alert]);
 
-
+// console.log(productCount);
   return (
     <>{loading ? (<Loader/>) :(
     <>

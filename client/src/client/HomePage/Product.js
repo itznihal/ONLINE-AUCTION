@@ -57,7 +57,7 @@ useEffect(() => {
           <div className="box">
             <div className="img-box">
               <img src={product.images[0].url} alt={product.itemName}/>
-              <Link to={product._id} className="add_cart_btn">
+              <Link to={`/product/${product._id}`} className="add_cart_btn">
                 <span>
                   Show Auction
                 </span>
