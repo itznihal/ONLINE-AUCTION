@@ -20,7 +20,7 @@ import Addlot from "./client/AddLot/Addlot";
 import UpdateLot from "./client/UpdateLots/UpdateLot";
 import Logout from "./client/Logout/Logout";
 import Footer from './client/Footer/Footer';
-
+import ProductDetails from "./client/ProductDetails/ProductDetails";
 import Lot from "./client/LotPage/Lot";
 import Profile from "./client/Profile/Profile";
 import Signup from "./client/SignUp/Signup";
@@ -32,6 +32,8 @@ import {initialState , reducer } from "./client/Reducer/UseReducer";
 import '../node_modules/font-awesome/css/font-awesome.min.css';
 import '../node_modules/font-awesome/css/font-awesome.min.css'; 
 import '@fortawesome/fontawesome-free/css/all.min.css';
+
+
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -69,6 +71,8 @@ const Routing = () => {
       <Route exact path="/logout" component={Logout} />
       <Route exact path="/signup" component={Signup} />
       <Route exact path="/signin" component={Signup} />
+      <Route exact path="/product/:id" component={ProductDetails} />
+
       <Redirect to="/" />
       {/* Can use Error 404 Page  but redirect is better than that page */}
     </Switch>
