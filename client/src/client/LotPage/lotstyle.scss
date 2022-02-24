@@ -477,7 +477,7 @@ $second: #094d6e;
 .product-topbar {
   position: relative;
   z-index: 100;
-  margin-top: 25px; }
+  margin-top: 0px; }
   .product-topbar .total-products p {
     margin-bottom: 0;
     font-size: 12px;
@@ -504,7 +504,7 @@ $second: #094d6e;
       color: #000000;
       text-transform: uppercase;
       letter-spacing: 0.75px; }
-  .product-topbar #sortByselect {
+  .product-topbar .nice-select {
     border: none;
     font-size: 14px;
     font-weight: 500;
@@ -513,7 +513,7 @@ $second: #094d6e;
     padding-left: 0;
     margin: 0;
     text-transform: uppercase; }
-    .product-topbar #sortByselect {
+    .product-topbar .nice-select .list {
       background-color: #f6f6f6;
       border-radius: 0;
       border: none; }
@@ -689,7 +689,51 @@ $second: #094d6e;
 
 
 
-// HEADING CSS
+// Search Bar
 
-//   About Heading
+.product-searching body {
+  background-color: #eee;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300
+}
 
+.product-searching .height {
+  height: 13vh;
+  width: 41em;
+}
+
+.product-searching .search {
+  position: relative;
+  box-shadow: 0 0 40px rgba(51, 51, 51, .1)
+}
+
+.product-searching .search input {
+  height: 55px;
+  text-indent: 25px;
+  border: 2px solid #d6d4d4
+}
+
+.product-searching .search input:focus {
+  box-shadow: none;
+  border: 2px solid blue
+}
+
+.product-searching .search .fa-search {
+  position: absolute;
+  top: 20px;
+  left: 16px
+}
+
+.product-searching .search button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 45px;
+  width: 105px;
+  background: blue
+}
+
+.product-searching .ctrlwidth{
+  width: 100%;
+}
+  

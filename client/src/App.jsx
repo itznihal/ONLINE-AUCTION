@@ -64,6 +64,8 @@ const Routing = () => {
       <Route exact path="/updatelot" component={UpdateLot} />
 
       <Route exact path="/lot" component={Lot} />
+      <Route path="/lot/:keyword" component={Lot} />
+
       <Route exact path="/about" component={About} />
       <Route exact path="/service" component={Service} />
       <Route exact path="/contact" component={Contact} />

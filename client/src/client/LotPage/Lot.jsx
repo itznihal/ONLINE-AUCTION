@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import CheckBox from "../Inputs/CheckBox";
 import RadioButton from "../Inputs/RadioButton";
 import "./lotstyle.scss";
+import Search from './Search';
 import {useSelector , useDispatch} from "react-redux";
 import {clearErrors , getProduct} from "../../actions/productAction";
 import Loader from '../Loader/Loader';
@@ -10,21 +11,33 @@ import Product from "../HomePage/Product";
 
 
 
-const Lot = () => {
+const Lot = ({match}) => {
+
+
+
+
+
 
 const dispatch = useDispatch();
   
 const {loading , error , products , productCount} = useSelector(
   (state) => state.products
     );
+
+
+    const keyword = match.params.keyword; 
   
 useEffect(() => {
   
 
  
-dispatch(getProduct());
+dispatch(getProduct(keyword));
   
-}, [dispatch ]);
+}, [dispatch , keyword]);
+
+
+
+
 
   return (
      <>{loading ? (<Loader/>) :(
@@ -201,18 +214,17 @@ dispatch(getProduct());
                                     <p><span>{productCount}</span> products found</p>
                                 </div>
                                 {/* <!-- Sorting --> */}
-                                {/* <div className="product-sorting d-flex">
-                                    <p>Sort by:</p>
-                                    <form action="#" method="get">
-                                        <select name="select" id="sortByselect">
-                                            <option value="value">Highest Rated</option>
-                                            <option value="value">Newest</option>
-                                            <option value="value">Price: $$ - $</option>
-                                            <option value="value">Price: $ - $$</option>
-                                        </select>
-                                        <input type="submit" className="d-none" value=""/>
-                                    </form>
-                                </div> */}
+                                <div className="product-searching ">
+                                <div className="container">
+    <div className="row height d-flex justify-content-center align-items-center">
+        <div className="col-md-8 ctrlwidth">
+            <div className="search"> 
+    <Search/>
+             </div>
+        </div>
+    </div>
+</div>
+                                </div>
                             </div>
                         </div>
                     </div>            
