@@ -7,6 +7,7 @@ import {useSelector , useDispatch} from "react-redux";
 import {clearErrors , getProduct} from "../../actions/productAction";
 import Loader from '../Loader/Loader';
 import Product from "../HomePage/Product";
+import Pagination from "react-js-pagination";
 
 
 
@@ -19,21 +20,30 @@ const Lot = ({match}) => {
 
 
 const dispatch = useDispatch();
+
+
+
+const [currentPage , setCurrentPage] =  useState(1);
   
-const {loading , error , products , productCount} = useSelector(
+const {loading , error , products , productCount , resultPerPage} = useSelector(
   (state) => state.products
     );
 
 
     const keyword = match.params.keyword; 
+
+    const setCurrentPageNo = (e) => {
+
+setCurrentPage(e);
+    }
   
 useEffect(() => {
   
 
  
-dispatch(getProduct(keyword));
+dispatch(getProduct(keyword , currentPage));
   
-}, [dispatch , keyword]);
+}, [dispatch , keyword , currentPage]);
 
 
 
@@ -238,6 +248,23 @@ dispatch(getProduct(keyword));
               
             </div>
            
+{/* <h1>Pagination</h1> */}
+
+{resultPerPage < productCount && 
+(<Pagination
+  activePage= {currentPage}
+  itemsCountPerPage = {resultPerPage}
+  totalItemsCount = {productCount}
+  onChange = {setCurrentPageNo}
+  nextPageText = "Next"
+  prevPageText = "Prev"
+  firstPageText = "1st"
+  lastPageText = "Last"
+  itemClass="page-item"
+  linkClass = "page-link"
+  activeClass = "pageItemActive"
+  activeLinkClass = "pageLinkActive"
+/>)}
 
           </section>
         </div>

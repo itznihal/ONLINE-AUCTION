@@ -537,7 +537,7 @@ $second: #094d6e;
 
 .product-lots{
   // margin-top: 10em;
-  margin-bottom: 10em;
+  margin-bottom: 5em;
 }
 
 .product-lots .heading_container {
@@ -737,3 +737,38 @@ $second: #094d6e;
   width: 100%;
 }
   
+
+
+// Pagination
+.product-lots .pagination {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  margin-top: 6em;
+  justify-content: center;
+}
+
+.page-item:first-child{
+  border-radius: 5px 0 0 5px;
+}
+
+.page-item:last-child{
+  border-radius: 5px 0 0 5px;
+}
+
+.page-item:hover{
+  background-color: rgb(230 , 230 , 230);
+}
+
+
+.page-item:hover .page-link{
+color: #fff;}
+
+.pageItemActive{
+  background-color: #4481eb;
+}
+
+.pageLinkActive{
+  color: #fff;
+}
+
