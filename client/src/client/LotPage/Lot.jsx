@@ -1,10 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import CheckBox from "../Inputs/CheckBox";
 import RadioButton from "../Inputs/RadioButton";
 import "./lotstyle.scss";
+import {useSelector , useDispatch} from "react-redux";
+import {clearErrors , getProduct} from "../../actions/productAction";
+import Loader from '../Loader/Loader';
+import Product from "../HomePage/Product";
+
+
+
 
 const Lot = () => {
+
+const dispatch = useDispatch();
+  
+const {loading , error , products , productCount} = useSelector(
+  (state) => state.products
+    );
+  
+useEffect(() => {
+  
+
+ 
+dispatch(getProduct());
+  
+}, [dispatch ]);
+
   return (
+     <>{loading ? (<Loader/>) :(
   <>
       {/* <h1> Lot Page</h1> */}
 
@@ -13,6 +36,15 @@ const Lot = () => {
         <div className='row'>
           <div className='col-10 mx-auto'>
           
+{/* Heading Section */}
+
+<div className="section-title" data-aos="fade-up">
+          <h2>Auctions</h2>
+          <p>Start Bidding Now!</p>
+        </div>
+
+
+
       <section className="lots-section">
         <div className="lots-list-content lots-container">
           <section className="filters">
@@ -25,13 +57,13 @@ const Lot = () => {
                 <div className="filter-title">Search among</div>
                 <div className="filter-list">
                   <div>
-                    <RadioButton value=""  name="search-among" label="All lots" />
+                    <RadioButton value=""  name="search-among" label="All Auctions" />
                   </div>
                   <div>
-                    <RadioButton value="active"  name="search-among" label="Active lots" />
+                    <RadioButton value="active"  name="search-among" label="Active Auctions" />
                   </div>
                   <div>
-                    <RadioButton value="sold"  name="search-among" label="Sold lots"/>
+                    <RadioButton value="sold"  name="search-among" label="Featured Auctions"/>
                   </div>
                   
                 </div>
@@ -49,6 +81,7 @@ const Lot = () => {
                     <option>Electronics</option>
                     <option>Property</option>
                     <option>Household</option>
+                    <option>Others</option>
                     
                   </select>
                 </div>
@@ -158,8 +191,38 @@ const Lot = () => {
 
             </div>
           </section>
-          <section className="lots filters-container">
-            <div className="lots-grid">
+          <section className="product-lots">
+
+          <div className="row">
+                        <div className="col-12">
+                            <div className="product-topbar d-flex align-items-center justify-content-between">
+                                {/* <!-- Total Products --> */}
+                                <div className="total-products">
+                                    <p><span>{productCount}</span> products found</p>
+                                </div>
+                                {/* <!-- Sorting --> */}
+                                {/* <div className="product-sorting d-flex">
+                                    <p>Sort by:</p>
+                                    <form action="#" method="get">
+                                        <select name="select" id="sortByselect">
+                                            <option value="value">Highest Rated</option>
+                                            <option value="value">Newest</option>
+                                            <option value="value">Price: $$ - $</option>
+                                            <option value="value">Price: $ - $$</option>
+                                        </select>
+                                        <input type="submit" className="d-none" value=""/>
+                                    </form>
+                                </div> */}
+                            </div>
+                        </div>
+                    </div>            
+                    <div className="lots-grid">
+              
+
+            {products && products.map(product => (
+  <Product product = {product} />
+))}
+
               
             </div>
            
@@ -176,7 +239,10 @@ const Lot = () => {
           </div>
 
 
-  </>);
+  </>
+  ) }</>
+  
+  );
 };
 
 export default Lot;
