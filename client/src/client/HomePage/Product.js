@@ -53,7 +53,7 @@ useEffect(() => {
 
   return (
     <>
-<div className="col-sm-6 col-lg-4">
+<div className="col-sm-6 col-lg-4 product-mediaquery">
           <div className="box">
             <div className="img-box">
               <img src={product.images[0].url} alt={product.itemName}/>

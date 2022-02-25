@@ -19,6 +19,15 @@ const Profile = () => {
   /*USESTATE FOR -> RECIVE AN USER OBJECT AS "DATA" -> ASSIGN DINAMICALLY TO THAT -> AFTER THAT TO CHANGE VALUE USE STATE USE*/
   const [userData , setUserData] = useState({});
 
+  const [name , setName] = useState({});
+  const [email , setEmail] = useState({});
+  const [phone , setPhone] = useState({});
+
+  const [oldPassword , setOldPassword] = useState({});
+  const [newPassword , setNewPassword] = useState({});
+  const [confirmPassword , setconfirmPassword] = useState({});
+
+
 
   const callProfilePage = async () => {
     
@@ -34,6 +43,9 @@ try {
   const data =  await res.json();
   console.log(data);
   setUserData(data);
+  setName(data.name);
+  setEmail(data.email);
+  setPhone(data.phone);
   // console.log(`data send to backend`);
 
   if(!res.status === 200){
@@ -55,6 +67,99 @@ try {
   
     callProfilePage();
   }, []);
+
+
+
+// // Update User Profile
+//   const updateUser =  async() => {
+
+// // console.log(name , email , phone);
+
+//  }
+
+
+
+
+ const updateUser = async () => {
+
+  // console.log(`email is ${email}`);
+  // console.log(`phone is ${phone}`);
+
+  // console.log(`name is ${name}`);
+
+
+  const res = await fetch("/me/update", {
+    method: "PUT",
+    headers: {
+      "Content-type": "application/json"
+    },
+    body: JSON.stringify({
+      name, email, phone
+    })
+
+  });
+
+// console.log(data);
+  if (res.status === 400 ) {
+    window.alert("Invalid credential");
+    console.log("Invalid credential");
+    
+  } else {
+    window.alert("Profile Updated");
+    console.log("Profile Updated");
+    callProfilePage();
+
+  }
+
+
+
+};
+
+
+
+// passwordChangeFun
+// const passwordChangeFun = () => {
+//   console.log(oldPassword , newPassword  , confirmPassword);
+// }
+
+
+// Update Password
+const passwordChangeFun = async () => {
+
+  // console.log(`email is ${email}`);
+  // console.log(`phone is ${phone}`);
+
+  // console.log(`name is ${name}`);
+
+
+  const res = await fetch("/password/update", {
+    method: "PUT",
+    headers: {
+      "Content-type": "application/json"
+    },
+    body: JSON.stringify({
+      oldPassword , newPassword  , confirmPassword
+    })
+
+  });
+
+// console.log(data);
+  if (res.status === 400 ) {
+    window.alert("Invalid credential");
+    console.log("Invalid credential");
+    
+  } else {
+    window.alert("Password Updated");
+    console.log("Password Updated");
+
+  }
+
+
+
+};
+
+
+
 
 
   return (<>
@@ -143,7 +248,6 @@ try {
 
                 <div className="tab-pane fade profile-edit pt-3" id="profile-edit">
 
-                  <form method='GET'>
                     <div className="row mb-3">
                       <label for="profileImage" className="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                       <div className="col-md-8 col-lg-9">
@@ -162,7 +266,8 @@ try {
                     <div className="row mb-3">
                       <label for="fullName" className="col-md-4 col-lg-3 col-form-label">Full Name</label>
                       <div className="col-md-8 col-lg-9">
-                        <input name="fullName" type="text" className="form-control" id="fullName" value={userData.name}/>
+                        <input name="fullName" type="text" className="form-control" id="fullName" value={name} onChange={(e) => setName(e.target.value)}  />
+                        {/* onChange={(e) => setName(e.target.value)}  */}
                       </div>
                     </div>
 
@@ -184,14 +289,18 @@ try {
                     <div className="row mb-3">
                       <label for="Phone" className="col-md-4 col-lg-3 col-form-label">Phone</label>
                       <div className="col-md-8 col-lg-9">
-                        <input name="phone" type="text" className="form-control" id="Phone" value={userData.phone}/>
+                        <input name="phone" type="text" className="form-control" id="Phone" value={phone} 
+                          onChange={(e) => setPhone(e.target.value)}
+                        />
                       </div>
                     </div>
 
                     <div className="row mb-3">
                       <label for="Email" className="col-md-4 col-lg-3 col-form-label">Email</label>
                       <div className="col-md-8 col-lg-9">
-                        <input name="email" type="email" className="form-control" id="Email" value={userData.email}/>
+                        <input name="email" type="email" className="form-control" id="Email" value={email} 
+                          onChange={(e) => setEmail(e.target.value)}
+                        />
                       </div>
                     </div>
 
@@ -203,41 +312,47 @@ try {
                     
 
                     <div className="text-center">
-                      <button type="submit" className="btn btn-primary">Save Changes</button>
+                      <button  className="btn btn-primary" onClick={updateUser} >Save Changes</button>
                     </div>
-                  </form>
+                 
 
                 </div>
 
 
                 <div className="tab-pane fade pt-3" id="profile-change-password">
-                  <form>
+                  
 
                     <div className="row mb-3">
                       <label for="currentPassword" className="col-md-4 col-lg-3 col-form-label">Current Password</label>
                       <div className="col-md-8 col-lg-9">
-                        <input name="password" type="password" className="form-control" id="currentPassword"/>
+                        <input name="password" type="password" className="form-control" id="currentPassword" 
+                          onChange={(e) => setOldPassword(e.target.value)}
+                        />
                       </div>
                     </div>
 
                     <div className="row mb-3">
                       <label for="newPassword" className="col-md-4 col-lg-3 col-form-label">New Password</label>
                       <div className="col-md-8 col-lg-9">
-                        <input name="newpassword" type="password" className="form-control" id="newPassword"/>
+                        <input name="newpassword" type="password" className="form-control" id="newPassword"
+                          onChange={(e) => setNewPassword(e.target.value)}
+                        />
                       </div>
                     </div>
 
                     <div className="row mb-3">
                       <label for="renewPassword" className="col-md-4 col-lg-3 col-form-label">Re-enter New Password</label>
                       <div className="col-md-8 col-lg-9">
-                        <input name="renewpassword" type="password" className="form-control" id="renewPassword"/>
+                        <input name="renewpassword" type="password" className="form-control" id="renewPassword"
+                          onChange={(e) => setconfirmPassword(e.target.value)}
+                        />
                       </div>
                     </div>
 
                     <div className="text-center">
-                      <button type="submit" className="btn btn-primary">Change Password</button>
+                      <button  className="btn btn-primary" onClick={passwordChangeFun}>Change Password</button>
                     </div>
-                  </form>
+                
 
                 </div>
 

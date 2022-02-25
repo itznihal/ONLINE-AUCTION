@@ -772,3 +772,63 @@ color: #fff;}
   color: #fff;
 }
 
+// Price Filter
+.filter-container .price-filter-box{
+  width: 10vmax;
+  margin-top: 6em;
+}
+
+.MuiSlider-root {
+  color: #4481eb !important;
+  width: 100%;
+  cursor: pointer;
+  height: 2px;
+  display: inline-block;
+  padding: 13px 0;
+  position: relative;
+  box-sizing: content-box;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+
+@media screen and (max-width:600px) {
+
+  .product-topbar{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-topbar .search{
+    width: 25em;
+    text-align: center;
+    margin-left: 9em;
+  }
+  
+  .product-searching .search .fa-search {
+    position: absolute;
+    top: 20px;
+    left: 16px;
+    display: none;
+}
+
+.product-searching .search input {
+  height: 46px;
+  text-indent: 0;
+  border: 2px solid #d6d4d4;
+}
+
+.product-searching .search button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 35px;
+  width: 73px;
+  background: blue;
+}
+
+.lots-grid .product-mediaquery {
+  width: 100%;
+}
+}

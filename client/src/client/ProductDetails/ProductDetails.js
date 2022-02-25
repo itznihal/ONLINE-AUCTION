@@ -7,6 +7,8 @@ import {useSelector , useDispatch} from "react-redux";
 import {clearErrors, getProductDetails} from "../../actions/productAction";
 import Loader from '../Loader/Loader';
 import { useAlert } from 'react-alert';
+import MetaData from '../MetaData/MetaData';
+
 
 import "./productdetails.scss";
 import 'swiper/css';
@@ -212,6 +214,8 @@ const created_minutes = new Date(product.createdAt).getMinutes();
   return (
     <>{loading ? (<Loader/>) :(
     <>
+    <MetaData title={`${product.itemName} Auction`}></MetaData>
+
 
     <div className='product_d'>
         <div className="product_image_area">

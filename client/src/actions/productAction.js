@@ -9,12 +9,16 @@ import {
        CLEAR_ERRORS,
 } from "../constants/productConstants";
 
-export const getProduct = (keyword="" , currentPage=1) => async (dispatch) => {
+export const getProduct = (keyword="" , currentPage=1 , price = [0, 2500000] , category) => async (dispatch) => {
     try {  
         
 dispatch({ type:ALL_PRODUCT_REQUEST });
+// startingBid[gte]=400&startingBid[lt]=2000
+let link = `/products?keyword=${keyword}&page=${currentPage}&startingBid[gte]=${price[0]}&startingBid[lt]=${price[1]}`;
 
-let link = `/products?keyword=${keyword}&page=${currentPage}`;
+if(category){
+    link = `/products?keyword=${keyword}&page=${currentPage}&startingBid[gte]=${price[0]}&startingBid[lt]=${price[1]}&category=${category}`;
+}
 
 const {data} = await axios.get(link);
 

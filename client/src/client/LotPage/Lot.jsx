@@ -8,6 +8,10 @@ import {clearErrors , getProduct} from "../../actions/productAction";
 import Loader from '../Loader/Loader';
 import Product from "../HomePage/Product";
 import Pagination from "react-js-pagination";
+import Slider from "@material-ui/core/Slider";
+import { useAlert } from 'react-alert';
+import MetaData from '../MetaData/MetaData';
+
 
 
 
@@ -21,9 +25,11 @@ const Lot = ({match}) => {
 
 const dispatch = useDispatch();
 
-
+const alert = useAlert();
 
 const [currentPage , setCurrentPage] =  useState(1);
+const [price, setPrice] = useState([0 , 2500000]);
+const [category, setCategory] = useState("");
   
 const {loading , error , products , productCount , resultPerPage} = useSelector(
   (state) => state.products
@@ -35,15 +41,24 @@ const {loading , error , products , productCount , resultPerPage} = useSelector(
     const setCurrentPageNo = (e) => {
 
 setCurrentPage(e);
-    }
+    };
+
+
+const priceHandler = (event , newPrice) => {
+  setPrice(newPrice);
+}
+
   
 useEffect(() => {
   
-
+  if(error){
+     alert.error(error);
+dispatch(clearErrors());
+  }
  
-dispatch(getProduct(keyword , currentPage));
+dispatch(getProduct(keyword , currentPage , price , category));
   
-}, [dispatch , keyword , currentPage]);
+}, [dispatch , keyword , currentPage , price , category , alert , error]);
 
 
 
@@ -53,6 +68,7 @@ dispatch(getProduct(keyword , currentPage));
      <>{loading ? (<Loader/>) :(
   <>
       {/* <h1> Lot Page</h1> */}
+      <MetaData title="Active Auctions"></MetaData>
 
 
       <div className=" lotcls" data-aos="fade-up" data-aos-delay="400">
@@ -97,36 +113,38 @@ dispatch(getProduct(keyword , currentPage));
               <div className="filter-container">
                 <div className="filter-title">Category</div>
                 <div className="filter-list">
-                  <select name="category" id="category" >
+                  <select name="category" id="category" value={category} onChange={(e) => {
+                    const selectedCategory = e.target.value;
+                    setCategory(selectedCategory);
+                  }} >
                     <option value="">All</option>
                     
-                    <option>Cloth</option>
-                    <option>Electronics</option>
-                    <option>Property</option>
-                    <option>Household</option>
-                    <option>Others</option>
+                    <option value="Clothes">Clothes</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Property">Property</option>
+                    <option value="Household">Household</option>
+                    <option value="Vehicle">Vehicle</option>
                     
                   </select>
                 </div>
+                {category}
               </div>
 
 
               <div className="filter-container">
                 <div className="filter-title">Price</div>
-                <div className="filter-list">
-                  <div>
-                    <RadioButton id="priceAZ" name="sort" value="priceAZ" label="From lower to higher" />
-                  </div>
-                  <div>
-                    <RadioButton id="priceZA" name="sort" value="priceZA" label="From higher to lower" />
-                  </div>
-                  <div className="price-range">
-                    <div>
-                      <input type="text" placeholder="From" id="price-from" name="priceFrom" />-
-                      <input type="text" placeholder="To" id="price-to" name="priceTo" />
-                    </div>
-                  </div>
-                </div>
+                {/* <h1>Price Filter</h1> */}
+<div className='price-filter-box'>
+        <Slider
+          value={price} 
+          onChange={priceHandler}
+          valueLabelDisplay="on"
+          aria-labelledby = "range-slider"
+          min={0}
+          max={2500000}/>
+
+</div>
+
               </div>
               <div className="filter-container">
                 <div className="filter-title">Name</div>
@@ -221,7 +239,7 @@ dispatch(getProduct(keyword , currentPage));
                             <div className="product-topbar d-flex align-items-center justify-content-between">
                                 {/* <!-- Total Products --> */}
                                 <div className="total-products">
-                                    <p><span>{productCount}</span> products found</p>
+                                    <p><span>{productCount}</span> Auctions found</p>
                                 </div>
                                 {/* <!-- Sorting --> */}
                                 <div className="product-searching ">
