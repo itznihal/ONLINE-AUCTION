@@ -34,12 +34,13 @@ const ProductDetails = ({match}) => {
 
     const [didMount, setDidMount] = useState(false); 
 
+// var winStatus = "init";
     // FIRST STEP
     const dispatch = useDispatch();
     const alert =  useAlert();
 // THIRD STEP -> Fetching From Store
-const {product , loading , error , sellerDetails } = useSelector((state) => state.productDetails);
-
+const {product , loading , error , sellerDetails ,  winStatus} = useSelector((state) => state.productDetails);
+//  winStatus  = useSelector((state) => state.productDetails);
 // SECOND STEP
     useEffect(() => {
         if(error){
@@ -193,20 +194,33 @@ const created_minutes = new Date(product.createdAt).getMinutes();
     
 
 
+    // console.log(winStatus.email);
 
 
     if(!didMount) {
         return null;
       }
 
+      var countdownDate = new Date(product.bidEnd).getTime();
+      var now = new Date().getTime();
 
-
-
-// if(sellerDetails.name){
-//     console.log(sellerDetails.name);
-// }else{
-//     console.log(`not rendered`);
-// }
+      // END DATE
+      var dateEnd = new Date(product.bidEnd);
+      
+      // Winner Announce --> Working
+      // console.log(winStatus);
+      
+      
+      // console.log(sellerDetails.name);
+      // console.log(product.bidEnd)
+      
+      
+      // if(countdownDate < now){
+      //   console.log(`Auction Ended`);
+      // }else{
+      //   console.log(`Auction Runnning`);
+      // }
+      
 
 
 // console.log(sellerDetails.name);
@@ -268,7 +282,22 @@ const created_minutes = new Date(product.createdAt).getMinutes();
 						<h2>{`₹ ${product.startingBid}`}</h2>
 						<ul className="list">
 							<li><a className="active" href="#"><span>Category</span> : {product.category}</a></li>
-							<li><a href="#"><span>Ends In </span>{ `: ${timerDays}:${timerHours}:${timerMinutes}:${timerSeconds} `}</a></li>
+
+{(countdownDate > now) ? (
+							<li><a href="#"><span>Ends In </span>
+              { `: ${timerDays}:${timerHours}:${timerMinutes}:${timerSeconds} `}
+              </a>
+              </li>
+              ) 
+              : 
+              (
+                <li><a href="#"><span>Ended </span>
+              { `: ${dateEnd.getDate()}-${dateEnd.getMonth()}-${dateEnd.getFullYear()}       ${dateEnd.getHours()}:${dateEnd.getMinutes()}  `}
+              </a>
+              </li>
+              )
+
+}
 						</ul>
 						<p>
                             {product.description}
@@ -332,6 +361,14 @@ const created_minutes = new Date(product.createdAt).getMinutes();
           </li>
 
 
+          <li className="nav-item col-6 col-md-4 col-lg-2">
+            <a className="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
+              <i className="bi bi-box-seam color-indigo"></i>
+              <h4>Status</h4>
+            </a>
+          </li>
+
+
         </ul>
 
         <div className="tab-content">
@@ -353,7 +390,7 @@ const created_minutes = new Date(product.createdAt).getMinutes();
 
                  <div className="row">
                    <div className="col-lg-3 col-md-4 label ">Seller Name</div>
-                   <div className="col-lg-9 col-md-8">abc</div>
+                   <div className="col-lg-9 col-md-8">{sellerDetails.name}</div>
 
                    {/* <div className="col-lg-9 col-md-8">{sellerInfo.name}</div> */}
                  </div>
@@ -368,14 +405,14 @@ const created_minutes = new Date(product.createdAt).getMinutes();
 
                  <div className="row">
                    <div className="col-lg-3 col-md-4 label">Phone</div>
-                   <div className="col-lg-9 col-md-8">552252525</div>
+                   <div className="col-lg-9 col-md-8">{sellerDetails.phone}</div>
                    {/* <div className="col-lg-9 col-md-8">{sellerInfo.phone}</div> */}
 
                  </div>
 
                  <div className="row">
                    <div className="col-lg-3 col-md-4 label">Email</div>
-                   <div className="col-lg-9 col-md-8">abc@gmail.com</div>
+                   <div className="col-lg-9 col-md-8">{sellerDetails.email}</div>
                    {/* <div className="col-lg-9 col-md-8">{sellerInfo.email}</div> */}
 
                  </div>
@@ -428,6 +465,76 @@ const created_minutes = new Date(product.createdAt).getMinutes();
                  </div>
 
                </div>
+
+            </div>
+          </div>
+
+
+
+          <div className="tab-pane card" id="tab-3">
+            <div className="row gy-4">
+
+
+
+            {
+(countdownDate > now) ? (
+                
+  <div className="row">
+                   <div className="col-lg-3 col-md-4 label ">Status</div>
+                   <div className="col-lg-9 col-md-8">Auction is Currently Active</div>
+                 </div>
+                 
+) : (
+
+  
+
+
+
+
+                 <div className="tab-pane fade show active profile-overview" id="profile-overview">
+
+
+<h5 className="card-title">Auction Status</h5>
+
+
+<div className="row">
+                  <div className="col-lg-3 col-md-4 label ">Status</div>
+                  <div className="col-lg-9 col-md-8">Auction Ended</div>
+                </div>
+
+<div className="row">
+                  <div className="col-lg-3 col-md-4 label ">Auction Winner</div>
+                  <div className="col-lg-9 col-md-8">{winStatus.bidder.name}</div>
+                </div>
+
+
+                <div className="row">
+                  <div className="col-lg-3 col-md-4 label ">Winner Email</div>
+                  <div className="col-lg-9 col-md-8">{winStatus.bidder.email}</div>
+                </div>
+
+
+                <div className="row">
+                  <div className="col-lg-3 col-md-4 label ">Winner Phone</div>
+                  <div className="col-lg-9 col-md-8">{winStatus.bidder.phone}</div>
+                </div>
+
+
+                <div className="row">
+                  <div className="col-lg-3 col-md-4 label ">Winning Ammount</div>
+                  <div className="col-lg-9 col-md-8">{winStatus.bid}</div>
+                </div>
+
+
+
+
+                
+              </div>
+
+)
+}
+
+
 
             </div>
           </div>
