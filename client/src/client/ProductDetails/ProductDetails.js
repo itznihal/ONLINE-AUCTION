@@ -353,7 +353,7 @@ const created_minutes = new Date(product.createdAt).getMinutes();
 
                  <div className="row">
                    <div className="col-lg-3 col-md-4 label ">Seller Name</div>
-                   <div className="col-lg-9 col-md-8">cbydbycbd</div>
+                   <div className="col-lg-9 col-md-8">abc</div>
 
                    {/* <div className="col-lg-9 col-md-8">{sellerInfo.name}</div> */}
                  </div>
@@ -375,7 +375,7 @@ const created_minutes = new Date(product.createdAt).getMinutes();
 
                  <div className="row">
                    <div className="col-lg-3 col-md-4 label">Email</div>
-                   <div className="col-lg-9 col-md-8">chbhcbdhbc</div>
+                   <div className="col-lg-9 col-md-8">abc@gmail.com</div>
                    {/* <div className="col-lg-9 col-md-8">{sellerInfo.email}</div> */}
 
                  </div>

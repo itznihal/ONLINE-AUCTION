@@ -1,11 +1,113 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useEffect } from 'react';
+import {useSelector , useDispatch} from "react-redux";
+import { useAlert } from 'react-alert';
+import MetaData from '../MetaData/MetaData';
+import Loader from '../Loader/Loader';
+import {clearErrors , createProduct} from "../../actions/productAction";
+import {NEW_PRODUCT_RESET} from "../../constants/productConstants";
+import { useHistory } from "react-router-dom";
+
+
 
 import "./addlotstyles.scss";
 
 
 const Addlot = () => {
+  let history = useHistory();
+  // history.push("/lot");
+
+
+  const dispatch = useDispatch();
+  const alert = useAlert();
+
+  const {loading , error , success } = useSelector(
+    (state) => state.newProduct
+      );
+// HOOKS
+const [name , setName] = useState("");
+const [description, setDescription] = useState("");
+const [category , setCategory] = useState("");
+const [price , setPrice] = useState(0);
+const [imagesPreview , setImagesPreview] = useState([]);
+const [images, setImages] = useState([]);
+const [endDate , setEndDate] = useState("");
+const [endTime, setEndTime] = useState("");
+
+
+
+ 
+useEffect(() => {
+  
+  if(error){
+     alert.error(error);
+dispatch(clearErrors());
+  }
+ 
+
+if(success){
+  alert.success("Product Created Successfully");
+  history.push("/lot");
+    dispatch({type: NEW_PRODUCT_RESET});
+}
+
+  
+}, [dispatch  , alert , error , success]);
+
+
+
+const createProductSubmitHandler = (e) => {
+  e.preventDefault();
+
+const myForm = new FormData();
+
+myForm.set("itemName" , name);
+myForm.set("description" , description);
+myForm.set("category" , category);
+myForm.set("startingBid" , price);
+myForm.set("bidEnd" , new Date(endDate + ' ' + endTime));
+// myForm.set("endTime" , endTime);
+// new Date(endDate + ' ' + endTime)
+
+images.forEach((image) => {
+  myForm.append("images" , image);
+});
+
+dispatch(createProduct(myForm));
+
+}
+
+const createProductImageChange = (e) => {
+
+const files = Array.from(e.target.files);
+setImages([]);
+setImagesPreview([]);
+
+files.forEach((file) => {
+  const reader = new FileReader();
+
+  reader.onload = () => {
+
+if(reader.readyState === 2){
+   setImagesPreview((old) => [...old , reader.result]);
+   setImages((old) => [...old , reader.result]);
+}
+
+  };
+
+
+
+  reader.readAsDataURL(file);
+});
+
+};
+
+
   return (
+
+
   <>
+      <MetaData title="Add Auctions"></MetaData>
 
 <div className=" addlotcls" data-aos="fade-up" data-aos-delay="400">
         <div className='row'>
@@ -28,13 +130,18 @@ const Addlot = () => {
 
               <div className='row'>
           <div className='col-8 mx-auto'>
-              <form className='formbd'>
+              <form className='formbd'
+              encType='multipart/form-data'
+              onSubmit={createProductSubmitHandler}>
 
               {/* LOT NAME */}
                 <div className="row mb-3 rowset">
                   <label for="inputText" className="col-sm-2 col-form-label" >LOT NAME</label>
                   <div className="col-sm-10">
-                    <input type="text" className="form-control" required/>
+                    <input type="text" className="form-control" required 
+                    value={name}
+                      onChange = {(e) => setName(e.target.value)}
+                    />
                   </div>
                 </div>
               
@@ -44,7 +151,11 @@ const Addlot = () => {
                 <div className="row mb-3 rowset">
                   <label for="inputPassword" className="col-sm-2 col-form-label">LOT DESCRIPTION</label>
                   <div className="col-sm-10">
-                    <textarea className="form-control" style={{height: "100px"}} required></textarea>
+                    <textarea className="form-control" style={{height: "100px"}} required 
+                    value={description}
+                      onChange = {(e) => setDescription(e.target.value)}
+
+                      ></textarea>
                   </div>
                 </div>
 
@@ -53,12 +164,16 @@ const Addlot = () => {
                 <div className="row mb-3 rowset">
                   <label className="col-sm-2 col-form-label">CATEGORY</label>
                   <div className="col-sm-10">
-                    <select className="form-select" aria-label="Default select example">
-                      <option selected>Choose Category</option>
-                      <option value="1">Clothes</option>
-                      <option value="2">Electronics</option>
-                      <option value="3">Property</option>
-                      <option value="3">HouseHold</option>
+                    <select className="form-select" aria-label="Default select example" 
+                    value={category}
+                    onChange = {(e) => setCategory(e.target.value)}>
+                      <option selected value="">Choose Category</option>
+
+                      <option value="Clothes">Clothes</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Property">Property</option>
+                    <option value="Household">Household</option>
+                    <option value="Vehicle">Vehicle</option>
 
 
                     </select>
@@ -71,7 +186,11 @@ const Addlot = () => {
                 <div className="row mb-3 rowset">
                   <label for="inputNumber" className="col-sm-2 col-form-label">LOT START PRICE</label>
                   <div className="col-sm-10">
-                    <input type="number" className="form-control"/>
+                    <input type="number" className="form-control" 
+                      placeholder='Price'
+                      value={price}
+                      onChange = {(e) => setPrice(e.target.value)}
+                    />
                   </div>
                 </div>
 
@@ -80,7 +199,10 @@ const Addlot = () => {
                 <div className="row mb-3 rowset">
                   <label for="inputDate" className="col-sm-2 col-form-label">END DATE</label>
                   <div className="col-sm-10">
-                    <input type="date" className="form-control"/>
+                    <input type="date" className="form-control" 
+                      value={endDate}
+                      onChange = {(e) => setEndDate(e.target.value)}
+                    />
                   </div>
                 </div>
 
@@ -91,7 +213,10 @@ const Addlot = () => {
                 <div className="row mb-3 rowset">
                   <label for="inputTime" className="col-sm-2 col-form-label">END TIME</label>
                   <div className="col-sm-10">
-                    <input type="time" className="form-control"/>
+                    <input type="time" className="form-control"
+                      value={endTime}
+                      onChange = {(e) => setEndTime(e.target.value)}
+                    />
                   </div>
                 </div>
 
@@ -100,12 +225,32 @@ const Addlot = () => {
                 <div className="row mb-3 rowset">
                   <label for="inputNumber" className="col-sm-2 col-form-label">LOT IMAGES</label>
                   <div className="col-sm-10">
-                    <input className="form-control" type="file" id="formFile"/>
+
+                    <input className="form-control" type="file" id="formFile"
+                    type="file"
+                      name='avatar'
+                      accept='image/*'
+                      onChange={createProductImageChange}
+                      multiple
+                    />
+                  
                   </div>
                 </div>
+
+                <div className="row mb-3 rowset">
+                  <div className="col-sm-10 createProductFormImage">
+{imagesPreview.map((image , index) => (
+  <img key={index} src={image} alt="Avatar preview" />
+))}
+                  
+                  </div>
+                </div>
+
+
+
  
                 {/* PAYMENT METHOD */}
-                <div className="row mb-3 rowset">
+                {/* <div className="row mb-3 rowset">
                   <legend className="col-form-label col-sm-2 pt-0">PAYMENT METHODS</legend>
                   <div className="col-sm-10">
 
@@ -133,13 +278,13 @@ const Addlot = () => {
                     
 
                   </div>
-                </div>
+                </div> */}
 
 
 {/* DELIVERY METHODS */}
 
-<div className="row mb-3 rowset">
-                  <legend className="col-form-label col-sm-2 pt-0">PAYMENT METHODS</legend>
+{/* <div className="row mb-3 rowset">
+                  <legend className="col-form-label col-sm-2 pt-0">DELIVERY METHODS</legend>
                   <div className="col-sm-10">
 
                     <div className="form-check">
@@ -173,7 +318,7 @@ const Addlot = () => {
                     
 
                   </div>
-                </div>
+                </div> */}
 
 
 
@@ -183,7 +328,8 @@ const Addlot = () => {
                 <div className="row mb-3 rowset submitbtn">
                   
                   <div className="col-sm-10">
-                    <button type="submit" className="btn btn-primary">Create</button>
+                    <button type="submit" className="btn btn-primary" 
+                    disabled = {loading ? true : false} >Create</button>
                   </div>
                 </div>
 

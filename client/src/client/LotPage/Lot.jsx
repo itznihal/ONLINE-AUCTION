@@ -127,7 +127,7 @@ dispatch(getProduct(keyword , currentPage , price , category));
                     
                   </select>
                 </div>
-                {category}
+                {/* {category} */}
               </div>
 
 

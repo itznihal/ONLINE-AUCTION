@@ -7,6 +7,10 @@ import {
       PRODUCT_DETAILS_SUCCESS,
       PRODUCT_DETAILS_FAIL,
        CLEAR_ERRORS,
+       NEW_PRODUCT_REQUEST,
+       NEW_PRODUCT_SUCCESS,
+       NEW_PRODUCT_FAIL,
+       NEW_PRODUCT_RESET,
 } from "../constants/productConstants";
 
 export const getProduct = (keyword="" , currentPage=1 , price = [0, 2500000] , category) => async (dispatch) => {
@@ -61,6 +65,43 @@ dispatch({
     }
 
 };
+
+
+
+// CREATE PRODUCT
+
+
+export const createProduct = (productData) => async (dispatch) => {
+    try {  
+        
+dispatch({ type:NEW_PRODUCT_REQUEST });
+
+
+const config = {
+headers: {"Content-Type":"application/json"},
+};
+
+
+const {data} = await axios.post(`/product/new`,
+productData,
+config
+);
+
+dispatch({
+    type:NEW_PRODUCT_SUCCESS,
+    payload:data,
+});
+
+    } catch (error) {
+        dispatch({
+            type:  NEW_PRODUCT_FAIL,
+            payload:error.response.data.message,
+        });
+        
+    }
+
+};
+
 
 
 
