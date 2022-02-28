@@ -1,6 +1,7 @@
 import React, { useEffect, useState , useRef } from 'react';
 import Img from "../images/values-1.png";
 import Img2 from "../images/values-3.png";
+import PlaceBid from './PlaceBid';
 import { Swiper , SwiperSlide} from "swiper/react";
 import SwiperCore , {Navigation, Pagination, Scrollbar, A11y , Autoplay , Thumbs} from "swiper";
 import {useSelector , useDispatch} from "react-redux";
@@ -302,24 +303,14 @@ const created_minutes = new Date(product.createdAt).getMinutes();
 						<p>
                             {product.description}
                         </p>
-						<div className="product_count">
-							<label for="qty">Bid Ammount:</label>
-							<input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:" className="input-text qty"/>
-							{/* <button
-							 className="increase items-count" type="button"><i class="fa-solid fa-angle-up"></i></button>
-							<button
-							 className="reduced items-count" type="button"> <i class="fa-solid fa-chevron-down"></i></button> */}
-						</div>
-						<div className="card_area d-flex">
-							<a className="primary-btn" href="#">Place Bid</a>
-                            <div className='pd-social-links'>
-							<a className="icon_btn" href="#"><i className="fab fa-facebook-f"></i></a>
-							<a className="icon_btn" href="#"><i className="fab fa-instagram"></i></a>
-                            <a className="icon_btn" href="#"><i className="fab fa-whatsapp"></i></a>
-                            <a className="icon_btn" href="#"><i className="fab fa-linkedin-in"></i></a>
 
-                            </div>
-						</div>
+
+                        {
+                          (countdownDate > now) ? 
+                        ( <PlaceBid product = {product}/>)
+                        :
+                        (  <h3>!   Auction Ended</h3>)
+                        }
 					</div>
 				</div>
 			</div>
@@ -478,10 +469,14 @@ const created_minutes = new Date(product.createdAt).getMinutes();
 
             {
 (countdownDate > now) ? (
-                
+  <div className="tab-pane fade show active profile-overview" id="profile-overview">
+
+
+<h5 className="card-title">Auction Status</h5>
   <div className="row">
                    <div className="col-lg-3 col-md-4 label ">Status</div>
                    <div className="col-lg-9 col-md-8">Auction is Currently Active</div>
+                 </div>
                  </div>
                  
 ) : (
