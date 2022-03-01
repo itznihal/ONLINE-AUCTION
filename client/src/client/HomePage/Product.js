@@ -51,6 +51,11 @@ useEffect(() => {
 });
 
 
+var countdownDate = new Date(product.bidEnd).getTime();
+var now = new Date().getTime();
+var dateEnd = new Date(product.bidEnd);
+
+
   return (
     <>
 <div className="col-sm-6 col-lg-4 product-mediaquery">
@@ -73,7 +78,15 @@ useEffect(() => {
                 </h5>
                 <div className="star_container">
                 <h5>
+
+
+{(countdownDate > now) ? (
+
               <span>{`Ends In:${timerDays}:${timerHours}:${timerMinutes}:${timerSeconds} `}</span>
+
+              ) : (
+                <span>{ `Ended : ${dateEnd.getDate()}-${dateEnd.getMonth()}-${dateEnd.getFullYear()}  `}</span>
+              )}
               </h5>
                 </div>
               </div>

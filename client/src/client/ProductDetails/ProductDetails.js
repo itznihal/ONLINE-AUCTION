@@ -205,6 +205,8 @@ const created_minutes = new Date(product.createdAt).getMinutes();
       var countdownDate = new Date(product.bidEnd).getTime();
       var now = new Date().getTime();
 
+
+
       // END DATE
       var dateEnd = new Date(product.bidEnd);
       
@@ -216,11 +218,18 @@ const created_minutes = new Date(product.createdAt).getMinutes();
       // console.log(product.bidEnd)
       
       
-      // if(countdownDate < now){
-      //   console.log(`Auction Ended`);
-      // }else{
-      //   console.log(`Auction Runnning`);
-      // }
+      if(countdownDate > now){
+        console.log(`Auction Runnning`);
+      }else{
+        
+        console.log(`Auction Ended`);
+      }
+
+      // REFRESH WHEN AUCTION ENDED
+//       var refreshTime = (countdownDate - now);
+// if (refreshTime > 1) {
+//     setTimeout(function() { window.location.reload(true); }, refreshTime);
+// }
       
 
 

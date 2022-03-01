@@ -24,6 +24,7 @@ import ProductDetails from "./client/ProductDetails/ProductDetails";
 import Lot from "./client/LotPage/Lot";
 import Profile from "./client/Profile/Profile";
 import Signup from "./client/SignUp/Signup";
+import BidStatus from './client/Bid Status/BidStatus';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
 import Navbar from "./client/Navbar/Navbar";
@@ -65,7 +66,7 @@ const Routing = () => {
 
       <Route exact path="/lot" component={Lot} />
       <Route path="/lot/:keyword" component={Lot} />
-
+      <Route exact path="/bidstatus" component={BidStatus} />
       <Route exact path="/about" component={About} />
       <Route exact path="/service" component={Service} />
       <Route exact path="/contact" component={Contact} />

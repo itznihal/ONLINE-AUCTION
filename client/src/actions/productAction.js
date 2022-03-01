@@ -11,6 +11,12 @@ import {
        NEW_PRODUCT_SUCCESS,
        NEW_PRODUCT_FAIL,
        NEW_PRODUCT_RESET,
+       BIDDED_PRODUCT_REQUEST,
+       BIDDED_PRODUCT_SUCCESS,
+       BIDDED_PRODUCT_FAIL,
+       SELLER_PRODUCT_REQUEST,
+       SELLER_PRODUCT_SUCCESS,
+       SELLER_PRODUCT_FAIL,
 } from "../constants/productConstants";
 
 export const getProduct = (keyword="" , currentPage=1 , price = [0, 2500000] , category) => async (dispatch) => {
@@ -102,6 +108,61 @@ dispatch({
 
 };
 
+
+
+
+// GET BIDDED PRODUCTS
+
+
+export const getBiddedProducts = () => async (dispatch) => {
+    try {  
+        
+dispatch({ type:BIDDED_PRODUCT_REQUEST });
+
+const {data} = await axios.get(`/products/bidstatus`);
+
+dispatch({
+    type:BIDDED_PRODUCT_SUCCESS,
+    payload:data,
+})
+
+    } catch (error) {
+        dispatch({
+            type: BIDDED_PRODUCT_FAIL,
+            payload:error.response.data.message,
+        });
+        
+    }
+
+};
+
+
+
+
+// GET SELLER PRODUCTS
+
+
+export const getSellerProducts = () => async (dispatch) => {
+    try {  
+        
+dispatch({ type:SELLER_PRODUCT_REQUEST });
+
+const {data} = await axios.get(`/products/myproducts`);
+
+dispatch({
+    type:SELLER_PRODUCT_SUCCESS,
+    payload:data,
+})
+
+    } catch (error) {
+        dispatch({
+            type: SELLER_PRODUCT_FAIL,
+            payload:error.response.data.message,
+        });
+        
+    }
+
+};
 
 
 

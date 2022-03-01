@@ -25,7 +25,7 @@ if(state){
 <li className="dropdown nav-item px-3 mx-auto licls"><NavLink to="#" className="nav-link"><span id='headrdr'>My Lots</span> </NavLink>
             <ul className='ddlist'>
               <li><NavLink to="/addlot" excat className="nav-link">Add Lot</NavLink></li>
-              <li><NavLink to="/updatelot" excat className="nav-link">Update Lot</NavLink></li>
+              <li><NavLink to="/updatelot" excat className="nav-link">My Lots</NavLink></li>
               
             </ul>
           </li>
@@ -46,6 +46,11 @@ if(state){
 
         <li className="nav-item px-3 mx-auto licls">
           <NavLink activeClassName = 'menu_active' excat className="nav-link" to="/contact">Contact Us</NavLink>
+        </li>
+
+        
+        <li className="nav-item px-3 mx-auto licls">
+          <NavLink activeClassName = 'menu_active' excat className="nav-link" to="/bidstatus">Bid Status</NavLink>
         </li>
 
         <li className="dropdown nav-item px-3 mx-auto licls"><NavLink to="#" className="nav-link"><span id='headrdr'>My Profile</span> </NavLink>

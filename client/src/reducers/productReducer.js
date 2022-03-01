@@ -9,6 +9,12 @@ import {
       NEW_PRODUCT_SUCCESS,
       NEW_PRODUCT_RESET,
       NEW_PRODUCT_FAIL,
+      BIDDED_PRODUCT_REQUEST,
+      BIDDED_PRODUCT_SUCCESS,
+      BIDDED_PRODUCT_FAIL,
+      SELLER_PRODUCT_REQUEST,
+      SELLER_PRODUCT_SUCCESS,
+      SELLER_PRODUCT_FAIL,
 
        CLEAR_ERRORS
 } from "../constants/productConstants";
@@ -134,3 +140,79 @@ export const productDetailsReducer = (state = { product: {} }, action) =>{
         
         };
     
+
+
+        // BIDDED PRODUCT REDUCER
+        export const biddedproductReducer = (state = { myproducts: [] }, action) =>{
+
+            switch (action.type) {
+                case BIDDED_PRODUCT_REQUEST:
+                    return{
+                        loading:true,
+                        myproduct:[],
+                    };
+            
+                    case BIDDED_PRODUCT_SUCCESS:
+                    return{
+                        loading:false,
+                        myproducts:action.payload.myproducts,
+                        
+                    };
+            
+                    case BIDDED_PRODUCT_FAIL:
+                    return{
+                        loading:false,
+                        error: action.payload,
+                    };
+                    
+                    case CLEAR_ERRORS:
+                    return{
+                        ...state,
+                        error: null,          
+                    };
+            
+                default:
+                    return state;
+            }
+            
+            };
+
+
+
+
+            // SELLLER PRODUCT REDUCER
+             
+        export const sellerproductReducer = (state = { sellerproducts: [] }, action) =>{
+
+            switch (action.type) {
+                case SELLER_PRODUCT_REQUEST:
+                    return{
+                        loading:true,
+                        sellerproduct:[],
+                    };
+            
+                    case SELLER_PRODUCT_SUCCESS:
+                    return{
+                        loading:false,
+                        sellerproducts:action.payload.sellerproducts,
+                        
+                    };
+            
+                    case SELLER_PRODUCT_FAIL:
+                    return{
+                        loading:false,
+                        error: action.payload,
+                    };
+                    
+                    case CLEAR_ERRORS:
+                    return{
+                        ...state,
+                        error: null,          
+                    };
+            
+                default:
+                    return state;
+            }
+            
+            };
+            
