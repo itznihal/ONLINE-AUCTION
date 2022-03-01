@@ -10,7 +10,7 @@ const Navbar = () => {
 
 
 const RenderMenu = () => {
-
+console.log(`state is ${state}`);
 if(state){
   return (
     <>
