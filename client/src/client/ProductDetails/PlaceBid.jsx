@@ -13,14 +13,9 @@ const PlaceBid = ({product}) => {
     const bidSubmitHandler = (e) => {
         e.preventDefault();
 
-        // if(ammount.trim()){
-        //     console.log(ammount);
-        //     console.log(product._id);
-        // //   history.push(`/lot/${keyword}`);
-        // }else{
-        //     console.log(`ammount is not define`);
-        // //   history.push("/lot");
-        // }
+        if(ammount > product.startingBid){
+           console.log(`ammount is valid`);
+        
 
         const myForm = new FormData();
 
@@ -50,6 +45,11 @@ console.log(myForm);
               console.log(response);
             });
 
+          }else{
+            console.log(`ammount is invalid`);
+        //   history.push("/lot");
+        alert.error(`Bid must be greater than initial `);
+        }
 
 
       };
