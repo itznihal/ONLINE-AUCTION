@@ -197,3 +197,19 @@
 .product_section .section-title p {
   margin: 15px 0 0 0;
 }
+
+
+
+// DELETE UPDATE BTN CSS
+
+.dltupdbtn{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.dltupdbtn .btn{
+  font-size: 25px;
+}

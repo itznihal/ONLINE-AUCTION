@@ -1,19 +1,35 @@
+// import React, { useEffect, useRef, useState } from 'react'
+// import { Link } from 'react-router-dom';
+
+
+// const UpdateComponent = () => {
+//   return (
+//    <>
+
+
+//        <h1>Hello World</h1>
+//    </>
+//   );
+// };
+
+// export default UpdateComponent;
+
+
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import {useSelector , useDispatch} from "react-redux";
 import { useAlert } from 'react-alert';
 import MetaData from '../MetaData/MetaData';
 import Loader from '../Loader/Loader';
-import {clearErrors , createProduct} from "../../actions/productAction";
-import {NEW_PRODUCT_RESET} from "../../constants/productConstants";
+import {clearErrors , updateProduct , getProductDetails, deleteProduct} from "../../actions/productAction";
+import {UPDATE_PRODUCT_RESET} from "../../constants/productConstants";
 import { useHistory } from "react-router-dom";
+import "../AddLot/addlotstyles.scss"
 
 
 
-import "./addlotstyles.scss";
 
-
-const Addlot = () => {
+const UpdateComponent = ({match}) => {
   let history = useHistory();
   // history.push("/lot");
 
@@ -21,8 +37,11 @@ const Addlot = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
 
-  const {loading , error , success } = useSelector(
-    (state) => state.newProduct
+  const {product , error } = useSelector((state) => state.productDetails);
+
+
+  const {loading , error:updateError , isUpdated } = useSelector(
+    (state) => state.deleteProduct
       );
 // HOOKS
 const [name , setName] = useState("");
@@ -31,32 +50,60 @@ const [category , setCategory] = useState("");
 const [price , setPrice] = useState(0);
 const [imagesPreview , setImagesPreview] = useState([]);
 const [images, setImages] = useState([]);
+const [oldImages, setOldImages] = useState([]);
+
 const [endDate , setEndDate] = useState("");
 const [endTime, setEndTime] = useState("");
 
 
-
+const productId = match.params.id;
  
+
+
+
 useEffect(() => {
   
+if(product && product._id != productId){
+    dispatch(getProductDetails(productId));
+}else{
+    setName(product.itemName);
+    setDescription(product.description);
+    setCategory(product.category);
+    setPrice(product.startingBid);
+    setOldImages(product.images.url);
+    // setEndDate(product.bidEnd);
+    // setEndTime(product.bidEnd);
+
+
+}
+
+
+
   if(error){
      alert.error(error);
 dispatch(clearErrors());
   }
  
 
-if(success){
-  alert.success("Product Created Successfully");
+  
+  if(updateError){
+    alert.error(updateError);
+dispatch(clearErrors());
+ }
+
+
+if(isUpdated){
+  alert.success("Product Updated Successfully");
   history.push("/lot");
-    dispatch({type: NEW_PRODUCT_RESET});
+    dispatch({type: UPDATE_PRODUCT_RESET});
 }
 
   
-}, [dispatch  , alert , error , success]);
+}, [dispatch  , alert , error , isUpdated , productId , product , updateError]);
 
 
 
-const createProductSubmitHandler = (e) => {
+const updateProductSubmitHandler = (e) => {
   e.preventDefault();
 
 const myForm = new FormData();
@@ -73,15 +120,16 @@ images.forEach((image) => {
   myForm.append("images" , image);
 });
 
-dispatch(createProduct(myForm));
+dispatch(updateProduct(productId, myForm));
 
 }
 
-const createProductImageChange = (e) => {
+const updateProductImageChange = (e) => {
 
 const files = Array.from(e.target.files);
 setImages([]);
 setImagesPreview([]);
+setOldImages([]);
 
 files.forEach((file) => {
   const reader = new FileReader();
@@ -107,7 +155,7 @@ if(reader.readyState === 2){
 
 
   <>
-      <MetaData title="Add Auctions"></MetaData>
+      <MetaData title="Update Auction"></MetaData>
 
 <div className=" addlotcls" data-aos="fade-up" data-aos-delay="400">
         <div className='row'>
@@ -122,8 +170,8 @@ if(reader.readyState === 2){
             <div className="card-body">
 
             <div className="section-title" data-aos="fade-up">
-          <h2>Add Lot</h2>
-          <p>Fill Details and Images of Lots</p>
+          <h2>Update Auction</h2>
+          <p>Update Details and Images of Lots</p>
         </div>
 
               {/* <h5 className="card-title">ADD LOT</h5> */}
@@ -132,7 +180,7 @@ if(reader.readyState === 2){
           <div className='col-8 mx-auto'>
               <form className='formbd'
               encType='multipart/form-data'
-              onSubmit={createProductSubmitHandler}>
+              onSubmit={updateProductSubmitHandler}>
 
               {/* LOT NAME */}
                 <div className="row mb-3 rowset">
@@ -230,12 +278,23 @@ if(reader.readyState === 2){
                     type="file"
                       name='avatar'
                       accept='image/*'
-                      onChange={createProductImageChange}
+                      onChange={updateProductImageChange}
                       multiple
                     />
                   
                   </div>
                 </div>
+                
+
+                <div className="row mb-3 rowset">
+                  <div className="col-sm-10 createProductFormImage">
+{oldImages && oldImages.map((image , index) => (
+  <img key={index} src={image.url} alt="Old Product preview" />
+))}
+                  
+                  </div>
+                </div>
+
 
                 <div className="row mb-3 rowset">
                   <div className="col-sm-10 createProductFormImage">
@@ -329,7 +388,7 @@ if(reader.readyState === 2){
                   
                   <div className="col-sm-10">
                     <button type="submit" className="btn btn-primary" 
-                    disabled = {loading ? true : false} >Create</button>
+                    disabled = {loading ? true : false} >Update</button>
                   </div>
                 </div>
 
@@ -363,4 +422,7 @@ if(reader.readyState === 2){
   );
 };
 
-export default Addlot;
+export default UpdateComponent;
+
+
+

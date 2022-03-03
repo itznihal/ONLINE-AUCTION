@@ -23,6 +23,7 @@ import Footer from './client/Footer/Footer';
 import ProductDetails from "./client/ProductDetails/ProductDetails";
 import Lot from "./client/LotPage/Lot";
 import Profile from "./client/Profile/Profile";
+import UpdateComponent from './client/UpdateLots/UpdateComponent';
 import Signup from "./client/SignUp/Signup";
 import BidStatus from './client/Bid Status/BidStatus';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
@@ -63,6 +64,7 @@ const Routing = () => {
       <Route exact path="/" component={Home} />
       <Route exact path="/addlot" component={Addlot} />
       <Route exact path="/updatelot" component={UpdateLot} />
+      <Route exact path="/updateauction/:id" component={UpdateComponent} />
 
       <Route exact path="/lot" component={Lot} />
       <Route path="/lot/:keyword" component={Lot} />

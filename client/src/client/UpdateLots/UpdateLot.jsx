@@ -6,7 +6,9 @@ import { getSellerProducts } from '../../actions/productAction';
 import {useSelector , useDispatch} from "react-redux";
 import Loader from '../Loader/Loader';
 import { useAlert } from 'react-alert';
+import SellerProduct from './SellerProduct';
 import "./updateLotstyle.scss";
+import "../HomePage/homestyle.scss";
 
 const UpdateLot = () => {
 
@@ -53,12 +55,17 @@ const UpdateLot = () => {
 
       </div>
       <div className="row">
-
+{/* 
 {sellerproducts && sellerproducts.map(product => (
   <Product product = {product} />
 ))}
+ */}
 
 
+
+ {sellerproducts && sellerproducts.map(product => (
+  <SellerProduct product = {product} />
+))}
 
 
 
