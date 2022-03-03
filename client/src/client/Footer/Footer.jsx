@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./footer.scss";
 import { NavLink } from 'react-router-dom';
 import {AiOutlineRight , AiFillTwitterCircle} from 'react-icons/ai';
@@ -13,6 +13,48 @@ import 'font-awesome/css/font-awesome.min.css';
 
 
 const Footer = () => {
+
+  const [userData, setUserData] = useState({ name: "", email: "", subject: "", message: "" });
+
+
+  const userContact = async () => {
+
+    try {
+      const res = await fetch('/getdata', {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json"
+        },
+      });
+      const data = await res.json();
+      console.log(data);
+      setUserData({ ...userData, name: data.name, email: data.email });
+      // console.log(`data send to backend`);
+
+      if (!res.status === 200) {
+        const error = new Error(res.error);
+        throw error;
+
+      }
+
+
+    } catch (err) {
+      console.log(err);
+    }
+
+  }
+  /*  USEEFFECT HOOK -> RUN ONLY ONE TIME WHEN FUNCTION IS CALLED -> ARRAY DENOTES -> NO OF TYMS USEEFFECT CALLLS -> callProfilePage is async function -> so we can not use it inside useEffect */
+ 
+  useEffect(() => {
+
+    userContact();
+  }, []);
+
+
+
+
+
+
   return (
     <>
     <div className="footercls">
@@ -25,7 +67,7 @@ const Footer = () => {
         <h4>Join Our Newsletter</h4>
         <p>Be the first to know about exciting new Auctions , special events and much more</p>
         <form action="" method="post">
-          <input type="email" name="email"/><input type="submit" value="Subscribe"/>
+          <input type="email" name="email" value={userData.email}/><input type="submit" value="Subscribe"/>
         </form>
       </div>
     </div>

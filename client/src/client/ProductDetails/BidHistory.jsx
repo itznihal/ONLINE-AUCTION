@@ -18,7 +18,6 @@ var bidTime = new Date(bids.time);
    <>
    
    <tr>
-                    <th scope="row">1</th>
                     <td>{bids.bidder.name}</td>
                     <td>{bids.bidder.email}</td>
                     <td>{bids.bid}</td>

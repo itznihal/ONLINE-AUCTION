@@ -615,7 +615,6 @@ if (refreshTime > 1) {
               <table className="table table-hover">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
                     <th scope="col">Bidder Name</th>
                     <th scope="col">Bidder Email</th>
                     <th scope="col">Bid Ammount</th>
