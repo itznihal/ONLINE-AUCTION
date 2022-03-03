@@ -571,3 +571,72 @@ margin-top: 3em;
 .searchBox .placeBid button{
   border: 1px solid #4481eb;
 }
+
+
+.bidhistory .section-title {
+  text-align: center;
+  padding-bottom: 30px;
+  margin-top: 6em;
+  margin-bottom: 4em;
+}
+.bidhistory .section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  color: #222222;
+}
+.bidhistory .section-title h2::before, .section-title h2::after {
+  content: "";
+  width: 50px;
+  height: 2px;
+  background: #3498db;
+  display: inline-block;
+}
+.bidhistory .section-title h2::before {
+  margin: 0 15px 10px 0;
+}
+.bidhistory  .section-title h2::after {
+  margin: 0 0 10px 15px;
+}
+.bidhistory .section-title p {
+  margin: 15px 0 0 0;
+}
+
+
+
+// BID HISTORY CSS
+.bidhistory table {
+  display: table;
+  border-collapse: separate;
+  box-sizing: border-box;
+  text-indent: initial;
+  border-spacing: 2px;
+  border-color: gray;
+}
+
+.bidhistory .card {
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px grey;
+
+}
+
+.bidhistory .card-title {
+  padding: 20px 0 15px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #012970;
+  font-family: "Poppins", sans-serif;
+}
+
+.bidhistory .card-title span {
+  color: #899bbd;
+  font-size: 14px;
+  font-weight: 400;
+}
+.bidhistory .card-body {
+  padding: 0 20px 20px 20px;
+}
+

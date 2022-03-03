@@ -2,6 +2,7 @@ import React, { useEffect, useState , useRef } from 'react';
 import Img from "../images/values-1.png";
 import Img2 from "../images/values-3.png";
 import PlaceBid from './PlaceBid';
+import BidHistory from './BidHistory';
 import { Swiper , SwiperSlide} from "swiper/react";
 import SwiperCore , {Navigation, Pagination, Scrollbar, A11y , Autoplay , Thumbs} from "swiper";
 import {useSelector , useDispatch} from "react-redux";
@@ -9,6 +10,7 @@ import {clearErrors, getProductDetails} from "../../actions/productAction";
 import Loader from '../Loader/Loader';
 import { useAlert } from 'react-alert';
 import MetaData from '../MetaData/MetaData';
+import { MdVerified } from 'react-icons/md';
 
 
 import "./productdetails.scss";
@@ -212,7 +214,8 @@ const created_minutes = new Date(product.createdAt).getMinutes();
       
       // Winner Announce --> Working
       // console.log(winStatus);
-      
+      // { `: ${dateEnd.getDate()}-${dateEnd.getMonth()}-${dateEnd.getFullYear()}       ${dateEnd.getHours()}:${dateEnd.getMinutes()}  `}
+
       
       // console.log(sellerDetails.name);
       // console.log(product.bidEnd)
@@ -226,10 +229,10 @@ const created_minutes = new Date(product.createdAt).getMinutes();
       }
 
       // REFRESH WHEN AUCTION ENDED
-//       var refreshTime = (countdownDate - now);
-// if (refreshTime > 1) {
-//     setTimeout(function() { window.location.reload(true); }, refreshTime);
-// }
+      var refreshTime = (countdownDate - now);
+if (refreshTime > 1) {
+    setTimeout(function() { window.location.reload(true); }, refreshTime);
+}
       
 
 
@@ -417,6 +420,17 @@ const created_minutes = new Date(product.createdAt).getMinutes();
 
                  </div>
 
+
+                 <div className="row">
+                 <div className="alert alert-primary" role="alert">
+  <MdVerified/>  Seller is Verfied by BestBid
+</div>
+                 </div>
+
+                 {/* <div className="alert alert-primary" role="alert">
+  This is a success alert—check it out!
+</div> */}
+
                </div>
               </div>
               <div className="col-lg-4 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
@@ -560,7 +574,6 @@ const created_minutes = new Date(product.createdAt).getMinutes();
 
 
 
-
           </div></div>
 
 
@@ -570,8 +583,72 @@ const created_minutes = new Date(product.createdAt).getMinutes();
 </div>
 
 
+{/* BID HISTORY SECTION */}
 
 
+{ !(countdownDate > now) && 
+
+<div className="container-fluid nav_bg bidhistory">
+        <div className='row'>
+          <div className='col-10 mx-auto'>
+
+<div className="section-title" data-aos="fade-up">
+          <h2>Bid  History</h2>
+          <p>Bidding history of Auction</p>
+        </div>
+
+
+
+
+
+        <div className="card">
+            <div className="card-body">
+              <h5 className="card-title">{`Product is Bidded upto ${winStatus.bid}`}</h5>
+
+
+
+
+{/* {product.bids && product.bids.map(bids => (
+  <Product product = {product} />
+))} */}
+     
+              <table className="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Bidder Name</th>
+                    <th scope="col">Bidder Email</th>
+                    <th scope="col">Bid Ammount</th>
+                    <th scope="col">Bid Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {product.bids && product.bids.map(bids => (
+
+
+
+
+                  <BidHistory bids = {bids} />
+                 
+
+
+))}
+                  
+
+                 
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+
+
+
+</div>
+</div>
+</div>
+}
+{/* BID HISTORY ENDED */}
 
 
     </div></>
