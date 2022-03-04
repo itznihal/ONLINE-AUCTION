@@ -139,12 +139,12 @@ const SellerProduct = ({product}) => {
               </div>
               <div className='dltupdbtn'>
 
-
+              {/* window.open(`/updateauction/${product._id}`, "_blank"); */}
 
               <button type="button" className="btn btn-light" 
                     disabled = {!(countdownDate > now) ? true : false}
                     onClick={() => {
-      window.open(`/updateauction/${product._id}`, "_blank");
+                      history.push(`/updateauction/${product._id}`);
     }}
                      > <MdModeEdit/> </button>
                     

@@ -216,12 +216,24 @@ if(reader.readyState === 2){
                     value={category}
                     onChange = {(e) => setCategory(e.target.value)}>
                       <option selected value="">Choose Category</option>
-
+{/* 
                       <option value="Clothes">Clothes</option>
                     <option value="Electronics">Electronics</option>
                     <option value="Property">Property</option>
                     <option value="Household">Household</option>
-                    <option value="Vehicle">Vehicle</option>
+                    <option value="Vehicle">Vehicle</option> */}
+
+
+                    <option value="Celebrity's Product">Celebrity's Product</option>
+                    <option value="Art">Art</option>
+                    <option value="Property">Property</option>
+                    <option value="Jewelry">Jewelry</option>
+                    <option value="Vehicles">Vehicles</option>
+                    <option value="Sports equipment">Sports equipment</option>
+                    <option value="Industrial equipment">Industrial equipment</option>
+                    <option value="Machinery">Machinery</option>
+                    <option value="Rare&Old Heritage">Rare&Old Heritage</option>
+                    <option value="Other">Other</option>
 
 
                     </select>
