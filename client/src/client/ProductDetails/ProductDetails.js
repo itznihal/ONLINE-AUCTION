@@ -10,7 +10,8 @@ import {clearErrors, getProductDetails} from "../../actions/productAction";
 import Loader from '../Loader/Loader';
 import { useAlert } from 'react-alert';
 import MetaData from '../MetaData/MetaData';
-import { MdVerified } from 'react-icons/md';
+import { MdVerified , 
+  MdOutlinePayment } from 'react-icons/md';
 
 
 import "./productdetails.scss";
@@ -36,6 +37,8 @@ SwiperCore.use([Navigation , Pagination , Thumbs , Autoplay]);
 const ProductDetails = ({match}) => {
 
     const [didMount, setDidMount] = useState(false); 
+    const [userData, setUserData] = useState({  _id : "" });
+
 
 // var winStatus = "init";
     // FIRST STEP
@@ -45,6 +48,39 @@ const ProductDetails = ({match}) => {
 const {product , loading , error , sellerDetails ,  winStatus} = useSelector((state) => state.productDetails);
 //  winStatus  = useSelector((state) => state.productDetails);
 // SECOND STEP
+
+
+// GET USER DATA
+
+const userContact = async () => {
+
+  try {
+    const res = await fetch('/getdata', {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      },
+    });
+    const data = await res.json();
+    console.log(`id is ${data._id}`);
+    // console.log(`data send to backend`);
+    setUserData({ _id: data._id });
+    if (!res.status === 200) {
+      const error = new Error(res.error);
+      throw error;
+
+    }
+
+
+  } catch (err) {
+    console.log(err);
+  }
+
+}
+
+
+// ENDED
+
     useEffect(() => {
         if(error){
             alert.error(error);
@@ -53,6 +89,7 @@ const {product , loading , error , sellerDetails ,  winStatus} = useSelector((st
         setDidMount(true);
         // at backend -> req.params.id and at Front end -> match.params.id
     dispatch(getProductDetails(match.params.id));
+    userContact();
 
     return () => setDidMount(false);
 
@@ -77,6 +114,9 @@ const {product , loading , error , sellerDetails ,  winStatus} = useSelector((st
     )
     ))}
 
+
+
+    
 
     // for( let i = 0 ; i< 5 ; i+=1){
     //      slides.push(
@@ -235,7 +275,7 @@ if (refreshTime > 1) {
 }
       
 
-
+console.log(userData._id);
 // console.log(sellerDetails.name);
 
   return (
@@ -526,11 +566,14 @@ if (refreshTime > 1) {
                 </div>
 
 
+
                 <div className="row">
                   <div className="col-lg-3 col-md-4 label ">Winner Email</div>
                   <div className="col-lg-9 col-md-8">{winStatus.bidder.email}</div>
                 </div>
 
+
+                
 
                 <div className="row">
                   <div className="col-lg-3 col-md-4 label ">Winner Phone</div>
@@ -543,6 +586,21 @@ if (refreshTime > 1) {
                   <div className="col-lg-9 col-md-8">{winStatus.bid}</div>
                 </div>
 
+
+{/* <div className="row">
+                  <div className="col-lg-3 col-md-4 label ">Winner Email</div>
+                  <div className="col-lg-9 col-md-8">{winStatus.bidder._id}</div>
+                </div> */}
+{userData._id === winStatus.bidder._id &&
+  <div className="row">
+                 <div className="alert alert-primary" role="alert">
+  <MdVerified/>  You Won. Congratulations!
+</div>
+<div className='stripecls'>
+<button class="button"><
+MdOutlinePayment/> <span>Connect with Stripe </span></button>
+</div>
+                 </div> }
 
 
 

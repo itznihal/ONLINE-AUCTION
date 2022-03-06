@@ -1,5 +1,6 @@
 import React from 'react';
 import "./servicestyle.scss";
+import MetaData from '../MetaData/MetaData';
 
 import Img from "../images/values-1.png";
 import { NavLink } from 'react-router-dom';
@@ -10,6 +11,7 @@ import {AiFillUpCircle} from 'react-icons/ai';
 const Service = () => {
   return (
   <>
+  <MetaData title="SERVICES"></MetaData>
      {/* Component 1 */}
 
      <section id='header1' className='d-flex align-items-center'>

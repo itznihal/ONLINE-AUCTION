@@ -5,6 +5,7 @@ import Img from "../images/values-1.png";
 import ProfileImg from "../images/profile-icon-png-899.png";
 import { AiOutlineUpload , AiFillDelete } from 'react-icons/ai';
 import {  BsCloudUploadFill} from 'react-icons/bs';
+import MetaData from '../MetaData/MetaData';
 
 
 
@@ -163,7 +164,7 @@ const passwordChangeFun = async () => {
 
 
   return (<>
-
+<MetaData title="BEST BID"></MetaData>
 
 {/* <h1>Hello World</h1> */}
 

@@ -50,7 +50,9 @@ const Footer = () => {
     userContact();
   }, []);
 
-
+  const newsLetterSubmitHandler = () => {
+    console.log("Handler called");
+  }
 
 
 
@@ -66,7 +68,7 @@ const Footer = () => {
       <div className="col-lg-6">
         <h4>Join Our Newsletter</h4>
         <p>Be the first to know about exciting new Auctions , special events and much more</p>
-        <form action="" method="post">
+        <form    onSubmit={newsLetterSubmitHandler}>
           <input type="email" name="email" value={userData.email}/><input type="submit" value="Subscribe"/>
         </form>
       </div>

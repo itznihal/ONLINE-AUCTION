@@ -92,7 +92,7 @@ dispatch(getProduct(keyword , currentPage , price , category));
                 Filters
               </h2>
 
-              <div className="filter-container">
+              {/* <div className="filter-container">
                 <div className="filter-title">Search among</div>
                 <div className="filter-list">
                   <div>
@@ -106,7 +106,7 @@ dispatch(getProduct(keyword , currentPage , price , category));
                   </div>
                   
                 </div>
-              </div>
+              </div> */}
 
 
 

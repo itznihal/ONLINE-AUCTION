@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "./contactstyle.scss";
+import MetaData from '../MetaData/MetaData';
+
 
 const Contact = () => {
 
@@ -92,6 +94,7 @@ const Contact = () => {
 
   return (
     <>
+    <MetaData title="Contact Us"></MetaData>
       {/* <h1 id='contchead'> Contact Page</h1> */}
 
       <div className="container-fluid nav_bg contactpge">

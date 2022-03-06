@@ -102,9 +102,10 @@ const SellerProduct = ({product}) => {
 
   return (
   
-
+    <>{loading ? (<Loader/>) :(
 
 <>
+<MetaData title="My Products"></MetaData>
 <div className="col-sm-6 col-lg-4 product-mediaquery">
           <div className="box">
             <div className="img-box">
@@ -157,6 +158,7 @@ const SellerProduct = ({product}) => {
           </div>
         </div>
 </>
+)}</>
 
   );
 };

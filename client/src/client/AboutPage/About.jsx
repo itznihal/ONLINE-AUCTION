@@ -2,6 +2,8 @@ import React from 'react';
 import Img from "../images/values-1.png";
 import Img2 from "../images/values-3.png";
 import Img3 from "../images/features.png";
+import Loader from '../Loader/Loader';
+import MetaData from '../MetaData/MetaData';
 
 
 import "./aboutstyle.scss";
@@ -10,6 +12,7 @@ import { NavLink } from 'react-router-dom';
 const About = () => {
   return (
     <>
+    <MetaData title="ABOUT US"></MetaData>
       {/* <h1>Welcome About Page</h1> */}
 
 
@@ -117,7 +120,9 @@ const About = () => {
       </div>
 
 
-    </>);
+    </>
+    
+    );
 };
 
 export default About;
