@@ -10,6 +10,7 @@ import {clearErrors, getProductDetails} from "../../actions/productAction";
 import Loader from '../Loader/Loader';
 import { useAlert } from 'react-alert';
 import MetaData from '../MetaData/MetaData';
+import StripeCheckout from "react-stripe-checkout";
 import { MdVerified , 
   MdOutlinePayment } from 'react-icons/md';
 
@@ -39,6 +40,12 @@ const ProductDetails = ({match}) => {
     const [didMount, setDidMount] = useState(false); 
     const [userData, setUserData] = useState({  _id : "" });
 
+    // FOR PAYMENT
+    const [items, setItems]=useState({
+      name:"Buy item",
+      price: 10,
+      productBy:"Seller name"
+    });
 
 // var winStatus = "init";
     // FIRST STEP
@@ -114,6 +121,31 @@ const userContact = async () => {
     )
     ))}
 
+
+    // FOR PAYMENT
+  
+  var flag = true;
+    const makePayment=token=>{  
+      const body = {
+        token,
+        items
+      }
+      const headers={
+        "Content-Type":"application/json"
+      }
+  
+      return fetch(`/payment`,{
+        method:"POST",
+        headers,
+        body: JSON.stringify(body)
+      }).then(response=>{
+        console.log("RESPONSE",response)
+        const{status}=response;
+        console.log("STATUS",status);
+        
+      })
+      .catch(error=>console.log(error));
+    }
 
 
     
@@ -276,6 +308,7 @@ if (refreshTime > 1) {
       
 
 console.log(userData._id);
+console.log(flag);
 // console.log(sellerDetails.name);
 
   return (
@@ -596,10 +629,22 @@ console.log(userData._id);
                  <div className="alert alert-primary" role="alert">
   <MdVerified/>  You Won. Congratulations!
 </div>
+
+{ flag === true && 
 <div className='stripecls'>
-<button class="button"><
+<StripeCheckout
+        stripeKey="pk_test_51KVzMySFWvR6XE1YKfGlTIsCD9C6Iwr2hy4H5ZkeddvgmJwUAGOJcOvWE6FeFh2qkANlnXD6f10wdZuuBHi0CoCj00s25fgrYw"
+        token={makePayment}
+        name="Buy here!!"
+        amount={items.price}
+        shippingAddress
+        billingAddress
+        >
+<button class="button" onClick={() => flag=false}><
 MdOutlinePayment/> <span>Connect with Stripe </span></button>
+</StripeCheckout>
 </div>
+}
                  </div> }
 
 

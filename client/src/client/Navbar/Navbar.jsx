@@ -22,7 +22,7 @@ if(state){
         </li>
 
        
-<li className="dropdown nav-item px-3 mx-auto licls"><NavLink to="#" className="nav-link"><span id='headrdr'>My Lots</span> </NavLink>
+<li className="dropdown nav-item px-3 mx-auto licls"><NavLink to="#" className="nav-link"><span id='headrdr'>Lots</span> </NavLink>
             <ul className='ddlist'>
               <li><NavLink to="/addlot" excat className="nav-link">Add Lot</NavLink></li>
               <li><NavLink to="/updatelot" excat className="nav-link">My Lots</NavLink></li>
@@ -33,7 +33,7 @@ if(state){
 
 
         <li className="nav-item px-3 mx-auto licls">
-          <NavLink activeClassName = 'menu_active' excat className="nav-link" to="/lot">Lot</NavLink>
+          <NavLink activeClassName = 'menu_active' excat className="nav-link" to="/lot">Bid & Buy</NavLink>
         </li>
 
         <li className="nav-item px-3 mx-auto licls">
@@ -72,10 +72,10 @@ if(state){
         </li>
 
        
-<li className="dropdown nav-item px-3 mx-auto licls"><NavLink to="#" className="nav-link"><span id='headrdr'>My Lots</span> </NavLink>
+<li className="dropdown nav-item px-3 mx-auto licls"><NavLink to="#" className="nav-link"><span id='headrdr'>Lots</span> </NavLink>
             <ul className='ddlist'>
               <li><NavLink to="/addlot" excat className="nav-link">Add Lot</NavLink></li>
-              <li><NavLink to="/updatelot" excat className="nav-link">Update Lot</NavLink></li>
+              <li><NavLink to="/updatelot" excat className="nav-link">My Lots</NavLink></li>
               
             </ul>
           </li>
@@ -83,7 +83,7 @@ if(state){
 
 
         <li className="nav-item px-3 mx-auto licls">
-          <NavLink activeClassName = 'menu_active' excat className="nav-link" to="/lot">Lot</NavLink>
+          <NavLink activeClassName = 'menu_active' excat className="nav-link" to="/lot">Bid & Buy</NavLink>
         </li>
 
         <li className="nav-item px-3 mx-auto licls">

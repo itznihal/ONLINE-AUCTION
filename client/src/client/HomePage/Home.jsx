@@ -87,7 +87,7 @@ dispatch(getProduct());
 
 
 
-      <div className="container-fluid nav_bg">
+      <div className="container-fluid nav_bg sectiontwocls">
           <div className='row'>
             <div className='col-10 mx-auto'>
 
@@ -150,10 +150,10 @@ any update, the database will be updated. </p>
 
 
 
-    <section className="section">
+    <section className="section secthreecls">
 
       <div className="container">
-        <div className="row justify-content-center text-center mb-5" data-aos="zoom-in" data-aos-delay="200">
+        <div className="row justify-content-center text-center mb-5 homeimgcls" data-aos="zoom-in" data-aos-delay="200">
           <div className="col-md-6 mb-5">
             <img src={Img} alt="Auction Image" className="img-fluid"/>
           </div>
@@ -187,9 +187,9 @@ to auction place. </p>
 
     </section>
 
-    <section className="section">
+    <section className="section secfourcls">
       <div className="container">
-        <div className="row align-items-center">
+        <div className="row align-items-center crtlot">
           <div className="col-md-4 me-auto" data-aos="fade-up" data-aos-delay="400">
             <h2 className="mb-4">Create a lot</h2>
             <p className="mb-4">All the valid information related to item for bidding
