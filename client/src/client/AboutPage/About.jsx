@@ -3,6 +3,7 @@ import Img from "../images/values-1.png";
 import Img2 from "../images/values-3.png";
 import Img3 from "../images/features.png";
 import Loader from '../Loader/Loader';
+import { FcNext } from 'react-icons/fc';
 import MetaData from '../MetaData/MetaData';
 
 
@@ -38,7 +39,7 @@ const About = () => {
 
 
 
-                <div className="row">
+                <div className="row abtclssection">
 
                   <div className="col-lg-4" data-aos="fade-up" data-aos-delay="200">
                     <div className="box">
@@ -150,27 +151,27 @@ const About = () => {
 
             {/*  About Writtern */}
             <section id="about" className="about">
-              <div className="container" data-aos="fade-up">
+              <div className="container sectionfivecls" data-aos="fade-up">
 
                 <div className="section-title">
                   <h2>Our Values</h2>
                   <p>Nonprofit Auction Software</p>
                 </div>
 
-                <div className="row content">
+                <div className="row content ourvaluescls">
                   <div className="col-lg-6">
                     <p>
-                      Every day, people build businesses on eAuction. Nonprofit organizations raise vital funds. Entrepreneurs gain new skills and access to new markets where they can turn their dreams and ideas into business success.
+                    <FcNext/>Every day, people build businesses on eAuction. Nonprofit organizations raise vital funds. Entrepreneurs gain new skills and access to new markets where they can turn their dreams and ideas into business success.
 
                     </p>
                     <p>
-                      eAuction creates inspiring ecommerce experiences for our buyers, sellers and developers. Embracing innovation has been a cornerstone of our growth and customer loyalty over the past 25 years.
+                    <FcNext/> eAuction creates inspiring ecommerce experiences for our buyers, sellers and developers. Embracing innovation has been a cornerstone of our growth and customer loyalty over the past 25 years.
                     </p>
 
                   </div>
                   <div className="col-lg-6 pt-4 pt-lg-0">
                     <p>
-                      Greater Giving works exclusively with schools and nonprofits across the nation—offering integrated technologies to help simplify event management, quickly train volunteers, streamline check-in and check-out and raise more funds.
+                    <FcNext/> Greater Giving works exclusively with schools and nonprofits across the nation—offering integrated technologies to help simplify event management, quickly train volunteers, streamline check-in and check-out and raise more funds.
                     </p>
                     <NavLink to="/" className="btn-learn-more">Learn More</NavLink>
                   </div>

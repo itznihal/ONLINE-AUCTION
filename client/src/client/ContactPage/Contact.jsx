@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import "./contactstyle.scss";
 import MetaData from '../MetaData/MetaData';
+import { HiLocationMarker } from 'react-icons/hi';
+import { MdEmail} from 'react-icons/md';
+
+
 
 
 const Contact = () => {
@@ -118,7 +122,7 @@ const Contact = () => {
 
                   <div className="box" data-aos="fade-up-right" data-aos-delay="400">
                     <div className="step">
-                      <div className="icon"><i className="fa fa-map-marker" aria-hidden="true"></i>
+                      <div className="icon"><HiLocationMarker/>
                       </div>
                       <div className="text">
                         <h3>Address</h3>
@@ -141,7 +145,7 @@ const Contact = () => {
                   </div>
                   <div className="box" data-aos="zoom-in-left" data-aos-delay="600">
                     <div className="step">
-                      <div className="icon"><i className="fa fa-envelope-o" aria-hidden="true"></i></div>
+                      <div className="icon"><MdEmail/></div>
                       <div className="text">
                         <h3>Email</h3>
                         <p>bestbid@gmial.com</p>

@@ -6,13 +6,14 @@ import register from '../images/register.svg';
 import 'font-awesome/css/font-awesome.min.css';
 import { NavLink, useHistory } from 'react-router-dom';
 import  {UserContext} from '../../App';
+import { useAlert } from 'react-alert';
 
 
 // import {RiLockPasswordFill} from 'react-icons/ri';
 
 
 const Signup = () => {
-
+  const alert = useAlert();
 
 const {state, dispatch} = useContext(UserContext);
 
@@ -53,10 +54,13 @@ const {state, dispatch} = useContext(UserContext);
     const data = await res.json();
 console.log(data);
     if (res.status === 400 || !data) {
-      window.alert("Invalid Regestration");
-      console.log("Invalid Regestration");
+      // window.alert("Invalid Regestration");
+      alert.error(data.error);
+      console.log(data);
     } else {
-      window.alert("Regestration Successful");
+      // window.alert("Regestration Successful");
+      alert.success("Regestration Successful");
+
       console.log("Regestration Successful");
 
       setFlag(!flag);
@@ -75,6 +79,11 @@ const [password , setPassword] = useState('');
 
 
 const loginUser =async (e) =>{
+
+//   if(this.state.value.length < 8) {
+//     return false;
+// }
+
   e.preventDefault();
   const res = await fetch('/signin' , {
     method: "POST",
@@ -90,13 +99,19 @@ const loginUser =async (e) =>{
   const data = res.json();
 
   if(res.status === 400 || !data){
-    window.alert("Invalid Credential");
+    // window.alert("Invalid Credential");
+    alert.error("Invalid Credential");
+
   }else{
     dispatch({type:"USER" , payload:true});
-    window.alert("login Successful");
+    // window.alert("login Successful");
+    alert.success("login Successful");
+
     history.push('/');
 
   }
+
+
 }
 
   return (

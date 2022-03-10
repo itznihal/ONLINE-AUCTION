@@ -20,7 +20,7 @@ const Service = () => {
 <div className="container-fluid nav_bg">
   <div className='row'>
     <div className='col-10 mx-auto'>
-      <div className='row'>
+      <div className='row srvccls'>
       <div className='col-md-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex justify-content-center flex-column' data-aos="fade-right" data-aos-delay="100">
       <h1> <strong className='brand-name'>Bid and sell items with Online Auction</strong></h1>
         <h2 className="my-3">
@@ -52,7 +52,7 @@ const Service = () => {
 <div className="container-fluid nav_bg">
   <div className='row'>
     <div className='col-10 mx-auto'>
-      <div className='row'>
+      <div className='row srvccls'>
       <div className='col-md-6 pt-5 pt-lg-0 order-2 order-lg-2 d-flex justify-content-center flex-column' data-aos="fade-right" data-aos-delay="300">
         <h1> <strong className='brand-name'>Bid and sell items with Online Auction</strong></h1>
 
@@ -88,8 +88,8 @@ const Service = () => {
 
 <div className="container-fluid nav_bg">
   <div className='row'>
-    <div className='col-10 mx-auto'>
-      <div className='row'>
+    <div className='col-10 mx-auto colcls'>
+      <div className='row srvccls'>
       <div className='col-md-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex justify-content-center flex-column' data-aos="fade-rightt" data-aos-delay="500">
       <h1> <strong className='brand-name'>Bid and sell items with Online Auction</strong></h1>
 

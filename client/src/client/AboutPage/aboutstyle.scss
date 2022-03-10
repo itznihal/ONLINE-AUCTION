@@ -57,8 +57,8 @@
         // padding: 80px 0;
 
            overflow: hidden;
-    margin-top: 6em;
-    margin-bottom: 6em;
+    margin-top: 8em;
+    margin-bottom: 8em;
       }
 
       .abtcls .section-title {
@@ -104,7 +104,7 @@
     left: 0;
     top: 2px;
     font-size: 20px;
-    color: #2487ce;
+    color: #4481eb;
     line-height: 1;
   }
   .about .content p:last-child {
@@ -120,15 +120,15 @@
     border-radius: 5px;
     transition: 0.3s;
     line-height: 1;
-    color: #2487ce;
+    color: #4481eb;
     -webkit-animation-delay: 0.8s;
     animation-delay: 0.8s;
     margin-top: 6px;
-    border: 2px solid #2487ce;
+    border: 2px solid #4481eb;
     text-decoration: none;
   }
   .about .content .btn-learn-more:hover {
-    background: #2487ce;
+    background: #4481eb;
     color: #fff;
     text-decoration: none;
   }
@@ -180,7 +180,7 @@
   .why-us .content h3 {
     font-weight: 400;
     font-size: 34px;
-    color: #37517e;
+    color: #4481eb;
   }
   .why-us .content h4 {
     font-size: 20px;
@@ -227,7 +227,7 @@
 
   }
   .why-us .accordion-list span {
-    color: #47b2e4;
+    color: #4481eb;
     font-weight: 600;
     font-size: 18px;
     padding-right: 10px;
@@ -250,7 +250,7 @@
     text-decoration: none;
   }
   .why-us .accordion-list a.collapsed:hover {
-    color: #47b2e4;
+    color: #4481eb;
     text-decoration: none;
   }
   .why-us .accordion-list a.collapsed .icon-show {
@@ -290,3 +290,22 @@
   }
 
   
+  // OUR VALUES 
+  // margin-top: 46px;
+  // margin-bottom: 3rem;
+  // font-size: 18px;
+  .ourvaluescls p{
+ margin-top: 46px;
+  margin-bottom: 3rem;
+  font-size: 18px;
+  }
+
+  .sectionfivecls{
+    margin-top: 3em;
+    margin-bottom: 7em;
+  }
+
+  .abtclssection{
+    margin-top: 4em;
+    margin-bottom: 4em;
+  }

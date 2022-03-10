@@ -14,7 +14,7 @@
 
 
 #header1 .brand-name{
-    color: #3498db;
+    color: #4481eb;
 
 }
 
@@ -32,15 +32,15 @@
     padding: 10px 30px;
     border-radius: 50px;
     transition: 0.5s;
-    color: #3498db;
-    border: 2px solid #3498db;
+    color: #4481eb;
+    border: 2px solid #4481eb;
     text-decoration: none;
     
 
 }
 
 #header1 .btn-get-started:hover{
-    background: #3498db;
+    background: #4481eb;
     color: #fff;
 }
 
@@ -108,7 +108,7 @@
     z-index: -1;
   }
   .services .icon-box:hover::before {
-    background: #3498db;
+    background: #4481eb;
     right: 0;
     top: 0;
     width: 100%;
@@ -123,7 +123,7 @@
     border-radius: 50%;
     width: 60px;
     height: 60px;
-    background: #3498db;
+    background: #4481eb;
     transition: all 0.3s ease-in-out;
   }
 
@@ -158,15 +158,19 @@
     background: #fff;
   }
    .icon-box:hover .icon i {
-    color: #3498db;
+    color: #4481eb;
   }
 
 
   // My Service heading
-  
+  .services{
+
+margin-bottom: 10em;
+
+  }
 .services .section-title {
   text-align: center;
-  padding-bottom: 30px;
+  margin-bottom: 8em;
 }
 .services .section-title h2 {
   font-size: 32px;
@@ -179,7 +183,7 @@
   content: "";
   width: 50px;
   height: 2px;
-  background: #3498db;
+  background: #4481eb;
   display: inline-block;
 }
 .services .section-title h2::before {
@@ -190,4 +194,12 @@
 }
 .services .section-title p {
   margin: 15px 0 0 0;
+}
+
+.srvccls{
+  margin-bottom: 4em;
+}
+
+.colcls{
+  margin-bottom: 6em;
 }
