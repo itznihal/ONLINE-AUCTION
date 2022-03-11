@@ -39,6 +39,7 @@ const ProductDetails = ({match}) => {
 
     const [didMount, setDidMount] = useState(false); 
     const [userData, setUserData] = useState({  _id : "" });
+    const [showButton, setShowButton] = useState(true);
 
     // FOR PAYMENT
     const [items, setItems]=useState({
@@ -124,7 +125,6 @@ const userContact = async () => {
 
     // FOR PAYMENT
   
-  var flag = true;
     const makePayment=token=>{  
       const body = {
         token,
@@ -142,6 +142,7 @@ const userContact = async () => {
         console.log("RESPONSE",response)
         const{status}=response;
         console.log("STATUS",status);
+        setShowButton(false);
         
       })
       .catch(error=>console.log(error));
@@ -308,8 +309,12 @@ if (refreshTime > 1) {
       
 
 console.log(userData._id);
-console.log(flag);
+console.log(showButton);
 // console.log(sellerDetails.name);
+
+
+
+
 
   return (
     <>{loading ? (<Loader/>) :(
@@ -630,20 +635,21 @@ console.log(flag);
   <MdVerified/>  You Won. Congratulations!
 </div>
 
-{ flag === true && 
+{ showButton  && (
 <div className='stripecls'>
 <StripeCheckout
         stripeKey="pk_test_51KVzMySFWvR6XE1YKfGlTIsCD9C6Iwr2hy4H5ZkeddvgmJwUAGOJcOvWE6FeFh2qkANlnXD6f10wdZuuBHi0CoCj00s25fgrYw"
         token={makePayment}
         name="Buy here!!"
-        amount={items.price}
+        amount={winStatus.bid}
         shippingAddress
         billingAddress
         >
-<button class="button" onClick={() => flag=false}><
+<button class="button" ><
 MdOutlinePayment/> <span>Connect with Stripe </span></button>
 </StripeCheckout>
 </div>
+)
 }
                  </div> }
 

@@ -36,11 +36,11 @@ const BidStatus = () => {
 
 <div className="container-fluid  bidstatuscls">
         <div className='row'>
-          <div className='col-10 mx-auto'>
+          <div className='col-10 mx-auto' >
 
 {/* <h1>Hello World</h1> */}
 
-<section className="product_section layout_padding">
+<section className="product_section layout_padding" >
     <div className="container">
       <div className="heading_container heading_center">
       <div className="section-title" data-aos="fade-up">

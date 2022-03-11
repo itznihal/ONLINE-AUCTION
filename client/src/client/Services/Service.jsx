@@ -3,6 +3,8 @@ import "./servicestyle.scss";
 import MetaData from '../MetaData/MetaData';
 
 import Img from "../images/values-1.png";
+import Team from "../images/team.png";
+
 import { NavLink } from 'react-router-dom';
 import { MdSell , MdLocalShipping  } from 'react-icons/md';
 import {AiFillUpCircle} from 'react-icons/ai';
@@ -18,20 +20,20 @@ const Service = () => {
 
 
 <div className="container-fluid nav_bg">
-  <div className='row'>
+  <div className='row firstele'>
     <div className='col-10 mx-auto'>
       <div className='row srvccls'>
       <div className='col-md-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex justify-content-center flex-column' data-aos="fade-right" data-aos-delay="100">
-      <h1> <strong className='brand-name'>Bid and sell items with Online Auction</strong></h1>
+      <h1> <strong className='brand-name'>Our Team</strong></h1>
         <h2 className="my-3">
-          An online auction is a service in which auction users or participants sell or bid for products or services via the Internet.
+        Team BestBid, comes up with a idea to provide a platform for the sellers who want to sell thier product via bidding and want to get the best price. Our team verifies all the users. Team bestbid tries to make this platform 100% secure and safe. 
         </h2>
         
 
       </div>
 
-      <div className='col-lg-6 order-1 order-lg-2 header-img ' data-aos="fade-left" data-aos-delay="200">
-          <img src={Img} className='img-fluid animated' alt="auction img" />
+      <div className='col-lg-6 order-1 order-lg-2 header-img imgabtcls' data-aos="fade-left" data-aos-delay="200">
+          <img src={Team} className='img-fluid animated imgabt' alt="auction img" />
 
       </div>
       </div>
@@ -54,10 +56,10 @@ const Service = () => {
     <div className='col-10 mx-auto'>
       <div className='row srvccls'>
       <div className='col-md-6 pt-5 pt-lg-0 order-2 order-lg-2 d-flex justify-content-center flex-column' data-aos="fade-right" data-aos-delay="300">
-        <h1> <strong className='brand-name'>Bid and sell items with Online Auction</strong></h1>
+        <h1> <strong className='brand-name'>Our Vision</strong></h1>
 
         <h2 className="my-3">
-          An online auction is a service in which auction users or participants sell or bid for products or services via the Internet.
+        Auction in the physical mode is little difficult. Also, sellers can't put their product Globally for selling. So team bestbid has came with the vision to put your product globally for online bidding and get the best price
         </h2>
         
 
@@ -79,39 +81,6 @@ const Service = () => {
 
 
 
-{/* Component 3 */}
-
-
-
-<section id='header1' className='d-flex align-items-center'>
-
-
-<div className="container-fluid nav_bg">
-  <div className='row'>
-    <div className='col-10 mx-auto colcls'>
-      <div className='row srvccls'>
-      <div className='col-md-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex justify-content-center flex-column' data-aos="fade-rightt" data-aos-delay="500">
-      <h1> <strong className='brand-name'>Bid and sell items with Online Auction</strong></h1>
-
-        <h2 className="my-3">
-          An online auction is a service in which auction users or participants sell or bid for products or services via the Internet.
-        </h2>
-        
-
-      </div>
-
-      <div className='col-lg-6 order-1 order-lg-2 header-img ' data-aos="fade-left" data-aos-delay="600">
-          <img src={Img} className='img-fluid animated' alt="auction img" />
-
-      </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-
-</section>
 
 
 
@@ -126,7 +95,7 @@ const Service = () => {
 
         <div className="section-title" data-aos="fade-up">
           <h2>Services</h2>
-          <p>The purpose of the system is to make an auction system online with proper 
+          <p>The purpose of the system is to make an Online auction system  with proper 
 security</p>
         </div>
 

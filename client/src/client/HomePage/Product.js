@@ -59,7 +59,7 @@ var dateEnd = new Date(product.bidEnd);
   return (
     <>
 <div className="col-sm-6 col-lg-4 product-mediaquery">
-          <div className="box">
+          <div className="box" data-aos="fade-up" data-aos-delay="200" >
             <div className="img-box">
               <img src={product.images[0].url} alt={product.itemName}/>
               <Link to={`/product/${product._id}`} className="add_cart_btn">

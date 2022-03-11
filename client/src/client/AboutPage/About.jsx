@@ -2,6 +2,12 @@ import React from 'react';
 import Img from "../images/values-1.png";
 import Img2 from "../images/values-3.png";
 import Img3 from "../images/features.png";
+import About3 from "../images/about3.jpg";
+
+import About1 from "../images/about1.jpg";
+
+import About4 from "../images/about4.png";
+import Team from "../images/team.png";
 import Loader from '../Loader/Loader';
 import { FcNext } from 'react-icons/fc';
 import MetaData from '../MetaData/MetaData';
@@ -43,28 +49,28 @@ const About = () => {
 
                   <div className="col-lg-4" data-aos="fade-up" data-aos-delay="200">
                     <div className="box">
-                      <img src={Img} className="img-fluid" alt="" />
-                      <h3>About 1</h3>
-                      <p>Auction in physical mode, is some kind of difficult if you have to travel
-                        to auction place. Through this app, a person with good internet can easily
-                        login and see their near by places where the auctions are holding</p>
+                      <img src={About4} className="img-fluid" alt="" />
+                      <h3>Mission</h3>
+                      <p>Auction in physical mode, is some kind of difficult. People cannot sell product globally.
+                        You have to travel
+                        to auction place. Through this app, a person with good internet can easily, sell thier product via bidding.</p>
                     </div>
                   </div>
 
                   <div className="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
                     <div className="box">
-                      <img src={Img2} className="img-fluid" alt="" />
-                      <h3>About 2</h3>
+                      <img src={About3} className="img-fluid" alt="" />
+                      <h3>Ease of Use</h3>
                       <p>Result can generated very easily through the website only, without third
-                        party interruption.</p>
+                        party interruption.All the sellers and bidders are verified by our system.</p>
                     </div>
                   </div>
 
                   <div className="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
                     <div className="box">
-                      <img src={Img3} className="img-fluid" alt="" />
-                      <h3>About 3</h3>
-                      <p>Also, this web-app provides a sorting through price and categories. So a
+                      <img src={About1} className="img-fluid" alt="" />
+                      <h3>Mordern Web</h3>
+                      <p>Our, Web-app is providing a Filter functionality.A
                         customer or bidder can filter it out by their choices</p>
                     </div>
                   </div>

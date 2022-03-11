@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import "./footer.scss";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
+
 import {AiOutlineRight , AiFillTwitterCircle} from 'react-icons/ai';
+import {AiFillLinkedin} from 'react-icons/ai';
 
 import {FiTwitter , FiFacebook , FiInstagram , FiMail} from 'react-icons/fi';
 // import {BsFacebook} from 'react-icons/bs';
@@ -15,8 +17,8 @@ import 'font-awesome/css/font-awesome.min.css';
 const Footer = () => {
 
   const [userData, setUserData] = useState({ name: "", email: "", subject: "", message: "" });
-
-
+  const [showButton, setShowButton] = useState(true);
+  const history = useHistory();
   const userContact = async () => {
 
     try {
@@ -52,6 +54,9 @@ const Footer = () => {
 
   const newsLetterSubmitHandler = () => {
     console.log("Handler called");
+    history.push('/');
+        setShowButton(false);
+
   }
 
 
@@ -61,7 +66,7 @@ const Footer = () => {
     <>
     <div className="footercls">
     <footer id="footer">
-
+    {showButton && (
 <div className="footer-newsletter">
   <div className="container">
     <div className="row justify-content-center">
@@ -75,6 +80,7 @@ const Footer = () => {
     </div>
   </div>
 </div>
+)}
 
 <div className="footer-top">
   <div className="container">
@@ -98,7 +104,6 @@ const Footer = () => {
         {/* <li><NavLink to="/addlot" excat className="nav-link">Add Lot</NavLink></li> */}
         <li><AiOutlineRight/> <NavLink to="/" excat className="nav-link">About us</NavLink></li>
         <li><AiOutlineRight/> <NavLink to="/service" excat className="nav-link">Services</NavLink></li>
-        <li><AiOutlineRight/> <NavLink to="/service" excat className="nav-link">Terms of Services</NavLink></li>
         <li><AiOutlineRight/> <NavLink to="/contact" excat className="nav-link">Contact Us</NavLink></li>
 
           
@@ -113,7 +118,6 @@ const Footer = () => {
         <li><AiOutlineRight/> <NavLink to="/signin" excat className="nav-link">Sign In</NavLink></li>
         <li><AiOutlineRight/> <NavLink to="/signin" excat className="nav-link">Register</NavLink></li>
         <li><AiOutlineRight/> <NavLink to="/lot" excat className="nav-link">Active Auctions</NavLink></li>
-        <li><AiOutlineRight/> <NavLink to="/contact" excat className="nav-link">Contact Us</NavLink></li>
 
 
 
@@ -126,17 +130,16 @@ const Footer = () => {
         <p>Best Bid Blogs</p>
         <div className="social-links mt-3">
 
-        <NavLink to="/contact" excat className="nav-link twitter"><FiTwitter/></NavLink>
-        <NavLink to="/contact" excat className="nav-link twitter"><FiFacebook/></NavLink>
+        {/* <NavLink to="https://twitter.com/RiyaPar18563538?t=XzT0mte2elxP7XWMUQSD7w&s=08" excat className="nav-link twitter"><FiTwitter/></NavLink>
+        <NavLink to="/contact" excat className="nav-link twitter"><AiFillLinkedin/></NavLink>
         <NavLink to="/contact" excat className="nav-link twitter"><FiInstagram/></NavLink>
         <NavLink to="/contact" excat className="nav-link twitter"><FiMail/></NavLink>
+ */}
 
-
-          {/* <a href="#" className="twitter"><i className="bx bxl-twitter"></i></a>
-          <a href="#" className="facebook"><i className="bx bxl-facebook"></i></a>
-          <a href="#" className="instagram"><i className="bx bxl-instagram"></i></a>
-          <a href="#" className="google-plus"><i className="bx bxl-skype"></i></a>
-          <a href="#" className="linkedin"><i className="bx bxl-linkedin"></i></a> */}
+          <a href="https://twitter.com/RiyaPar18563538?t=XzT0mte2elxP7XWMUQSD7w&s=08" className="nav-link twitter"><FiTwitter/></a>
+          <a href="https://www.linkedin.com/in/riya-parmar-4ba3a01b6" className="nav-link twitter"><AiFillLinkedin/></a>
+          <a href="https://www.instagram.com/invites/contact/?i=rnhihdqk55aw&utm_content=kpj45oh" className="nav-link twitter"><FiInstagram/></a>
+          <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJTNHjhvFrmPQGbJtkZTZPWDwFmfrPfcMdTshcmVKSSLQjZBpwpPrzfKtGnTdLdGBdCxRxV" className="nav-link twitter"><FiMail/></a>
         </div>
       </div>
 

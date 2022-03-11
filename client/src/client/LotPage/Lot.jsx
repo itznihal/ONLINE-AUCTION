@@ -190,8 +190,7 @@ dispatch(getProduct(keyword , currentPage , price , category));
                 </div>
               </div>
 
-
-              <div className="filter-container">
+              {/* <div className="filter-container">
                 <div className="filter-title">Payment type</div>
                 <div className="filter-list">
                   
@@ -224,14 +223,14 @@ dispatch(getProduct(keyword , currentPage , price , category));
                     </div>
                  
                 </div>
-              </div>
+              </div> */}
 
-
+{/* 
               <div className="filter-container">
                 <div className="filter-title">Delivery type</div>
                 <div className="filter-list">
                 
-                    <div key="delivery">
+                    {/* <div key="delivery">
                       <CheckBox
                         type="checkbox"
                         id="delivery1"
@@ -239,11 +238,9 @@ dispatch(getProduct(keyword , currentPage , price , category));
                         value="Courior"
                         label="Courior"
                       
-                      />
-                    </div>
-                 
-                </div>
-              </div>
+                      {/* />
+                    </div> */}
+                
 
             </div>
           </section>
