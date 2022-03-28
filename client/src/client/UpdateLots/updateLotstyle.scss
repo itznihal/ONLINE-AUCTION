@@ -1,0 +1,215 @@
+
+
+  // FREATURED PRODUCT 
+  .slider_section .carousel_btn_box .carousel-control-prev img,
+.slider_section .carousel_btn_box .carousel-control-next img {
+  width: 10px;
+}
+
+.slider_section .carousel_btn_box .carousel-control-prev:hover,
+.slider_section .carousel_btn_box .carousel-control-next:hover {
+  background-color: #4481eb;
+}
+
+.product_section{
+  margin-top: 10em;
+  margin-bottom: 10em;
+}
+
+.product_section .heading_container {
+  margin-bottom: 25px;
+
+}
+
+.product_section .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px;
+  margin-top: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.product_section .box .img-box {
+  background-color: #f8f8f8;
+  width: 100%;
+  height: 275px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  padding: 15px;
+}
+
+.product_section .box .img-box img {
+  height: 175px;
+  max-width: 100%;
+}
+
+.product_section .box .img-box .add_cart_btn {
+  display: inline-block;
+  width: 175px;
+  text-align: center;
+  height: 45px;
+  line-height: 45px;
+  background-color: #3498db;
+  color: #ffffff;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  opacity: 0;
+  z-index: 3;
+  text-decoration: none;
+}
+
+.product_section .box .img-box .add_cart_btn:hover {
+  background-color: #4481eb;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.product_section .box .img-box::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 1;
+  opacity: 0;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.product_section .box .detail-box {
+  padding-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.product_section .box .product_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.product_section .box .star_container {
+  color: #4481eb;
+}
+
+.product_section .box:hover .img-box .add_cart_btn {
+  opacity: 1;
+  visibility: visible;
+}
+
+.product_section .box:hover .img-box::before {
+  opacity: .55;
+}
+
+.product_section .btn_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 45px;
+}
+
+.product_section .btn_box .view_more-link {
+  display: inline-block;
+  padding: 10px 45px;
+  background-color: #4481eb;
+  color: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #4481eb;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  text-decoration: none;
+}
+
+.product_section .btn_box .view_more-link:hover {
+  background-color: transparent;
+  color: #4481eb;
+}
+
+
+
+
+
+// HEADING CSS
+
+//   About Heading
+
+
+.product_section .section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+.product_section .section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  color: #222222;
+}
+.product_section .section-title h2::before, .section-title h2::after {
+  content: "";
+  width: 50px;
+  height: 2px;
+  background: #3498db;
+  display: inline-block;
+}
+.product_section .section-title h2::before {
+  margin: 0 15px 10px 0;
+}
+.product_section .section-title h2::after {
+  margin: 0 0 10px 15px;
+}
+.product_section .section-title p {
+  margin: 15px 0 0 0;
+}
+
+
+
+// DELETE UPDATE BTN CSS
+
+.dltupdbtn{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.dltupdbtn .btn{
+  font-size: 25px;
+}

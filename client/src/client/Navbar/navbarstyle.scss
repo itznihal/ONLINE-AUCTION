@@ -1,0 +1,155 @@
+
+.navbarpg .navbar {
+    background-color: #fff !important;
+}
+
+.navbar-logo{
+    font-size: 1.9rem !important;
+    color: #3498db !important;
+    text-decoration: none;
+/* For logo */
+}
+
+.navbar a{
+    font-size: 1.3rem ;
+    text-transform: capitalize ;
+}
+
+#drpdwn{
+    font-size: 1.3rem ;
+    text-transform: capitalize ;
+}
+
+.menu_active{
+    font-weight: bold;
+    border-bottom: 1px solid #4481eb;
+
+}
+
+.navbar a:hover{
+    color: #4481eb !important;
+}
+
+
+
+@media only screen and (max-width: 991px){
+    
+    .navbar-brand{
+        font-size: 1.5 rem !important;
+    }
+
+    .menu_active{
+        font-weight: bold;
+        border:0 !important;
+    }
+
+    .licls{
+        margin-top: 2rem;
+    }
+
+    .signblk{
+        margin-top: 5rem;
+        margin-bottom: 2rem;
+    }
+
+  
+}
+
+
+
+// DropDown
+.navbar .dropdown ul {
+    display: block;
+    position: absolute;
+    left: 30px;
+    top: calc(100% + 30px);
+    margin: 0;
+    padding: 10px 0;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    background: #fff;
+    box-shadow: 0px 0px 5px #4481eb;
+    transition: 0.3s;
+    border-radius: 4px;
+    list-style: none;
+    
+    
+    
+  }
+  .navbar .dropdown ul li {
+    min-width: 200px;
+    
+  }
+  .navbar .dropdown ul a {
+    padding: 10px 20px;
+    font-size: 17px;
+
+  }
+ 
+  .navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
+    color: #4481eb;
+  }
+  .navbar .dropdown:hover > ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+  }
+  .navbar .dropdown .dropdown ul {
+    top: 0;
+    left: calc(100% - 30px);
+    visibility: hidden;
+    list-style: none;
+  }
+  .navbar .dropdown .dropdown:hover > ul {
+    opacity: 1;
+    top: 0;
+    left: 100%;
+    visibility: visible;
+  }
+
+  
+
+  
+  @media (max-width: 1366px) {
+    .navbar .dropdown .dropdown ul {
+      left: -90%;
+    }
+    .navbar .dropdown .dropdown:hover > ul {
+      left: -100%;
+    }
+  }
+
+
+
+
+
+.signupbtn #bt1{
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 5px;
+    transition: 0.5s;
+    color: #4481eb;
+    border: 2px solid #4481eb;
+    text-decoration: none;
+    
+
+}
+
+.signupbtn #bt1:hover{
+    background: #3498db;
+    color: #fff !important;
+}
+
+
+#headrdr{
+    color: grey;
+}
+
+#headrdr:hover{
+    color: #4481eb ;
+}
+

@@ -1,0 +1,109 @@
+// .formbd{
+//     margin-top: 0;
+//     padding: 0;
+// }
+
+.formbd{
+  // margin-left: 15em;
+  width: 75em;
+  // align-items: center;
+  // justify-content: center;k
+}
+.form-elements{
+  margin-top: 6em;
+  margin-bottom: 6em;
+}
+.form-elements .card {
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+  }
+  
+  .form-elements .card-header, .card-footer {
+    border-color: #ebeef4;
+    background-color: #fff;
+    color: #798eb3;
+    padding: 15px;
+  }
+  
+  .form-elements .card-title {
+    padding: 20px 0 15px 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #012970;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+  }
+  .form-elements .card-title span {
+    color: #899bbd;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .form-elements .card-body {
+    padding: 0 20px 20px 20px;
+  }
+  
+  .form-elements .card-img-overlay {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .rowset{
+      // width: 75em;
+      // text-align: center;
+      margin: 0em 3em;
+  }
+
+  .addlotcls .row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 4em;
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+
+
+
+  // Add Lot Header
+  .addlotcls .section-title {
+    text-align: center;
+    padding-bottom: 30px;
+    margin-top: 5em;
+    margin-bottom: -2em;
+  }
+  .addlotcls .section-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    color: #222222;
+  }
+  .addlotcls .section-title h2::before, .section-title h2::after {
+    content: "";
+    width: 50px;
+    height: 2px;
+    background: #3498db;
+    display: inline-block;
+  }
+  .addlotcls .section-title h2::before {
+    margin: 0 15px 10px 0;
+  }
+  .addlotcls .section-title h2::after {
+    margin: 0 0 10px 15px;
+  }
+  .addlotcls .section-title p {
+    margin: 15px 0 0 0;
+  }
+  
+  // submit btn
+  .addlotcls .submitbtn{
+    text-align: center;
+    margin-left: 8em;
+  }
+
+// SELECT IMAGE CSS
+.createProductFormImage img{
+  width: 16em;
+}
