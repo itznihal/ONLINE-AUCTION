@@ -16,6 +16,7 @@ import Home from "./client/HomePage/Home";
 import About from "./client/AboutPage/About";
 import Service from "./client/Services/Service";
 import Contact from "./client/ContactPage/Contact";
+import Feedback from './client/Feedback/Feedback';
 import Addlot from "./client/AddLot/Addlot";
 import UpdateLot from "./client/UpdateLots/UpdateLot";
 import Logout from "./client/Logout/Logout";
@@ -72,6 +73,8 @@ const Routing = () => {
       <Route exact path="/about" component={About} />
       <Route exact path="/service" component={Service} />
       <Route exact path="/contact" component={Contact} />
+      <Route exact path="/feedback" component={Feedback} />
+
       <Route exact path="/profile" component={Profile} />
       <Route exact path="/logout" component={Logout} />
       <Route exact path="/signup" component={Signup} />
