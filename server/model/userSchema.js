@@ -50,6 +50,28 @@ const userSchema = mongoose.Schema({
 
 
     }],
+    fmessages: [{
+
+
+        name: {
+            type: String,
+            required: true
+        },
+        email: {
+            type: String,
+            required: true
+        },
+        subject: {
+            type: String,
+            required: true
+        },
+        message: {
+            type: String,
+            required: true
+        }
+
+
+    }],
     tokens: [
         {
             token : {
@@ -106,6 +128,28 @@ return this.messages;
 }
 
 }
+
+// SAVE FEEDBACK DATA 
+userSchema.methods.addFeedback = async function(name, email, subject, message){
+
+    try {
+        
+    this.fmessages = this.fmessages.concat({name, email, subject, message});
+    await this.save();
+    return this.fmessages;
+    
+    } catch (error) {
+        console.log(`userSchema error : ${error}`);
+        
+    }
+    
+    }
+
+
+
+
+
+
 
 
 const User = mongoose.model('USER', userSchema);

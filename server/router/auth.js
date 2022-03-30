@@ -263,43 +263,43 @@ try {
 
 
 
-// // FEEDBACK PAGE
+// FEEDBACK PAGE
 
-// router.post('/feedback',authenticate , async (req, res) => {
-//     const {name, email, subject, message} = req.body;
+router.post('/feedback',authenticate , async (req, res) => {
+    const {name, email, subject, message} = req.body;
     
-//     // console.log(`pre testing`);
-//     // console.log(name);
-//     // console.log(email);
-//     // console.log(subject);
+    // console.log(`pre testing`);
+    // console.log(name);
+    // console.log(email);
+    // console.log(subject);
 
-//     // console.log(message);
-// try {
+    // console.log(message);
+try {
 
-//     const {name, email, subject, message} = req.body;
+    const {name, email, subject, message} = req.body;
 
-//     if( !name || !email || !subject || !message ){
-//         console.log("Error in Feedback form at server side");
-//         return res.json({ error: "All Feilds must be filled"});
-//     }
+    if( !name || !email || !subject || !message ){
+        console.log("Error in Feedback form at server side");
+        return res.json({ error: "All Feilds must be filled"});
+    }
 
 
-//     const userContact = await User.findOne({_id:req.userID});
+    const userContact = await User.findOne({_id:req.userID});
 
-//     if(userContact){
+    if(userContact){
 
-//         const userMessage = await userContact.addMessage(name, email, subject, message);
+        const userMessage = await userContact.addFeedback(name, email, subject, message);
 
-//         await userContact.save();
+        await userContact.save();
 
-//         res.status(201).json({message : "User Contact Form Saved Successfully"});
-//     }
+        res.status(201).json({message : "User FeedBack Form Saved Successfully"});
+    }
     
-// } catch (error) {
-//     console.log(`auth file error : ${error}`);
-// }
+} catch (error) {
+    console.log(`auth file error : ${error}`);
+}
 
-// });
+});
 
 
 

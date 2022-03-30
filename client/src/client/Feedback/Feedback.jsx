@@ -6,6 +6,88 @@ import { MdEmail} from 'react-icons/md';
 import Imgs from "../images/about1.jpg";
 
 const Feedback = () => {
+
+	const [userData, setUserData] = useState({ name: "", email: "", subject: "", message: "" });
+
+
+	const userFeedback = async () => {
+
+		try {
+		  const res = await fetch('/getdata', {
+			method: "GET",
+			headers: {
+			  "Content-Type": "application/json"
+			},
+		  });
+		  const data = await res.json();
+		  console.log(data);
+		  setUserData({ ...userData, name: data.name, email: data.email });
+		  // console.log(`data send to backend`);
+	
+		  if (!res.status === 200) {
+			const error = new Error(res.error);
+			throw error;
+	
+		  }
+	
+	
+		} catch (err) {
+		  console.log(err);
+		}
+	
+	  }
+	  /*  USEEFFECT HOOK -> RUN ONLY ONE TIME WHEN FUNCTION IS CALLED -> ARRAY DENOTES -> NO OF TYMS USEEFFECT CALLLS -> callProfilePage is async function -> so we can not use it inside useEffect */
+	 
+	  useEffect(() => {
+	
+		userFeedback();
+	  }, []);
+	
+	
+
+
+// for storing data in states
+const handleInputs = (e) => {
+    const name = e.target.name;
+    const value =  e.target.value;
+
+    setUserData({ ...userData, [name]: value });
+
+  }
+
+
+
+
+  // SEND DATA TO BACKEND
+
+  const feedbackForm = async (e) => {
+    e.preventDefault();
+
+    const { name, email, subject, message } = userData;
+    const res = await fetch('/feedback', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        name, email, subject, message
+      })
+    });
+
+    const data = await res.json();
+
+    if (!data) {
+      console.log(`message not send `);
+    } else {
+      alert("Message Sent");
+      setUserData({...userData , message: "" , subject: ""});
+    }
+
+
+  }
+
+
+
   return (
       <>
       <MetaData title="Feedback"></MetaData>
@@ -76,31 +158,43 @@ const Feedback = () => {
 {/* From Section */}
 
 <div className="col-lg-10 mt-5 mt-lg-0  d-flex align-items-center justify-content-center contact" data-aos="fade-up" data-aos-delay="300">
-            <form action="" method="post" role="form" className="react-email-form">
+            <form  method="POST" role="form" className="react-email-form">
               <div className="row">
                 <div className="form-group col-md-6">
                   <label for="name">Your Name</label>
-                  <input type="text" name="name" className="form-control" id="name" required/>
+                  <input type="text" name="name"
+				    value={userData.name}
+                            onChange={handleInputs}
+							 className="form-control" id="name" required/>
                 </div>
                 <div className="form-group col-md-6">
                   <label for="name">Your Email</label>
-                  <input type="email" className="form-control" name="email" id="email" required/>
+                  <input type="email" className="form-control" name="email"
+				  value={userData.email}
+                            onChange={handleInputs}
+							 id="email" required/>
                 </div>
               </div>
               <div className="form-group">
                 <label for="name">Subject</label>
-                <input type="text" className="form-control" name="subject" id="subject" required/>
+                <input type="text" className="form-control" name="subject"
+				 value={userData.subject}
+                            onChange={handleInputs}
+							 id="subject" required/>
               </div>
               <div className="form-group">
                 <label for="name">Message</label>
-                <textarea className="form-control" name="message" rows="10" required></textarea>
+                <textarea className="form-control" name="message"
+				 value={userData.message}
+                            onChange={handleInputs}
+							 rows="10" required></textarea>
               </div>
               <div className="my-3">
                 <div className="loading">Loading</div>
                 <div className="error-message"></div>
                 <div className="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div className="text-center"><button type="submit">Send Message</button></div>
+              <div className="text-center"><button type="submit" onClick={feedbackForm}>Send Message</button></div>
             </form>
           </div>
 
