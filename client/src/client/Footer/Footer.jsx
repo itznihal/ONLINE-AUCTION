@@ -29,7 +29,7 @@ const Footer = () => {
         },
       });
       const data = await res.json();
-      console.log(data);
+      // console.log(data);
       setUserData({ ...userData, name: data.name, email: data.email });
       // console.log(`data send to backend`);
 

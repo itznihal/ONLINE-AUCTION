@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+.feedbackcls 
+{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+
+// CSS
+
+
+.feedbackcls .ftco-section {
+    padding: 7em 0; }
+  
+    .feedbackcls  .ftco-no-pt {
+    padding-top: 0; }
+  
+    .feedbackcls  .ftco-no-pb {
+    padding-bottom: 0; }
+  
+    .feedbackcls  .heading-section {
+    font-size: 28px;
+    color: #000; }
+  
+    .feedbackcls .img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; }
+  
+    .feedbackcls .form-control {
+    height: 36px;
+    background: #fff;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 14px;
+    border-radius: 2px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid rgba(0, 0, 0, 0.1); }
+    .feedbackcls .form-control::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      color: rgba(0, 0, 0, 0.3) !important; }
+      .feedbackcls  .form-control::-moz-placeholder {
+      /* Firefox 19+ */
+      color: rgba(0, 0, 0, 0.3) !important; }
+      .feedbackcls  .form-control:-ms-input-placeholder {
+      /* IE 0+ */
+      color: rgba(0, 0, 0, 0.3) !important; }
+      .feedbackcls .form-control:-moz-placeholder {
+      /* Firefox 18- */
+      color: rgba(0, 0, 0, 0.3) !important; }
+      .feedbackcls  .form-control:focus, .form-control:active {
+      border-color: #4481eb !important; }
+  
+      .feedbackcls textarea.form-control {
+    height: inherit !important; }
+  
+    .feedbackcls .wrapper {
+    width: 100%; }
+  
+    .feedbackcls .contact-wrap {
+    background: #fff; }
+  
+  @media (max-width: 767.98px) {
+    .feedbackcls .info-wrap {
+      height: 400px; } }
+  
+      .feedbackcls .dbox {
+    width: 100%;
+    margin-bottom: 25px; }
+    @media (max-width: 767.98px) {
+      .dbox {
+        margin-bottom: 25px !important;
+        padding: 0 20px; } }
+    .dbox p {
+      margin-bottom: 0; }
+      .dbox p span {
+        font-weight: 500;
+        color: #000; }
+      .dbox p a {
+        color: #4481eb; }
+   .feedbackcls  .dbox .icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #4481eb;
+      margin: 0 auto;
+      margin-bottom: 20px; }
+      .dbox .icon span {
+        font-size: 20px;
+        color: #fff; }
+    .dbox .text {
+      width: 100%; }
+  
+      .feedbackcls .btn {
+    padding: 12px 16px;
+    cursor: pointer;
+    border-width: 1px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    -webkit-box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.12);
+    position: relative;
+    margin-bottom: 20px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s; }
+    @media (prefers-reduced-motion: reduce) {
+        .feedbackcls  .btn {
+        -webkit-transition: none;
+        -o-transition: none;
+        transition: none; } }
+        .feedbackcls  .btn:hover, .btn:active, .btn:focus {
+      outline: none !important; }
+      .feedbackcls  .btn.btn-primary {
+      background: #4481eb !important;
+      border-color: #4481eb !important;
+      color: #fff; }
+      .feedbackcls  .btn.btn-primary:hover, .btn.btn-primary:focus {
+        border-color: #2d9bb7 !important;
+        background: #2d9bb7 !important; }
+  
+
+    
+        .feedbackcls .section-title {
+    text-align: center;
+    padding-bottom: 30px;
+    margin-top: 2em;
+    margin-bottom: 5em;
+  }
+  .feedbackcls .section-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    color: #222222;
+  }
+  .feedbackcls .section-title h2::before, .section-title h2::after {
+    content: "";
+    width: 50px;
+    height: 2px;
+    background: #4481eb;
+    display: inline-block;
+  }
+  .feedbackcls .section-title h2::before {
+    margin: 0 15px 10px 0;
+  }
+  .feedbackcls .section-title h2::after {
+    margin: 0 0 10px 15px;
+  }
+  .feedbackcls .section-title p {
+    margin: 15px 0 0 0;
+  }
+
+
+
+//   FORM
+.contact{
+    justify-content: center !important;
+    align-items: center !important;
+
+}
+@media (min-width: 767.98px) {
+    .contact{
+        justify-content: center !important;
+        align-items: center !important;
+        margin-left: 10em;
+        margin-top: 3em;
+margin-bottom: 3em;
+    }
+}
+.contact .info {
+    border-top: 3px solid #4481eb;
+    border-bottom: 3px solid #4481eb;
+    padding: 30px;
+    background: #fff;
+    width: 100%;
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.1);
+  }
+  .contact .info i {
+    font-size: 20px;
+    color: #4481eb;
+    float: left;
+    width: 44px;
+    height: 44px;
+    background: #e7f5fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+  }
+  .contact .info h4 {
+    padding: 0 0 0 60px;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #37517e;
+  }
+  .contact .info p {
+    padding: 0 0 10px 60px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #6182ba;
+  }
+  .contact .info .email p {
+    padding-top: 5px;
+  }
+  .contact .info .social-links {
+    padding-left: 60px;
+  }
+  .contact .info .social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    line-height: 1;
+    padding: 8px 0;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+    margin-right: 10px;
+    text-decoration: none !important;
+  }
+  .contact .info .social-links a:hover {
+    background: #4481eb;
+    color: #fff;
+    text-decoration: none !important;
+
+  }
+  .contact .info .email:hover i, .contact .info .address:hover i, .contact .info .phone:hover i {
+    background: #4481eb;
+    color: #fff;
+  }
+  .contact .react-email-form {
+    width: 100%;
+    border-top: 3px solid #4481eb;
+    border-bottom: 3px solid #4481eb;
+    padding: 30px;
+    background: #fff;
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  }
+  .contact .react-email-form .form-group {
+    padding-bottom: 8px;
+  }
+  .contact .react-email-form .validate {
+    display: none;
+    color: red;
+    margin: 0 0 15px 0;
+    font-weight: 400;
+    font-size: 13px;
+  }
+  .contact .react-email-form .error-message {
+    display: none;
+    color: #fff;
+    background: #ed3c0d;
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+  }
+  .contact .react-email-form .error-message br + br {
+    margin-top: 25px;
+  }
+  .contact .react-email-form .sent-message {
+    display: none;
+    color: #fff;
+    background: #18d26e;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+  }
+  .contact .react-email-form .loading {
+    display: none;
+    background: #fff;
+    text-align: center;
+    padding: 15px;
+  }
+  .contact .react-email-form .loading:before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px -6px 0;
+    border: 3px solid #18d26e;
+    border-top-color: #eee;
+    -webkit-animation: animate-loading 1s linear infinite;
+    animation: animate-loading 1s linear infinite;
+  }
+  .contact .react-email-form .form-group {
+    margin-bottom: 20px;
+  }
+  .contact .react-email-form label {
+    padding-bottom: 8px;
+  }
+  .contact .react-email-form input, .contact .react-email-form textarea {
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+  .contact .react-email-form input:focus, .contact .react-email-form textarea:focus {
+    border-color: #4481eb;
+  }
+  .contact .react-email-form input {
+    height: 44px;
+  }
+  .contact .react-email-form textarea {
+    padding: 10px 12px;
+  }
+  .contact .react-email-form button[type=submit] {
+    background: #4481eb;
+    border: 0;
+    padding: 12px 34px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 50px;
+  }
+  .contact .react-email-form button[type=submit]:hover {
+    background: #209dd8;
+  }
+  @-webkit-keyframes animate-loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes animate-loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  

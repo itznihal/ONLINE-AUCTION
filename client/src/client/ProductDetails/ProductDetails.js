@@ -395,17 +395,64 @@ console.log(showButton);
                         </p>
 
 
-                        {
-                          (countdownDate > now) ? 
+                        {/* {
+                          (countdownDate > now && userData._id !==sellerDetails._id ) ? 
                         ( <PlaceBid product = {product}/>)
                         :
                         (  <h3>!   Auction Ended</h3>)
-                        }
+                        } */}
+{/* TRY */}
+
+{
+                          (countdownDate > now  ) ? 
+                        (
+                           
+                            (userData._id !==sellerDetails._id)  ? (<PlaceBid product = {product}/>) 
+                            :
+                             (    <div className="alert alert-primary" role="alert">
+  <MdVerified/>  Your Product Auction is currently active!
+</div>)
+                          
+                          )
+                          :
+                        (  <h3>!   Auction Ended</h3>)
+ }
+
+
+
+
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
+
+
+{/* 
+  {userData._id === winStatus.bidder._id &&
+  <div className="row">
+                 <div className="alert alert-primary" role="alert">
+  <MdVerified/>  You Won. Congratulations!
+</div>
+
+{ showButton  && (
+<div className='stripecls'>
+<StripeCheckout
+        stripeKey="pk_test_51KVzMySFWvR6XE1YKfGlTIsCD9C6Iwr2hy4H5ZkeddvgmJwUAGOJcOvWE6FeFh2qkANlnXD6f10wdZuuBHi0CoCj00s25fgrYw"
+        token={makePayment}
+        name="Buy here!!"
+        amount={winStatus.bid}
+        shippingAddress
+        billingAddress
+        >
+<button class="button" ><
+MdOutlinePayment/> <span>Connect with Stripe </span></button>
+</StripeCheckout>
+</div>
+)
+}
+                 </div> } */}
 
 {/* PRODUCT ADDITIONAL INFORMATION */}
 
