@@ -39,17 +39,32 @@ if(state){
         <li className="nav-item px-3 mx-auto licls">
           <NavLink activeClassName = 'menu_active' excat className="nav-link" to="/about">About</NavLink>
         </li>
-
+{/* 
         <li className="nav-item px-3 mx-auto licls ">
           <NavLink activeClassName = 'menu_active' excat className="nav-link" to="/service">Services</NavLink>
-        </li>
-
-        {/* <li className="nav-item px-3 mx-auto licls">
-          <NavLink activeClassName = 'menu_active' excat className="nav-link" to="/contact">Contact Us</NavLink>
         </li> */}
 
 
-        <li className="dropdown nav-item px-3 mx-auto licls"><NavLink to="#" className="nav-link"><span id='headrdr'>Connect Us</span> </NavLink>
+        <li className="dropdown nav-item px-3 mx-auto licls"><NavLink to="#" className="nav-link"><span id='headrdr'>Services</span> </NavLink>
+            <ul className='ddlist'>
+            <li className="nav-item px-3 mx-auto licls ">
+          <NavLink  excat className="nav-link" to="/service">Our Services</NavLink>
+        </li>
+        <li className="nav-item px-3 mx-auto licls">
+          <NavLink  excat className="nav-link fdbck" to="/feedback">Feedback</NavLink>
+        </li>
+              
+            </ul>
+          </li>
+        
+
+
+        <li className="nav-item px-3 mx-auto licls">
+          <NavLink activeClassName = 'menu_active' excat className="nav-link" to="/contact">Contact Us</NavLink>
+        </li>
+
+
+        {/* <li className="dropdown nav-item px-3 mx-auto licls"><NavLink to="#" className="nav-link"><span id='headrdr'>Connect Us</span> </NavLink>
             <ul className='ddlist'>
             <li className="nav-item px-3 mx-auto licls">
           <NavLink activeClassName = 'menu_active' excat className="nav-link fdbck" to="/contact">Contact Us</NavLink>
@@ -60,7 +75,7 @@ if(state){
               
             </ul>
           </li>
-        
+         */}
         <li className="nav-item px-3 mx-auto licls">
           <NavLink activeClassName = 'menu_active' excat className="nav-link" to="/bidstatus">Bid Status</NavLink>
         </li>
