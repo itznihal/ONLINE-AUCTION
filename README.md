@@ -4,6 +4,7 @@
 
 Let’s Visit our Website “BestBid” – An interactive and User friendly Virtual Platform for auction!!
 
+![MergedImages](https://user-images.githubusercontent.com/83122808/161217545-4e4ea08f-8fbb-4330-8054-ef145e6b1c12.png)
 
 ## Technologies
 
