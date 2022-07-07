@@ -6,7 +6,7 @@ const authenticate = require("../middleware/authenticate");
 
 
 require('../db/conn');
-const User = require("../model/userSchema");
+const User = require('../model/userSchema');
 
 router.get('/', (req, res) => {
     res.send(`Router js is called`);
@@ -17,7 +17,12 @@ router.post('/register', async (req, res) => {
     const { name, email, phone, password, cpassword } = req.body;
 
     if (!name || !email || !phone || !password || !cpassword) {
-        return res.status(400).json({ error: "Fill all Require Feild Properly " });
+        return res.status(400).json({ error: "Fill all Require Field Properly " });
+    }
+
+
+    if(phone.length < 10) {
+        return res.status(400).json({ error: "password should be minimum 10 characters" });
     }
 
     if(password.length < 8) {
