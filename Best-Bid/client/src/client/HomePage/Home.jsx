@@ -49,7 +49,7 @@ dispatch(getProduct());
   return (
     <>{loading ? (<Loader/>) :(
     <>
-    <MetaData title="BEST BID"></MetaData>
+    <MetaData title="HOT BID"></MetaData>
       <section id='header' className='d-flex align-items-center homepg'>
 
 

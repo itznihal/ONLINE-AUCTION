@@ -238,7 +238,7 @@ const loginUser =async (e) =>{
                   <div className="content">
                     <h3>Already have an account?</h3>
                     <p>
-                      Log in first to start with bestbid!!
+                      Log in first to start with HotBid!!
                     </p>
                     <NavLink excat className="nav-link-signin" to="/signin">
                       <button className="btn transparent" id="sign-in-btn" onClick={() => setFlag(!flag)}>
